@@ -21,7 +21,7 @@ const wrapperModifiers = {
       svg{
         width: 3.375rem;
       }
-      .text{
+      .logotype{
         display: none;
         pointer-events: none;
       }
