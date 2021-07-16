@@ -5,35 +5,28 @@ import { LogoProps } from '.'
 
 const wrapperModifiers = {
   normal: () => css`
-    width: 3.375rem;
-    height: 3.6875rem;
+    width: 5.4rem;
+    height: 5.9rem;
   `,
 
   large: () => css`
-    width: 9rem;
-    height: 9.938rem;
+    width: 14.4rem;
+    height: 15.9rem;
   `,
 
-  hideOnMobile: () => css`
+  horizontalOnMobile: () => css`
     ${media.lessThan('medium')`
-      width: 3.375rem;
-      height: 1.763rem;
-      svg{
-        width: 3.375rem;
-      }
-      .logotype{
-        display: none;
-        pointer-events: none;
-      }
+      width: 8.5rem;
+      height: 3.8rem;
     `}
   `
 }
 
 export const Wrapper = styled.div<LogoProps>`
-  ${({ theme, color, size, hideOnMobile }) => css`
+  ${({ theme, color, size, horizontalOnMobile }) => css`
     color: ${theme.colors[color!]};
 
     ${!!size && wrapperModifiers[size]}
-    ${!!hideOnMobile && wrapperModifiers.hideOnMobile}
+    ${!!horizontalOnMobile && wrapperModifiers.horizontalOnMobile}
   `}
 `

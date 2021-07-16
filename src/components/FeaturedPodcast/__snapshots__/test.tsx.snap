@@ -1,0 +1,521 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FeaturedPodcast /> should render game informations 1`] = `
+.c5 {
+  color: #FFFFFF;
+  font-size: 2.5rem;
+}
+
+.c6 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c0 {
+  position: relative;
+  color: #FFFFFF;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.c1 {
+  width: 100%;
+  min-height: 100%;
+  background-image: url(https://source.unsplash.com/cCIVkw4K27A/1600x900);
+  background-size: cover;
+  background-position: top center;
+}
+
+.c1::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #3A0332;
+  position: absolute;
+  opacity: 0.95;
+  z-index: 0;
+}
+
+.c2 {
+  position: relative;
+  width: 100%;
+  margin-top: 3.2rem;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 555 407'%3E%3Cdefs/%3E%3Cg fill='%23000' clip-path='url(%23clip0)'%3E%3Cpath d='M24.3484 166.5h-5.729v61.667h5.729V166.5zm9.3097-12.333h-5.729v80.166h5.729v-80.166zm9.3096-18.5h-5.7291v78.663h5.7291v-78.663zM5.72903 185H0v30.833h5.72903V185zm9.30967-6.167H9.30969v30.834h5.72901v-30.834zm37.2387 0h-5.7291v74h5.7291v-74zm9.3097-37H55.858v129.5h5.7291v-129.5zm9.3097 18.5h-5.7291v104.834h5.7291V160.333zM80.2065 185h-5.7291v49.333h5.7291V185zm27.9295-15.417h-5.73v74h5.73v-74zm-18.6198-33.916h-5.7291v74h5.7291v-74zM98.8258 111h-5.729v160.333h5.729V111zm18.6192-12.3334h-5.729V308.333h5.729V98.6666zm9.31 70.9164h-5.729v120.25h5.729v-120.25zm9.309-43.166h-5.729V286.75h5.729V126.417zm9.31-49.3336h-5.729V268.25h5.729V77.0834zm9.31-15.4168h-5.729V357.667h5.729V61.6666zm9.31 15.4168h-5.729V348.417h5.729V77.0834zm9.309 43.1666h-5.729v197.333h5.729V120.25zm9.31-64.75h-5.729v231.25h5.729V55.5zm9.31 18.5h-5.729v188.083h5.729V74zm9.309-24.6666h-5.729V370h5.729V49.3334zm9.31 12.3332h-5.729V317.583h5.729V61.6666zm9.31-37h-5.729V286.75h5.729V24.6666zm9.309 6.1668h-5.729V382.333h5.729V30.8334zM555 186.966h-5.729v16.226H555v-16.226zm-9.31-9.482h-5.729v34.726h5.729v-34.726zm-9.309-13.451h-5.729v34.726h5.729v-34.726zm-9.31-11.369h-5.729v74h5.729v-74zm-9.31 6.166h-5.729v53.226h5.729V158.83zm-279.29-97.1634h-5.729V317.583h5.729V61.6666zm9.31-43.1666h-5.729v382.333h5.729V18.5zm9.309 6.1666h-5.729V339.167h5.729V24.6666zm9.31-18.49997h-5.729V407h5.729V6.16663zM275.71 0h-5.729v336.083h5.729V0zm9.309 30.525h-5.729v328.876h5.729V30.525zm9.31-12.025H288.6v366.261h5.729V18.5zm9.31 47.2521h-5.729V400.486h5.729V65.7521zm9.309-31.4886h-5.729V370h5.729V34.2635zm9.31 28.7521h-5.729V383.759h5.729V63.0156zm9.31-5.126h-5.729V354.969h5.729V57.8896zm9.309-18.4615h-5.729V344.909h5.729V39.4281zm9.31 86.3719h-5.729v256.533h5.729V125.8zm9.31-12.642h-5.729v216.296h5.729V113.158zm9.309-100.8246h-5.729V362.215h5.729V12.3334zm9.31 48.0614h-5.729V346.451h5.729V60.3948zm9.31 33.6468h-5.729V363.833h5.729V94.0416zm9.31-53.5343h-5.73V348.686h5.73V40.5073zm9.309 5.7427h-5.729v234.333h5.729V46.25zm9.31 104.833h-5.729V305.25h5.729V151.083zm9.31-46.25h-5.729v171.549h5.729V104.833zm9.309 23.819h-5.729v166.77h5.729v-166.77zm9.31 19.078h-5.729V314.5h5.729V147.73zm9.31-5.897h-5.729V296h5.729V141.833zm9.309-24.666h-5.729v148h5.729v-148zm9.31 33.916h-5.729v148h5.729v-148zm9.309-37h-5.729v166.5h5.729v-166.5zm9.31 77.084h-5.729V277.5h5.729v-86.333zm9.31-20.389h-5.729v86.333h5.729v-86.333zm9.31-18.114h-5.729v86.333h5.729v-86.333z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Cpath fill='%23fff' d='M0 0h555v407H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 555 407'%3E%3Cdefs/%3E%3Cg fill='%23000' clip-path='url(%23clip0)'%3E%3Cpath d='M24.3484 166.5h-5.729v61.667h5.729V166.5zm9.3097-12.333h-5.729v80.166h5.729v-80.166zm9.3096-18.5h-5.7291v78.663h5.7291v-78.663zM5.72903 185H0v30.833h5.72903V185zm9.30967-6.167H9.30969v30.834h5.72901v-30.834zm37.2387 0h-5.7291v74h5.7291v-74zm9.3097-37H55.858v129.5h5.7291v-129.5zm9.3097 18.5h-5.7291v104.834h5.7291V160.333zM80.2065 185h-5.7291v49.333h5.7291V185zm27.9295-15.417h-5.73v74h5.73v-74zm-18.6198-33.916h-5.7291v74h5.7291v-74zM98.8258 111h-5.729v160.333h5.729V111zm18.6192-12.3334h-5.729V308.333h5.729V98.6666zm9.31 70.9164h-5.729v120.25h5.729v-120.25zm9.309-43.166h-5.729V286.75h5.729V126.417zm9.31-49.3336h-5.729V268.25h5.729V77.0834zm9.31-15.4168h-5.729V357.667h5.729V61.6666zm9.31 15.4168h-5.729V348.417h5.729V77.0834zm9.309 43.1666h-5.729v197.333h5.729V120.25zm9.31-64.75h-5.729v231.25h5.729V55.5zm9.31 18.5h-5.729v188.083h5.729V74zm9.309-24.6666h-5.729V370h5.729V49.3334zm9.31 12.3332h-5.729V317.583h5.729V61.6666zm9.31-37h-5.729V286.75h5.729V24.6666zm9.309 6.1668h-5.729V382.333h5.729V30.8334zM555 186.966h-5.729v16.226H555v-16.226zm-9.31-9.482h-5.729v34.726h5.729v-34.726zm-9.309-13.451h-5.729v34.726h5.729v-34.726zm-9.31-11.369h-5.729v74h5.729v-74zm-9.31 6.166h-5.729v53.226h5.729V158.83zm-279.29-97.1634h-5.729V317.583h5.729V61.6666zm9.31-43.1666h-5.729v382.333h5.729V18.5zm9.309 6.1666h-5.729V339.167h5.729V24.6666zm9.31-18.49997h-5.729V407h5.729V6.16663zM275.71 0h-5.729v336.083h5.729V0zm9.309 30.525h-5.729v328.876h5.729V30.525zm9.31-12.025H288.6v366.261h5.729V18.5zm9.31 47.2521h-5.729V400.486h5.729V65.7521zm9.309-31.4886h-5.729V370h5.729V34.2635zm9.31 28.7521h-5.729V383.759h5.729V63.0156zm9.31-5.126h-5.729V354.969h5.729V57.8896zm9.309-18.4615h-5.729V344.909h5.729V39.4281zm9.31 86.3719h-5.729v256.533h5.729V125.8zm9.31-12.642h-5.729v216.296h5.729V113.158zm9.309-100.8246h-5.729V362.215h5.729V12.3334zm9.31 48.0614h-5.729V346.451h5.729V60.3948zm9.31 33.6468h-5.729V363.833h5.729V94.0416zm9.31-53.5343h-5.73V348.686h5.73V40.5073zm9.309 5.7427h-5.729v234.333h5.729V46.25zm9.31 104.833h-5.729V305.25h5.729V151.083zm9.31-46.25h-5.729v171.549h5.729V104.833zm9.309 23.819h-5.729v166.77h5.729v-166.77zm9.31 19.078h-5.729V314.5h5.729V147.73zm9.31-5.897h-5.729V296h5.729V141.833zm9.309-24.666h-5.729v148h5.729v-148zm9.31 33.916h-5.729v148h5.729v-148zm9.309-37h-5.729v166.5h5.729v-166.5zm9.31 77.084h-5.729V277.5h5.729v-86.333zm9.31-20.389h-5.729v86.333h5.729v-86.333zm9.31-18.114h-5.729v86.333h5.729v-86.333z'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0'%3E%3Cpath fill='%23fff' d='M0 0h555v407H0z'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+}
+
+.c3 {
+  width: 32rem;
+  padding: 0 2.4rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-rows: auto;
+  grid-auto-flow: dense;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+}
+
+.c3 div:last-child {
+  display: grid;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+  margin-top: 3.2rem;
+}
+
+.c3 div {
+  position: relative;
+}
+
+.c3 .c4 {
+  font-size: 4.0rem;
+  text-align: center;
+  margin-bottom: 3.2rem;
+}
+
+.c3 p {
+  padding-right: 2.4rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.c3 svg {
+  color: #FFFFFF;
+  height: 10vh;
+  position: relative;
+  bottom: 0.4rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.c7 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #3A0332;
+  width: 100%;
+  height: 100%;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateX(100vw);
+  -ms-transform: translateX(100vw);
+  transform: translateX(100vw);
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: -webkit-transform 1s ease-in-out,opacity 1s ease-in-out;
+  -webkit-transition: transform 1s ease-in-out,opacity 1s ease-in-out;
+  transition: transform 1s ease-in-out,opacity 1s ease-in-out;
+}
+
+.c9 {
+  width: 28.8rem;
+}
+
+.c8 {
+  display: grid;
+  width: 32rem;
+  padding: 0 2.4rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  margin: 0 auto;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.c8 .c4 {
+  margin-bottom: 1.6rem;
+  font-size: 4.0rem;
+}
+
+.c8 div {
+  position: relative;
+}
+
+.c8 div:last-child {
+  display: grid;
+  -webkit-box-pack: end;
+  -webkit-justify-content: end;
+  -ms-flex-pack: end;
+  justify-content: end;
+}
+
+.c8 p {
+  font-size: 1.5rem;
+}
+
+.c8 iframe {
+  position: relative;
+  bottom: 0;
+  margin-top: 3.2rem;
+}
+
+.c8 a {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  border: 0.1rem solid #FFFFFF;
+  margin: 0.5rem 0.3rem;
+  padding: 0.5rem 1rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.c8 svg {
+  position: relative;
+  color: #FFFFFF;
+  cursor: pointer;
+  height: 10vh;
+  top: 1rem;
+  z-index: 1;
+}
+
+@media (min-width:768px) {
+  .c5 {
+    font-size: 4.0rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c1 {
+    display: grid;
+    grid-template-rows: 410px auto;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (min-width:768px) {
+  .c2 {
+    top: 5.6rem;
+    margin: 0 auto;
+    height: 45vh;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+@media (max-width:413px) {
+  .c3 .c4 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width:413px) {
+  .c3 p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    width: 144rem;
+    display: grid;
+    grid-template-columns: calc(12rem * 7) 12rem;
+    -webkit-column-gap: calc(12rem + 2.4rem);
+    column-gap: calc(12rem + 2.4rem);
+    grid-auto-flow: dense;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .c3 div:first-child {
+    display: grid;
+    -webkit-box-pack: end;
+    -webkit-justify-content: end;
+    -ms-flex-pack: end;
+    justify-content: end;
+    padding-left: calc(12rem * 2);
+  }
+
+  .c3 div:last-child {
+    margin-top: 0;
+  }
+
+  .c3 .c4 {
+    font-size: 4.0rem;
+    margin-bottom: 3.2rem;
+  }
+
+  .c3 p {
+    text-align: left;
+    font-size: 2.5rem;
+    line-height: 3.2rem;
+  }
+}
+
+@media (min-width:768px) and (max-width:1170px) {
+  .c3 {
+    width: 83rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-auto-flow: dense;
+  }
+
+  .c3 div:first-child {
+    padding-left: 0;
+  }
+
+  .c3 .c4 {
+    font-size: 5.0rem;
+  }
+}
+
+@media (max-width:768px) {
+  .c9 {
+    display: none;
+  }
+}
+
+@media (min-width:768px) and (max-width:1170px) {
+  .c9 {
+    width: 22rem;
+  }
+}
+
+@media (max-width:413px) {
+  .c8 .c4 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width:413px) {
+  .c8 p {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c8 {
+    width: 144rem;
+    padding: 0;
+    grid-template-columns: calc(12rem * 5) calc( 12rem * 3 );
+    -webkit-column-gap: calc(12rem + 2.4rem);
+    column-gap: calc(12rem + 2.4rem);
+  }
+
+  .c8 div:last-child {
+    grid-column: span 2;
+  }
+
+  .c8 p {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+  }
+
+  .c8 iframe {
+    position: absolute;
+  }
+
+  .c8 a {
+    font-size: 1.5rem;
+    border: 0.2rem solid #FFFFFF;
+    margin: 0 0.5rem 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .c8 svg {
+    top: auto;
+  }
+}
+
+@media (min-width:768px) and (max-width:1170px) {
+  .c8 {
+    width: 83rem;
+    padding: 0;
+    grid-template-columns: calc(12rem * 4) calc( 12rem * 2 );
+    -webkit-column-gap: calc(2.4rem *2);
+    column-gap: calc(2.4rem *2);
+  }
+
+  .c8 div:last-child {
+    grid-column: span 2;
+    margin-top: 10vh;
+  }
+
+  .c8 p {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+    padding: 1vh 0 3vh;
+  }
+
+  .c8 iframe {
+    position: relative;
+  }
+
+  .c8 a {
+    font-size: 1.5rem;
+    border: 0.2rem solid #FFFFFF;
+    margin: 0 0.5rem 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .c8 svg {
+    top: auto;
+  }
+}
+
+<main
+  class="c0"
+>
+  <div
+    class="c1"
+    src="https://source.unsplash.com/cCIVkw4K27A/1600x900"
+  >
+    <img
+      aria-label="cover"
+      class="c2"
+      role="image"
+      src="https://source.unsplash.com/cCIVkw4K27A/1600x900"
+    />
+    <div
+      class="c3"
+    >
+      <div>
+        <h2
+          class="c4 c5"
+          color="white"
+        >
+          A nossa casa indica
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <div>
+        <svg
+          aria-hidden="true"
+          aria-label="ver podcast"
+          class="c6"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div
+    aria-hidden="true"
+    class="c7"
+  >
+    <div
+      class="c8"
+    >
+      <div>
+        <h2
+          class="c4 c5"
+          color="white"
+        >
+          Calango Careta
+        </h2>
+        <p>
+          Sobre Brasília, música, cotidiano e demais atividades culturais aleatórias produzidas pelo Bloco do Calango Careta!
+        </p>
+        <iframe
+          allow="encrypted-media"
+          frameborder="0"
+          height="152"
+          src="https://open.spotify.com/embed/episode/7l6kyf9DCF9oTCAg3pzSnO"
+          width="100%"
+        />
+      </div>
+      <div>
+        <img
+          aria-label="Calango Careta"
+          class="c9"
+          role="image"
+          src="/img/podcasts/calango-careta.jpeg"
+        />
+        <a
+          href="/carnaval"
+        >
+          carnaval
+        </a>
+        <a
+          href="/arte"
+        >
+          arte
+        </a>
+        <a
+          href="/brasilia"
+        >
+          brasília
+        </a>
+        <a
+          href="/musica"
+        >
+          música
+        </a>
+      </div>
+      <div>
+        <svg
+          aria-hidden="true"
+          aria-label="voltar para apresentação"
+          class="c6"
+          fill="currentColor"
+          focusable="false"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 0h24v24H0V0z"
+            fill="none"
+          />
+          <path
+            d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
+          />
+        </svg>
+      </div>
+    </div>
+  </div>
+</main>
+`
