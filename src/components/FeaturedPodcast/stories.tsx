@@ -3,7 +3,7 @@ import FeaturedPodcast, { FeaturedPodcastProps } from '.'
 import mockFeaturedPodcast from './mock'
 
 export default {
-  title: 'FeaturedPodcast',
+  title: 'Design System/Organisms/FeaturedPodcast',
   component: FeaturedPodcast,
   parameters: {
     layout: 'fullscreen',
