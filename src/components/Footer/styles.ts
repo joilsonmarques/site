@@ -39,6 +39,7 @@ export const Wrapper = styled.footer`
     }
 
     ${media.greaterThan('medium')`
+      margin-top: 14rem;
       padding: ${theme.spacings.large};
       &::before {
       top: -12rem;
