@@ -7,17 +7,20 @@ type MenuProps = {
 
 export const Wrapper = styled.menu<MenuProps>`
   ${({ theme, isRight }) => css`
-    background: black;
+    background: ${theme.colors.black};
     display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
     align-items: center;
     padding: ${theme.spacings.xsmall};
     justify-content: space-between;
+    z-index: ${theme.layers.menu};
     ${media.greaterThan('medium')`
       justify-content: center;
       width: 9rem;
       height: 100vh;
-      position: fixed;
-      left: 0;
       transform: ${
         isRight ? 'translateX(calc(100vw - 9rem))' : 'translateX(0)'
       };

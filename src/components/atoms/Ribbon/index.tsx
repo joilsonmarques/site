@@ -8,7 +8,7 @@ export type RibbonProps = {
 
 const Ribbon = ({
   children,
-  textColor = 'white',
+  textColor = 'black',
   color = '#9071AF'
 }: RibbonProps) => (
   <S.Wrapper color={color} textColor={textColor}>

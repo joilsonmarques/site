@@ -60,6 +60,7 @@ export default {
     xxlarge: '5.6rem'
   },
   layers: {
+    zero: 0,
     base: 10,
     menu: 20,
     overlay: 30,

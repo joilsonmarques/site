@@ -6,7 +6,19 @@ export default {
   component: Menu
 } as Meta
 
-export const Default: Story = () => <Menu />
+export const Default: Story = () => (
+  <div
+    style={{
+      position: 'relative',
+      height: '3000px',
+      background: 'linear-gradient(#29292B,#3A0332, #451379, #C61C4A, #F95E3C)',
+      margin: '0',
+      padding: '0'
+    }}
+  >
+    <Menu />
+  </div>
+)
 
 Default.parameters = {
   layout: 'fullscreen',

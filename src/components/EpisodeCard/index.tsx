@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import Ribbon from 'components/Ribbon'
+import Ribbon from 'components/atoms/Ribbon'
 
 import * as S from './styles'
 
