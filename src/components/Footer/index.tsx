@@ -7,8 +7,16 @@ import { Twitter as TwitterIcon } from '@styled-icons/boxicons-logos/Twitter'
 
 import * as S from './styles'
 
-const Footer = () => (
-  <S.Wrapper>
+export type FooterProps = {
+  outerBarsColor?: '29292B' | string
+  innerBarsColor?: 'ffffff' | string
+}
+
+const Footer = ({
+  outerBarsColor = '29292B',
+  innerBarsColor = 'ffffff'
+}: FooterProps) => (
+  <S.Wrapper outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor}>
     <S.Content>
       <S.Column aria-labelledby="logo">
         <S.LogoWrapper>
