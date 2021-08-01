@@ -8,8 +8,6 @@ export const Wrapper = styled.article`
     width: 100%;
     height: 100%;
     background-color: ${theme.colors.white};
-    margin-left: 5rem;
-    margin-top: 5rem;
   `}
 `
 
@@ -18,6 +16,9 @@ export const ImageBox = styled.div`
   height: 100%;
   width: 100%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #f6f7f8;
   background-image: linear-gradient(
     to right,
@@ -40,6 +41,8 @@ export const ImageBox = styled.div`
   img {
     width: 100%;
     height: 100%;
+    align-self: flex-start;
+    flex-shrink: 0;
   }
 `
 

@@ -7,7 +7,7 @@ export default {
   component: EpisodeCard,
   parameters: {
     backgrounds: {
-      default: 'won-dark'
+      default: 'ancp-dark'
     }
   },
   args: {
@@ -25,12 +25,12 @@ export default {
 export const Default: Story<EpisodeCardProps> = (args) => (
   <div>
     <MediaMatch lessThan="medium">
-      <div style={{ width: '15rem', height: '15rem', margin: '5rem 0 0 0' }}>
+      <div style={{ width: '15rem', height: '15rem', margin: '5rem' }}>
         <EpisodeCard {...args} />
       </div>
     </MediaMatch>
     <MediaMatch greaterThan="medium">
-      <div style={{ width: '28rem', height: '28rem', margin: '15rem 0 0 0' }}>
+      <div style={{ width: '28rem', height: '28rem', margin: '15rem' }}>
         <EpisodeCard {...args} />
       </div>
     </MediaMatch>

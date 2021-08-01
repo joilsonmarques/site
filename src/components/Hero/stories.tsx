@@ -3,7 +3,7 @@ import Hero from '.'
 import Menu from 'components/Menu'
 
 export default {
-  title: 'Design System/Molecules/Hero',
+  title: 'Design System/Organisms/Hero',
   component: Hero
 } as Meta
 
