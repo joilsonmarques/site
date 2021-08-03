@@ -6,9 +6,15 @@ import * as S from './styles'
 
 export type BaseTemplateProps = {
   children: React.ReactNode
+  outerBarsColor: string
+  innerBarsColor: string
 }
 
-const Base = ({ children }: BaseTemplateProps) => {
+const Base = ({
+  children,
+  outerBarsColor = '29292B',
+  innerBarsColor = '451379'
+}: BaseTemplateProps) => {
   return (
     <S.Wrapper>
       <Container>
@@ -17,7 +23,7 @@ const Base = ({ children }: BaseTemplateProps) => {
 
       <S.Content>{children}</S.Content>
 
-      <Footer />
+      <Footer outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor} />
     </S.Wrapper>
   )
 }
