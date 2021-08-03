@@ -1,6 +1,5 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
 import Hero from '.'
-import Menu from 'components/Menu'
 
 export default {
   title: 'Design System/Organisms/Hero',
@@ -9,7 +8,6 @@ export default {
 
 export const Default: Story = () => (
   <div>
-    <Menu />
     <Hero />
     <div
       style={{
