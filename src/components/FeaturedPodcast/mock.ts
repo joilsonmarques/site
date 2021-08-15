@@ -5,7 +5,7 @@ export default {
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
   podcast: {
     cover: '/img/podcasts/calango-careta.jpeg',
-    title: 'Calango Careta',
+    title: 'Calango Careta II',
     subtitle: 'Por MarcioRamos',
     description:
       'Sobre Brasília, música, cotidiano e demais atividades culturais aleatórias produzidas pelo Bloco do Calango Careta!',
