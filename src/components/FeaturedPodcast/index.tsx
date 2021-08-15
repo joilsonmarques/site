@@ -80,7 +80,7 @@ const FeaturedPodcast = ({
               role="image"
               aria-label={podcast.title}
             />
-            {podcast.lastEpisode.categories.map((item) => (
+            {podcast.categories.map((item) => (
               <Link key={item.slug} href={item.slug}>
                 <a>{item.name}</a>
               </Link>

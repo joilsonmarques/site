@@ -2,9 +2,9 @@ import Base from 'components/templates/Base'
 
 import { Container } from 'components/atoms/Container'
 import Hero from 'components/Hero'
-
-import FeaturedPodcast from 'components/FeaturedPodcast'
-import { FeaturedPodcastProps } from 'components/FeaturedPodcast'
+import FeaturedPodcast, {
+  FeaturedPodcastProps
+} from 'components/FeaturedPodcast'
 import { EpisodeCardProps } from 'components/EpisodeCard'
 import SelectedEpisodes from 'components/SelectedEpisodes'
 
@@ -15,7 +15,7 @@ import episodes from 'components/SelectedEpisodes/mock'
 import * as S from './styles'
 
 export type HomeTemplateProps = {
-  featuredPodcast: FeaturedPodcastProps[]
+  featuredPodcast: Observable<FeaturedPodcastProps[]>
   selectedEpisodes: EpisodeCardProps[]
   outerBarsColor: string
   innerBarsColor: string
