@@ -1,15 +1,38 @@
 import { gql } from '@apollo/client'
 
 export const QUERY_HOME = gql`
-  query getHome {
-    paginaInicial {
-      id
+  query QueryHome {
+    featuredPodcasts: paginaInicial {
       Section {
-        __typename
-        ... on ComponentSiteIntroducao {
-          id
-          description
-          embed
+        ... on ComponentSectionFeaturedPodcast {
+          sectionTitle
+          background {
+            url
+          }
+          showLastEpisode
+          podcast {
+            title
+            subtitle
+            cover {
+              url
+            }
+            description
+            slug
+            categories {
+              name
+              slug
+            }
+            episodes(limit: 1) {
+              embed
+            }
+          }
+        }
+      }
+    }
+    selectedEpisodes: paginaInicial {
+      Section {
+        ... on ComponentSectionExtra {
+          title
         }
       }
     }
