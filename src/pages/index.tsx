@@ -31,6 +31,7 @@ export async function getStaticProps() {
                 background {
                   url
                 }
+                description
                 showLastEpisode
                 podcast {
                   title
@@ -73,13 +74,14 @@ export async function getStaticProps() {
   console.log('before featured: ', data.featuredPodcasts.Section)
 
   const featured = data.featuredPodcasts.Section.map((podFeat) => ({
-    sectiontitle: podFeat.sectionTitle,
-    background: podFeat.background?.url,
+    sectionTitle: podFeat.sectionTitle,
+    background: `http://localhost:1337${podFeat.background?.url}`,
+    description: podFeat.description,
     showLastEpisode: podFeat.showLastEpisode,
     podcast: {
       title: podFeat.podcast?.title,
       subtitle: podFeat.podcast?.subtitle,
-      cover: podFeat.podcast?.cover?.url,
+      cover: `http://localhost:1337${podFeat.podcast?.cover?.url}`,
       description: podFeat.podcast?.description,
       slug: podFeat.podcast?.slug,
       categories: podFeat.podcast?.categories,
@@ -98,7 +100,7 @@ export async function getStaticProps() {
   return {
     props: {
       revalidate: 60,
-      featured: featured[0],
+      featuredPodcast: featured[0],
       episodes,
       outerBarsColor,
       innerBarsColor

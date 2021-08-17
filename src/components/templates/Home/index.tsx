@@ -8,7 +8,6 @@ import { EpisodeCardProps } from 'components/EpisodeCard'
 import SelectedEpisodes from 'components/SelectedEpisodes'
 
 //Mocks
-import podcast from 'components/FeaturedPodcast/mock'
 import episodes from 'components/SelectedEpisodes/mock'
 
 import * as S from './styles'
@@ -21,7 +20,7 @@ export type HomeTemplateProps = {
 }
 
 const Home = ({
-  featuredPodcast = podcast,
+  featuredPodcast,
   selectedEpisodes = episodes,
   outerBarsColor = '29292B',
   innerBarsColor = 'aab1bd'
