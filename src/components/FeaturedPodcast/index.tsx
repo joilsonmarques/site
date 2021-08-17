@@ -12,11 +12,7 @@ export type CategoryProps = {
 }
 
 export type LastEpisodeProps = {
-  cover: string
-  title: string
-  slug: string
   embedUrl: string
-  categories: CategoryProps[]
 }
 
 export type PodcastProps = {
@@ -25,30 +21,31 @@ export type PodcastProps = {
   subtitle: string
   description: string
   slug: string
+  categories: CategoryProps[]
   lastEpisode: LastEpisodeProps
 }
 
 export type FeaturedPodcastProps = {
-  title: string
-  cover: string
+  sectionTitle: string
+  background: string
   description: string
   podcast: PodcastProps
 }
 
 const FeaturedPodcast = ({
-  title,
-  cover,
+  sectionTitle,
+  background,
   description,
   podcast
 }: FeaturedPodcastProps) => {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <S.Wrapper>
-      <S.CallWrapper src={cover}>
-        <S.Cover src={cover} role="image" aria-label="cover" />
+      <S.CallWrapper src={background}>
+        <S.Cover src={background} role="image" aria-label="cover" />
         <S.Info>
           <div>
-            <Heading color="white">{title}</Heading>
+            <Heading color="white">{sectionTitle}</Heading>
             <p>{description}</p>
           </div>
           <div>
