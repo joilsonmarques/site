@@ -15,7 +15,7 @@ import episodes from 'components/SelectedEpisodes/mock'
 import * as S from './styles'
 
 export type HomeTemplateProps = {
-  featuredPodcast: Observable<FeaturedPodcastProps[]>
+  featuredPodcast: FeaturedPodcastProps[]
   selectedEpisodes: EpisodeCardProps[]
   outerBarsColor: string
   innerBarsColor: string
