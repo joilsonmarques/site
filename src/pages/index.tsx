@@ -72,6 +72,7 @@ export async function getStaticProps() {
     })
 
   console.log('before featured: ', data.featuredPodcasts.Section)
+  const regex = /(?<=src=").*?(?=[\\*"])/
 
   const featured = data.featuredPodcasts.Section.map((podFeat) => ({
     sectionTitle: podFeat.sectionTitle,
@@ -86,17 +87,21 @@ export async function getStaticProps() {
       slug: podFeat.podcast?.slug,
       categories: podFeat.podcast?.categories,
       lastEpisode: {
-        embedUrl:
-          'https://legaltalknetwork.com/podcasts/legal-talk-today/2021/08/ohio-forbids-vaccine-mandates/?embed' /*podFeat.podcast?.episodes[0]?.embed*/
+        embedUrl: podFeat.podcast?.episodes[0]?.embed
       }
     }
   }))
 
   console.log('featured after: ', featured[0])
-  const episodioss = data.selectedEpisodes
+  if (featured[0].showLastEpisode) {
+    featured[0].podcast.lastEpisode.embedUrl = regex.exec(
+      featured[0].podcast?.lastEpisode?.embedUrl
+    )[0]
+  } else {
+    featured[0].podcast.lastEpisode.embedUrl = null
+  }
 
-  console.log('episodioss: ', episodioss)
-
+  //const episodioss = data.selectedEpisodes
   return {
     props: {
       revalidate: 60,
