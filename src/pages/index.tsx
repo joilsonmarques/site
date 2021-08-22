@@ -74,8 +74,8 @@ export async function getStaticProps() {
   console.log('before featured: ', data.featuredPodcasts.Section)
 
   const featured = data.featuredPodcasts.Section.map((podFeat) => ({
-    sectionTitle: podFeat.sectionTitle,
-    background: `http://localhost:1337${podFeat.background?.url}`,
+    sectionTitle: podFeat?.sectionTitle,
+    background: `http://localhost:1337${podFeat?.background?.url}`,
     description: podFeat.description,
     showLastEpisode: podFeat.showLastEpisode,
     podcast: {

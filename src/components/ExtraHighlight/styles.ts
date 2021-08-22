@@ -1,8 +1,14 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
   ${({ theme }) => css`
+    position: relative;
     display: flex;
+    flex-direction: column;
+    ${media.greaterThan('large')`
+      flex-direction: row;
+    `}
     align-items: stretch;
     justify-content: center;
     background: ${theme.colors.red};
@@ -16,6 +22,13 @@ export const Wrapper = styled.div`
     > div {
       margin: 0 calc(${theme.grid.collumn} / 2);
     }
+
+    ${media.lessThan('medium')`
+      padding: ${theme.grid.mobile.collumn};
+      > div {
+        margin: 0;
+      }
+    `}
   `}
 `
 
@@ -23,6 +36,10 @@ export const ImageBox = styled.div`
   display: block;
   min-height: 360px;
   min-width: 360px;
+  ${media.lessThan('medium')`
+    min-height: 220px;
+    min-width: 220px;
+  `}
   position: relative;
   display: flex;
   flex-direction: column;
@@ -71,5 +88,49 @@ export const Content = styled.div`
       position: absolute;
       bottom: 0;
     }
+
+    ${media.lessThan('medium')`
+      h2{
+        margin: ${theme.spacings.xsmall} 0;
+        font-size: ${theme.font.sizes.small};
+      }
+      p {
+        font-size: ${theme.font.sizes.small};
+        line-height: ${theme.font.sizes.small};
+        margin-bottom: ${theme.spacings.xsmall};
+      }
+      span {
+        display: block;
+        font-size: ${theme.font.sizes.xsmall};
+        font-weight: ${theme.font.bold};
+      }
+      /* embed wrapper */
+      > div{
+        margin: 0.5em 0;
+        height: 160px;
+      }
+    `}
+
+    ${media.between('medium', 'large')`
+      h2{
+        margin: ${theme.spacings.small} 0;
+        font-size: ${theme.font.sizes.medium};
+      }
+      p {
+        font-size: ${theme.font.sizes.small};
+        line-height: ${theme.font.sizes.small};
+        margin-bottom: ${theme.spacings.xsmall};
+      }
+      span {
+        display: block;
+        font-size: ${theme.font.sizes.xsmall};
+        font-weight: ${theme.font.bold};
+      }
+      /* embed wrapper */
+      > div{
+        margin: 0.5em 0;
+        height: 160px;
+      }
+    `}
   `}
 `
