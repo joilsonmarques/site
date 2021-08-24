@@ -2,13 +2,14 @@ import { gql } from '@apollo/client'
 
 export const QUERY_HOME = gql`
   query QueryHome {
-    featuredPodcasts: paginaInicial {
+    featuredPodcasts: home {
       Section {
         ... on ComponentSectionFeaturedPodcast {
           sectionTitle
           background {
             url
           }
+          description
           showLastEpisode
           podcast {
             title
@@ -26,13 +27,6 @@ export const QUERY_HOME = gql`
               embed
             }
           }
-        }
-      }
-    }
-    selectedEpisodes: paginaInicial {
-      Section {
-        ... on ComponentSectionExtra {
-          title
         }
       }
     }
