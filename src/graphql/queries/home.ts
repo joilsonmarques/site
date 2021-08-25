@@ -1,34 +1,16 @@
 import { gql } from '@apollo/client'
+import { FeaturedPodcastsFragment } from 'graphql/fragments/featuredPodcasts'
+import { SelectedPodcastsFragment } from 'graphql/fragments/selectedPodcasts'
 
 export const QUERY_HOME = gql`
   query QueryHome {
     featuredPodcasts: home {
-      Section {
-        ... on ComponentSectionFeaturedPodcast {
-          sectionTitle
-          background {
-            url
-          }
-          description
-          showLastEpisode
-          podcast {
-            title
-            subtitle
-            cover {
-              url
-            }
-            description
-            slug
-            categories {
-              name
-              slug
-            }
-            episodes(limit: 1) {
-              embed
-            }
-          }
-        }
-      }
+      ...FeaturedPodcastsFragment
+    }
+    selectedPodcastsFragment: home {
+      ...SelectedPodcastsFragment
     }
   }
+  ${FeaturedPodcastsFragment}
+  ${SelectedPodcastsFragment}
 `

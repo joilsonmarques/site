@@ -1,6 +1,4 @@
-"""
-Direct the client to resolve this field locally, either from the cache or local resolvers.
-"""
+"""Direct the client to resolve this field locally, either from the cache or local resolvers."""
 directive @client(
   """
   When true, the client will never use the cache for this value. See
@@ -25,10 +23,7 @@ https://www.apollographql.com/docs/react/advanced/caching/#the-connection-direct
 directive @connection(
   """Specify the store key."""
   key: String!
-
-  """
-  An array of query argument names to include in the generated custom store key.
-  """
+  """An array of query argument names to include in the generated custom store key."""
   filter: [String!]
 ) on FIELD
 
@@ -85,9 +80,9 @@ type Author {
   color: String
   bool: String
   published_at: DateTime
-  episodes(sort: String, limit: Int, start: Int, where: JSON): [Episode]
-  posts(sort: String, limit: Int, start: Int, where: JSON): [Posts]
-  avatar(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  episodes(sort: String, limit: Int, start: Int, where: JSON): [Episode!]!
+  posts(sort: String, limit: Int, start: Int, where: JSON): [Posts!]!
+  avatar(sort: String, limit: Int, start: Int, where: JSON): [UploadFile!]!
 }
 
 type AuthorConnection {
@@ -254,8 +249,8 @@ type Category {
   updated_at: DateTime!
   name: String!
   slug: String!
-  episodes(sort: String, limit: Int, start: Int, where: JSON): [Episode]
-  podcasts(sort: String, limit: Int, start: Int, where: JSON): [Podcasts]
+  episodes(sort: String, limit: Int, start: Int, where: JSON): [Episode!]!
+  podcasts(sort: String, limit: Int, start: Int, where: JSON): [Podcasts!]!
 }
 
 type CategoryConnection {
@@ -360,9 +355,9 @@ type Episode {
   episodeNumber: Int!
   season: String
   published_at: DateTime
-  categories(sort: String, limit: Int, start: Int, where: JSON): [Category]
-  authors(sort: String, limit: Int, start: Int, where: JSON): [Author]
-  tags(sort: String, limit: Int, start: Int, where: JSON): [Tags]
+  categories(sort: String, limit: Int, start: Int, where: JSON): [Category!]!
+  authors(sort: String, limit: Int, start: Int, where: JSON): [Author!]!
+  tags(sort: String, limit: Int, start: Int, where: JSON): [Tags!]!
 }
 
 type EpisodeConnection {
@@ -713,8 +708,8 @@ type Podcasts {
   subtitle: String
   producer: String!
   published_at: DateTime
-  episodes(sort: String, limit: Int, start: Int, where: JSON): [Episode]
-  categories(sort: String, limit: Int, start: Int, where: JSON): [Category]
+  episodes(sort: String, limit: Int, start: Int, where: JSON): [Episode!]!
+  categories(sort: String, limit: Int, start: Int, where: JSON): [Category!]!
 }
 
 type PodcastsConnection {
@@ -1027,7 +1022,7 @@ type Tags {
   nome: String
   slug: String
   published_at: DateTime
-  episodes(sort: String, limit: Int, start: Int, where: JSON): [Episode]
+  episodes(sort: String, limit: Int, start: Int, where: JSON): [Episode!]!
 }
 
 type TagsConnection {
@@ -1272,7 +1267,7 @@ type UploadFile {
   previewUrl: String
   provider: String!
   provider_metadata: JSON
-  related(sort: String, limit: Int, start: Int, where: JSON): [Morph]
+  related(sort: String, limit: Int, start: Int, where: JSON): [Morph!]!
 }
 
 type UploadFileConnection {
@@ -1482,8 +1477,8 @@ type UsersPermissionsRole {
   name: String!
   description: String
   type: String
-  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission]
-  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser]
+  permissions(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsPermission!]!
+  users(sort: String, limit: Int, start: Int, where: JSON): [UsersPermissionsUser!]!
 }
 
 type UsersPermissionsRoleConnection {
@@ -1866,7 +1861,7 @@ type ComponentSectionExtra {
   secondaryInfo: String
   embed: String!
   hyperlink: ComponentFragmentHyperlink
-  image(sort: String, limit: Int, start: Int, where: JSON): [UploadFile]
+  image(sort: String, limit: Int, start: Int, where: JSON): [UploadFile!]!
 }
 
 input ComponentSectionExtraInput {
@@ -1919,7 +1914,7 @@ input editComponentSectionFeaturedPodcastInput {
 type ComponentSectionSelectedEpisodes {
   id: ID!
   sectionTitle: String
-  episodes(sort: String, limit: Int, start: Int, where: JSON): [Episode]
+  episodes(sort: String, limit: Int, start: Int, where: JSON): [Episode!]!
 }
 
 input ComponentSectionSelectedEpisodeInput {
@@ -2016,43 +2011,40 @@ type AdminUser {
 
 type Query {
   author(id: ID!, publicationState: PublicationState): Author
-  authors(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Author]
+  authors(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Author!]!
   authorsConnection(sort: String, limit: Int, start: Int, where: JSON): AuthorConnection
   barraLateral(publicationState: PublicationState): BarraLateral
   category(id: ID!, publicationState: PublicationState): Category
-  categories(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Category]
+  categories(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Category!]!
   categoriesConnection(sort: String, limit: Int, start: Int, where: JSON): CategoryConnection
   episode(id: ID!, publicationState: PublicationState): Episode
-  episodes(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Episode]
+  episodes(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Episode!]!
   episodesConnection(sort: String, limit: Int, start: Int, where: JSON): EpisodeConnection
   home(publicationState: PublicationState): Home
   paginasInterna(id: ID!, publicationState: PublicationState): PaginasInternas
-  paginasInternas(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [PaginasInternas]
+  paginasInternas(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [PaginasInternas!]!
   paginasInternasConnection(sort: String, limit: Int, start: Int, where: JSON): PaginasInternasConnection
   podcast(id: ID!, publicationState: PublicationState): Podcasts
-  podcasts(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Podcasts]
+  podcasts(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Podcasts!]!
   podcastsConnection(sort: String, limit: Int, start: Int, where: JSON): PodcastsConnection
   post(id: ID!, publicationState: PublicationState): Posts
-  posts(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Posts]
+  posts(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Posts!]!
   postsConnection(sort: String, limit: Int, start: Int, where: JSON): PostsConnection
   rodape(publicationState: PublicationState): Rodape
   tag(id: ID!, publicationState: PublicationState): Tags
-  tags(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Tags]
+  tags(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Tags!]!
   tagsConnection(sort: String, limit: Int, start: Int, where: JSON): TagsConnection
   test(id: ID!, publicationState: PublicationState): Test
-  tests(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Test]
+  tests(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [Test!]!
   testsConnection(sort: String, limit: Int, start: Int, where: JSON): TestConnection
-  files(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UploadFile]
+  files(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UploadFile!]!
   filesConnection(sort: String, limit: Int, start: Int, where: JSON): UploadFileConnection
   role(id: ID!, publicationState: PublicationState): UsersPermissionsRole
-
-  """
-  Retrieve all the existing roles. You can't apply filters on this query.
-  """
-  roles(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UsersPermissionsRole]
+  """Retrieve all the existing roles. You can't apply filters on this query."""
+  roles(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UsersPermissionsRole!]!
   rolesConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsRoleConnection
   user(id: ID!, publicationState: PublicationState): UsersPermissionsUser
-  users(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UsersPermissionsUser]
+  users(sort: String, limit: Int, start: Int, where: JSON, publicationState: PublicationState): [UsersPermissionsUser!]!
   usersConnection(sort: String, limit: Int, start: Int, where: JSON): UsersPermissionsUserConnection
   me: UsersPermissionsMe
 }
@@ -2088,25 +2080,18 @@ type Mutation {
   createTest(input: createTestInput): createTestPayload
   updateTest(input: updateTestInput): updateTestPayload
   deleteTest(input: deleteTestInput): deleteTestPayload
-
   """Delete one file"""
   deleteFile(input: deleteFileInput): deleteFilePayload
-
   """Create a new role"""
   createRole(input: createRoleInput): createRolePayload
-
   """Update an existing role"""
   updateRole(input: updateRoleInput): updateRolePayload
-
   """Delete an existing role"""
   deleteRole(input: deleteRoleInput): deleteRolePayload
-
   """Create a new user"""
   createUser(input: createUserInput): createUserPayload
-
   """Update an existing user"""
   updateUser(input: updateUserInput): updateUserPayload
-
   """Delete an existing user"""
   deleteUser(input: deleteUserInput): deleteUserPayload
   upload(refId: ID, ref: String, field: String, source: String, info: FileInfoInput, file: Upload!): UploadFile!
@@ -2119,22 +2104,16 @@ type Mutation {
   emailConfirmation(confirmation: String!): UsersPermissionsLoginPayload
 }
 
-"""
-The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
-"""
+"""The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf)."""
 scalar JSON
 
-"""
-A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
-"""
+"""A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."""
 scalar DateTime
 
 """A time string with format: HH:mm:ss.SSS"""
 scalar Time
 
-"""
-A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar.
-"""
+"""A date string, such as 2007-12-03, compliant with the `full-date` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar."""
 scalar Date
 
 """The `Long` scalar type represents 52-bit integers"""

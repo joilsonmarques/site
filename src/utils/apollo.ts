@@ -8,13 +8,12 @@ import {
 // import { Session } from 'next-auth'
 import { useMemo } from 'react'
 // import apolloCache from './apolloCache'
-import { getPublicUrl } from './getPublicUrl'
 
 let apolloClient: ApolloClient<NormalizedCacheObject | null>
 
 function createApolloClient(/*session?: Session | null*/) {
   const httpLink = new HttpLink({
-    uri: `${getPublicUrl}/graphql`
+    uri: `${process.env.NEXT_PUBLIC_API_URL}/graphql`
   })
 
   return new ApolloClient({

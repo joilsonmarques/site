@@ -1,6 +1,6 @@
 export const getPublicUrl = (url: string | undefined) => {
   if (process.env.NEXT_PUBLIC_IMAGE_HOST) {
-    return `${process.env.NEXT_PUBLIC_IMAGE_HOST}${url}}`
+    return `${process.env.NEXT_PUBLIC_IMAGE_HOST}${url}`
   }
 
   if (url) {

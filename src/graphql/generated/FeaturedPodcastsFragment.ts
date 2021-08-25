@@ -39,8 +39,8 @@ export interface FeaturedPodcastsFragment_Section_ComponentSectionFeaturedPodcas
   cover: FeaturedPodcastsFragment_Section_ComponentSectionFeaturedPodcast_podcast_cover | null;
   description: string | null;
   slug: string;
-  categories: (FeaturedPodcastsFragment_Section_ComponentSectionFeaturedPodcast_podcast_categories | null)[] | null;
-  episodes: (FeaturedPodcastsFragment_Section_ComponentSectionFeaturedPodcast_podcast_episodes | null)[] | null;
+  categories: FeaturedPodcastsFragment_Section_ComponentSectionFeaturedPodcast_podcast_categories[];
+  episodes: FeaturedPodcastsFragment_Section_ComponentSectionFeaturedPodcast_podcast_episodes[];
 }
 
 export interface FeaturedPodcastsFragment_Section_ComponentSectionFeaturedPodcast {

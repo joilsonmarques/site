@@ -27,7 +27,7 @@ export interface SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisod
 export interface SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes {
   __typename: "ComponentSectionSelectedEpisodes";
   sectionTitle: string | null;
-  episodes: (SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes | null)[] | null;
+  episodes: SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes[];
 }
 
 export type SelectedPodcastsFragment_Section = SelectedPodcastsFragment_Section_ComponentSiteIntro | SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes;

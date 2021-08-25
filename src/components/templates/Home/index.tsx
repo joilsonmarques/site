@@ -23,6 +23,8 @@ export type HomeTemplateProps = {
   innerBarsColor: string
 }
 
+
+
 const Home = ({
   featuredPodcast = podcast,
   selectedEpisodes = episodes,
@@ -30,6 +32,7 @@ const Home = ({
   outerBarsColor = '29292B',
   innerBarsColor = '451379'
 }: HomeTemplateProps) => (
+  
   <Base outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor}>
     <Container>
       <S.Section>

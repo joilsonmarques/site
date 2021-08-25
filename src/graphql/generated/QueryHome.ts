@@ -39,8 +39,8 @@ export interface QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodc
   cover: QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodcast_podcast_cover | null;
   description: string | null;
   slug: string;
-  categories: (QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodcast_podcast_categories | null)[] | null;
-  episodes: (QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodcast_podcast_episodes | null)[] | null;
+  categories: QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodcast_podcast_categories[];
+  episodes: QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodcast_podcast_episodes[];
 }
 
 export interface QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodcast {
@@ -52,13 +52,44 @@ export interface QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodc
   podcast: QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodcast_podcast | null;
 }
 
-export type QueryHome_featuredPodcasts_Section = QueryHome_featuredPodcasts_Section_ComponentSiteIntro | QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodcast;
+export type QueryHome_featuredPodcasts_Section = QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodcast;
 
 export interface QueryHome_featuredPodcasts {
   __typename: "Home";
   Section: (QueryHome_featuredPodcasts_Section | null)[];
 }
 
+export interface QueryHome_selectedPodcastsFragment_Section_ComponentSiteIntro {
+  __typename: "ComponentSiteIntro" | "ComponentSectionFeaturedPodcast" | "ComponentSectionExtra" | "ComponentSectionCallToAction";
+}
+
+export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_cover {
+  __typename: "UploadFile";
+  url: string;
+}
+
+export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes {
+  __typename: "Episode";
+  title: string;
+  cover: QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_cover | null;
+  subTitle: string | null;
+  embed: string;
+}
+
+export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes {
+  __typename: "ComponentSectionSelectedEpisodes";
+  sectionTitle: string | null;
+  episodes: QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes[];
+}
+
+export type QueryHome_selectedPodcastsFragment_Section = QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes;
+
+export interface QueryHome_selectedPodcastsFragment {
+  __typename: "Home";
+  Section: (QueryHome_selectedPodcastsFragment_Section | null)[];
+}
+
 export interface QueryHome {
   featuredPodcasts: QueryHome_featuredPodcasts | null;
+  selectedPodcastsFragment: QueryHome_selectedPodcastsFragment | null;
 }
