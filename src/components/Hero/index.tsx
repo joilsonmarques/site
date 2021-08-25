@@ -5,7 +5,14 @@ import { ExpandMore as ExpandMoreIcon } from '@styled-icons/material-outlined/Ex
 import * as S from './styles'
 import React, { useRef } from 'react'
 
-const Hero = () => {
+export type HeroProps = {
+  call: string
+  hasDetail: boolean
+  description: string
+  embedUrl: string
+}
+
+const Hero = ({ call, hasDetail, description, embedUrl }: HeroProps) => {
   const titleRef = useRef()
 
   function handleClick() {
@@ -244,20 +251,20 @@ const Hero = () => {
         </svg>
       </S.AnimatedBg>
       <FullSection className="test" color="darkGray">
-        <Heading>Pode entrar que a casa é sua, aliás é nossa</Heading>
-        <ExpandMoreIcon aria-label="ver podcast" onClick={handleClick} />
+        <Heading>{call}</Heading>
+        {hasDetail && (
+          <ExpandMoreIcon aria-label="ver podcast" onClick={handleClick} />
+        )}
       </FullSection>
-      <div ref={titleRef}>
-        <FullSection className="test-1" color="darkGray">
-          <Heading>
-            Somos uma produtora de conteúdos em áudio de Brasília e um hub de
-            ideias e conexões.
-          </Heading>
-          <Embed embedUrl="https://anchor.fm/a-nossa-casa-de-podcasts/embed/episodes/Trailer-I-Radiofonias-Internticas-e12rg9p/a-a5t2jg4" />
-        </FullSection>
-      </div>
+      {hasDetail && (
+        <div ref={titleRef}>
+          <FullSection className="test-1" color="darkGray">
+            <Heading>{description}</Heading>
+            <Embed embedUrl={embedUrl} />
+          </FullSection>
+        </div>
+      )}
     </S.Wrapper>
   )
 }
-
 export default Hero

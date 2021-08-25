@@ -1,14 +1,23 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import Hero from '.'
+import Hero, { HeroProps } from '.'
+
+import mockHero from './mock'
 
 export default {
   title: 'Design System/Organisms/Hero',
-  component: Hero
+  component: Hero,
+  parameters: {
+    layout: 'fullscreen',
+    backgrounds: {
+      default: 'ancp-dark'
+    }
+  },
+  args: mockHero
 } as Meta
 
-export const Default: Story = () => (
+export const Default: Story<HeroProps> = (args) => (
   <div>
-    <Hero />
+    <Hero {...args} />
     <div
       style={{
         width: '100%',
@@ -20,10 +29,3 @@ export const Default: Story = () => (
     ></div>
   </div>
 )
-
-Default.parameters = {
-  layout: 'fullscreen',
-  background: {
-    default: 'dark'
-  }
-}

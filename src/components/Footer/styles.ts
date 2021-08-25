@@ -13,8 +13,8 @@ export const Wrapper = styled.footer<FooterProps>`
     }
     position: relative;
     background: ${theme.colors.darkGray};
-    margin-top: 7rem;
-    padding-top: 7rem;
+    margin-top: 6rem;
+    padding-top: 6rem;
 
     &::before {
       content: '';
