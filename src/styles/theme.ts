@@ -32,10 +32,11 @@ export default {
       xxsmall: '1.3rem', //13px
       xsmall: '1.5rem', //15px
       small: '1.8rem', //18px
-      medium: '2.5rem', //25px
+      medium: '2.6rem', //26px
       large: '4.0rem', //40px
       xlarge: '5.0rem', //50px
-      xxlarge: '6.0rem' //60px
+      xxlarge: '6.0rem', //60px
+      huge: '8.0rem' //80px
     }
   },
   colors: {

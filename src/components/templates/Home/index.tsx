@@ -7,35 +7,38 @@ import FeaturedPodcast, { FeaturedPodcastProps } from 'components/FeaturedPodcas
 import { EpisodeCardProps } from 'components/EpisodeCard'
 import SelectedEpisodes from 'components/SelectedEpisodes'
 import ExtraHighlight, {ExtraHighlightProps} from 'components/ExtraHighlight'
+import CallToAction, { CallToActionProps } from 'components/CallToAction'
 
 //Mocks
 import hero from 'components/Hero/mock'
 import episodes from 'components/SelectedEpisodes/mock'
 import podcast from 'components/FeaturedPodcast/mock'
 import extra from 'components/ExtraHighlight/mock'
+import call from 'components/CallToAction/mock'
 
 import * as S from './styles'
+
 
 export type HomeTemplateProps = {
   siteIntro: HeroProps
   featuredPodcast: FeaturedPodcastProps
   selectedEpisodes: EpisodeCardProps[]
   extraHighlight: ExtraHighlightProps
+  callToAction: CallToActionProps
   outerBarsColor: string
   innerBarsColor: string
 }
-
-
 
 const Home = ({
   siteIntro = hero,
   featuredPodcast = podcast,
   selectedEpisodes = episodes,
   extraHighlight = extra,
+  callToAction = call,
   outerBarsColor = '29292B',
-  innerBarsColor = 'C61C4A'
+  innerBarsColor = 'F95E3C'
 }: HomeTemplateProps) => (
-  
+
   <Base outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor}>
     <Container>
       <S.Section>
@@ -49,6 +52,9 @@ const Home = ({
       </S.Section>
       <S.Section>
         <ExtraHighlight {...extraHighlight} />
+      </S.Section>
+      <S.Section>
+        <CallToAction {...callToAction} />
       </S.Section>
     </Container>
   </Base>
