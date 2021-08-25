@@ -4,7 +4,12 @@ export default {
     containerTablet: '83rem',
     containerMobile: '32rem',
     collumn: '12rem',
-    gutter: '2.4rem'
+    gutter: '2.4rem',
+    mobile: {
+      container: '24rem',
+      collumn: '4rem',
+      gutter: '1.6rem'
+    }
   },
   media: {
     desktop: '78rem',
