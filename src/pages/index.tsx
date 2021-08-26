@@ -1,9 +1,8 @@
 import Home, { HomeTemplateProps } from 'components/templates/Home'
 import { initializeApollo } from 'utils/apollo'
-import episodes from 'components/SelectedEpisodes/mock'
 import { QUERY_HOME } from 'graphql/queries/home'
 import { QueryHome } from 'graphql/generated/QueryHome'
-import { featuredPodcastMapper } from 'utils/mappers'
+import { featuredPodcastMapper, selectedPodcastMapper } from 'utils/mappers'
 
 export default function Index(props: HomeTemplateProps) {
   return <Home {...props} />
@@ -23,7 +22,9 @@ export async function getStaticProps() {
     props: {
       revalidate: 60,
       featuredPodcast: featuredPodcastMapper(data.featuredPodcasts?.Section),
-      episodes,
+      selectedEpisodes: selectedPodcastMapper(
+        data.selectedPodcastsFragment?.Section
+      ),
       outerBarsColor,
       innerBarsColor
     }

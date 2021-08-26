@@ -16,12 +16,19 @@ export interface SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisod
   url: string;
 }
 
+export interface SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_podcast {
+  __typename: "Podcasts";
+  title: string;
+}
+
 export interface SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes {
   __typename: "Episode";
+  id: string;
+  slug: string | null;
   title: string;
   cover: SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_cover | null;
   subTitle: string | null;
-  embed: string;
+  podcast: SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_podcast | null;
 }
 
 export interface SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes {

@@ -6,12 +6,16 @@ export const SelectedPodcastsFragment = gql`
       ... on ComponentSectionSelectedEpisodes {
         sectionTitle
         episodes {
+          id
+          slug
           title
           cover {
             url
           }
           subTitle
-          embed
+          podcast {
+            title
+          }
         }
       }
     }

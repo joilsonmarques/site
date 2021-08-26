@@ -68,12 +68,19 @@ export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSele
   url: string;
 }
 
+export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_podcast {
+  __typename: "Podcasts";
+  title: string;
+}
+
 export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes {
   __typename: "Episode";
+  id: string;
+  slug: string | null;
   title: string;
   cover: QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_cover | null;
   subTitle: string | null;
-  embed: string;
+  podcast: QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_podcast | null;
 }
 
 export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes {
