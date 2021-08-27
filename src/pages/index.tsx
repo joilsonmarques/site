@@ -21,10 +21,10 @@ export async function getStaticProps() {
   return {
     props: {
       revalidate: 60,
-      featuredPodcast: featuredPodcastMapper(data.featuredPodcasts?.Section),
-      selectedEpisodes: selectedPodcastMapper(
-        data.selectedPodcastsFragment?.Section
-      ),
+      featuredPodcast:
+        featuredPodcastMapper(data.featuredPodcasts?.Section) || null,
+      selectedEpisodes:
+        selectedPodcastMapper(data.selectedPodcastsFragment?.Section) || null,
       outerBarsColor,
       innerBarsColor
     }

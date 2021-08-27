@@ -39,7 +39,7 @@ const FeaturedPodcast = ({
   podcast
 }: FeaturedPodcastProps) => {
   const [isOpen, setIsOpen] = useState(false)
-  return (
+  return podcast ? (
     <S.Wrapper>
       <S.CallWrapper src={background}>
         <S.Cover src={background} role="image" aria-label="cover" />
@@ -94,7 +94,7 @@ const FeaturedPodcast = ({
         </S.Podcast>
       </S.PodcastWrapper>
     </S.Wrapper>
-  )
+  ) : null
 }
 
 export default FeaturedPodcast

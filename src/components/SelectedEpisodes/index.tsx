@@ -6,12 +6,13 @@ export type SelectedEpisodesProps = {
   items: EpisodeCardProps[]
 }
 
-const SelectedEpisodes = ({ items }: SelectedEpisodesProps) => (
-  <S.Wrapper>
-    {items.map((item, index) => (
-      <EpisodeCard key={index} {...item} />
-    ))}
-  </S.Wrapper>
-)
+const SelectedEpisodes = ({ items }: SelectedEpisodesProps) =>
+  items ? (
+    <S.Wrapper>
+      {items.map((item, index) => (
+        <EpisodeCard key={index} {...item} />
+      ))}
+    </S.Wrapper>
+  ) : null
 
 export default SelectedEpisodes

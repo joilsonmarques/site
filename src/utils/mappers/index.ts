@@ -46,6 +46,7 @@ export const selectedPodcastMapper = (
     ? selectedPodcast
         .filter((obj) => {
           if (obj?.__typename === 'ComponentSectionSelectedEpisodes') {
+            console.log('ae', obj)
             return obj
           }
         })[0]
