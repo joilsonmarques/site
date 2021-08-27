@@ -14,25 +14,26 @@ export type CallToActionProps = {
   title: string
   listLinks: linkProps[]
 }
-const CallToAction = ({ title, listLinks }: CallToActionProps) => (
-  <S.Wrapper>
-    <Heading>{title}</Heading>
-    <nav aria-labelledby="Lista de links">
-      {listLinks.map((link, index) => (
-        <Link key={index} href={link.url} passHref>
-          {link.isExternal ? (
-            <a target="_blank">
-              {link.label} <ExternalLinkIcon aria-label="abrir link" />
-            </a>
-          ) : (
-            <a target="_self">
-              {link.label} <LinkIcon aria-label="abrir link" />
-            </a>
-          )}
-        </Link>
-      ))}
-    </nav>
-  </S.Wrapper>
-)
+const CallToAction = ({ title, listLinks }: CallToActionProps) =>
+  title ? (
+    <S.Wrapper>
+      <Heading>{title}</Heading>
+      <nav aria-labelledby="Lista de links">
+        {listLinks.map((link, index) => (
+          <Link key={index} href={link.url} passHref>
+            {link.isExternal ? (
+              <a target="_blank">
+                {link.label} <ExternalLinkIcon aria-label="abrir link" />
+              </a>
+            ) : (
+              <a target="_self">
+                {link.label} <LinkIcon aria-label="abrir link" />
+              </a>
+            )}
+          </Link>
+        ))}
+      </nav>
+    </S.Wrapper>
+  ) : null
 
 export default CallToAction

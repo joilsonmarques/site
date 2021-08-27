@@ -40,7 +40,7 @@ const Home = ({
 }: HomeTemplateProps) => (
 
   <Base outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor}>
-    <Container>
+    <Container>      
       <S.Section>
         <Hero {...siteIntro}/>
       </S.Section>
