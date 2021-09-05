@@ -7,7 +7,7 @@ import { Twitter as TwitterIcon } from '@styled-icons/boxicons-logos/Twitter'
 
 import * as S from './styles'
 
-export type LinksProps = {
+export type FooterLinksProps = {
   label: string
   url: string
   type: string
@@ -16,7 +16,7 @@ export type LinksProps = {
 export type FooterProps = {
   outerBarsColor?: '29292B' | string
   innerBarsColor?: 'ffffff' | string
-  listLinks: LinksProps[]
+  listLinks: FooterLinksProps[]
 }
 
 const Footer = ({

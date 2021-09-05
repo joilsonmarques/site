@@ -1,8 +1,9 @@
 import { Container } from 'components/atoms/Container'
-import Footer, { LinksProps } from 'components/Footer'
-import Menu from 'components/Menu'
+import Footer, { FooterLinksProps } from 'components/Footer'
+import Menu, { MenuLinksProps } from 'components/Menu'
 
-import footer from 'components/Footer/mock'
+import menuLinks from 'components/Menu/mock'
+import footerLinks from 'components/Footer/mock'
 
 import * as S from './styles'
 
@@ -10,19 +11,21 @@ export type BaseTemplateProps = {
   children: React.ReactNode
   outerBarsColor: string
   innerBarsColor: string
-  listLinks: LinksProps[]
+  menuListLinks: MenuLinksProps[]
+  footerListLinks: FooterLinksProps[]
 }
 
 const Base = ({
   children,
   outerBarsColor = '29292B',
   innerBarsColor = '451379',
-  listLinks = footer
+  menuListLinks = menuLinks.listLinks,
+  footerListLinks = footerLinks.listLinks
 }: BaseTemplateProps) => {
   return (
     <S.Wrapper>
       <Container>
-        <Menu />
+        <Menu listLinks={menuListLinks} />
       </Container>
 
       <S.Content>{children}</S.Content>
@@ -30,7 +33,7 @@ const Base = ({
       <Footer
         outerBarsColor={outerBarsColor}
         innerBarsColor={innerBarsColor}
-        listLinks={listLinks}
+        listLinks={footerListLinks}
       />
     </S.Wrapper>
   )

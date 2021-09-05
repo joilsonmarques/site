@@ -1,12 +1,21 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import Menu from '.'
+import Menu, { MenuProps } from '.'
+
+import mockMenuLinksProps from './mock'
 
 export default {
   title: 'Design System/Molecules/Menu',
-  component: Menu
+  component: Menu,
+  parameters: {
+    layout: 'fullscreen',
+    background: {
+      default: 'ancp-dark'
+    }
+  },
+  args: mockMenuLinksProps
 } as Meta
 
-export const Default: Story = () => (
+export const Default: Story<MenuProps> = (args) => (
   <div
     style={{
       position: 'relative',
@@ -16,13 +25,6 @@ export const Default: Story = () => (
       padding: '0'
     }}
   >
-    <Menu />
+    <Menu {...args} />
   </div>
 )
-
-Default.parameters = {
-  layout: 'fullscreen',
-  background: {
-    default: 'dark'
-  }
-}

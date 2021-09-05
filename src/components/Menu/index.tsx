@@ -7,7 +7,17 @@ import Logo from 'components/Logo'
 import Search from 'components/Search'
 import * as S from './styles'
 
-const Menu = () => {
+export type MenuLinksProps = {
+  label: string
+  url: string
+  type: string
+}
+
+export type MenuProps = {
+  listLinks: MenuLinksProps[]
+}
+
+const Menu = ({ listLinks }: MenuProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isRight, setIsRight] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
@@ -43,8 +53,15 @@ const Menu = () => {
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
         <CloseIcon aria-label="Fechar Menu" onClick={() => setIsOpen(false)} />
         <S.MenuNav>
-          <S.MenuLink href="#">Podcast em destaque</S.MenuLink>
-          <S.MenuLink href="#">Sobre nós</S.MenuLink>
+          {listLinks.map((link, index) => (
+            <S.MenuLink key={index} href={link.url} passHref>
+              {link.type === 'externo' ? (
+                <a target="_blank">{link.label}</a>
+              ) : (
+                <a target="_self">{link.label}</a>
+              )}
+            </S.MenuLink>
+          ))}
         </S.MenuNav>
       </S.MenuFull>
 

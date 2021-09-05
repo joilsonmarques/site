@@ -1,7 +1,7 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
 import Footer, { FooterProps } from '.'
 
-import mockLinksProps from './mock'
+import mockFooterLinksProps from './mock'
 
 export default {
   title: 'Design System/Organisms/Footer',
@@ -12,7 +12,7 @@ export default {
       default: 'ancp-light'
     }
   },
-  args: mockLinksProps
+  args: mockFooterLinksProps
 } as Meta
 
 export const Default: Story<FooterProps> = (args) => (
