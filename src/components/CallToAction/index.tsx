@@ -7,7 +7,7 @@ import * as S from './styles'
 export type linkProps = {
   label: string
   url: string
-  isExternal: boolean
+  type: string
 }
 
 export type CallToActionProps = {
@@ -21,7 +21,7 @@ const CallToAction = ({ title, listLinks }: CallToActionProps) =>
       <nav aria-labelledby="Lista de links">
         {listLinks.map((link, index) => (
           <Link key={index} href={link.url} passHref>
-            {link.isExternal ? (
+            {link.type === 'external' ? (
               <a target="_blank">
                 {link.label} <ExternalLinkIcon aria-label="abrir link" />
               </a>

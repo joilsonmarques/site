@@ -4,17 +4,17 @@ export default {
     {
       label: 'Produza seu podcast com a nossa ajuda',
       url: '/contato#produza',
-      isExternal: false
+      type: 'internal'
     },
     {
       label: 'Divulgue seu podcast com a gente',
       url: '/contato#divulgue',
-      isExternal: true
+      type: 'internal'
     },
     {
       label: 'Tem outras dúvidas?',
       url: '/contato#duvidas',
-      isExternal: false
+      type: 'internal'
     }
   ]
 }
