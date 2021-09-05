@@ -7,14 +7,22 @@ import { Twitter as TwitterIcon } from '@styled-icons/boxicons-logos/Twitter'
 
 import * as S from './styles'
 
+export type LinksProps = {
+  label: string
+  url: string
+  type: string
+}
+
 export type FooterProps = {
   outerBarsColor?: '29292B' | string
   innerBarsColor?: 'ffffff' | string
+  listLinks: LinksProps[]
 }
 
 const Footer = ({
   outerBarsColor = '29292B',
-  innerBarsColor = 'ffffff'
+  innerBarsColor = 'ffffff',
+  listLinks
 }: FooterProps) => (
   <S.Wrapper outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor}>
     <S.Content>
@@ -26,24 +34,15 @@ const Footer = ({
       <S.Column aria-labelledby="list-links">
         <Heading size="small">Links</Heading>
         <nav aria-labelledby="Lista de links">
-          <Link href="/podcasts">
-            <a>Podcasts da nossa casa</a>
-          </Link>
-          <Link href="/livecasts">
-            <a>Livecasts</a>
-          </Link>
-          <Link href="/eventos">
-            <a>Eventos</a>
-          </Link>
-          <Link href="#">
-            <a>Textos</a>
-          </Link>
-          <Link href="#">
-            <a>Parcerias</a>
-          </Link>
-          <Link href="#">
-            <a>Contato</a>
-          </Link>
+          {listLinks.map((link, index) => (
+            <Link key={index} href={link.url} passHref>
+              {link.type === 'externo' ? (
+                <a target="_blank">{link.label}</a>
+              ) : (
+                <a target="_self">{link.label}</a>
+              )}
+            </Link>
+          ))}
         </nav>
       </S.Column>
       <S.Column aria-labelledby="social-media-and-contacts">
