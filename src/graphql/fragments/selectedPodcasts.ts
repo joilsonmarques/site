@@ -16,6 +16,7 @@ export const SelectedPodcastsFragment = gql`
           podcast {
             title
           }
+          releaseDate
         }
       }
     }

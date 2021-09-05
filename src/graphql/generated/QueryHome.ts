@@ -100,6 +100,7 @@ export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSele
   cover: QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_cover | null;
   subTitle: string | null;
   podcast: QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_podcast | null;
+  releaseDate: string;
 }
 
 export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes {

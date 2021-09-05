@@ -5,7 +5,7 @@ import {
   QueryHome_selectedPodcastsFragment_Section,
   QueryHome_siteInfroFragment_Section
 } from 'graphql/generated/QueryHome'
-import { getPublicUrl } from 'utils/getPublicUrl'
+import { getPublicUrl, exibirNovoEpisodio } from 'utils/getPublicUrl'
 
 export const featuredPodcastMapper = (
   featuredPodcast: (QueryHome_featuredPodcasts_Section | null)[] | undefined
@@ -49,7 +49,6 @@ export const selectedPodcastMapper = (
     ? selectedPodcast
         .filter((obj) => {
           if (obj?.__typename === 'ComponentSectionSelectedEpisodes') {
-            console.log('ae', obj)
             return obj
           }
         })[0]
@@ -58,8 +57,8 @@ export const selectedPodcastMapper = (
           slug: podSelect?.slug,
           title: podSelect?.title,
           img: `${getPublicUrl(podSelect?.cover?.url)}`,
-          podcast: podSelect.podcast?.title,
-          ribbon: podSelect.subTitle
+          podcast: podSelect?.podcast?.title,
+          ribbon: `${exibirNovoEpisodio(podSelect?.releaseDate)}`
         }))
     : {}
 }
@@ -68,7 +67,6 @@ export const siteIntroMapper = (
   siteIntro: (QueryHome_siteInfroFragment_Section | null)[] | undefined
 ) => {
   const regex = /(?<=src=").*?(?=[\\*"])/
-  console.log('siteIntro: ', siteIntro)
   return siteIntro
     ? siteIntro
         .filter((obj) => {
