@@ -118,9 +118,9 @@ export const callToActionMapper = (
             return obj
           }
         })
-        .map((call) => ({
+        ?.map((call) => ({
           title: call?.title,
           listLinks: call?.listLinks
         }))[0]
-    : {}
+    : null
 }

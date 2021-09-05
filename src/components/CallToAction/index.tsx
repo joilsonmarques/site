@@ -15,7 +15,7 @@ export type CallToActionProps = {
   listLinks: linkProps[]
 }
 const CallToAction = ({ title, listLinks }: CallToActionProps) =>
-  title ? (
+  listLinks ? (
     <S.Wrapper>
       <Heading>{title}</Heading>
       <nav aria-labelledby="Lista de links">

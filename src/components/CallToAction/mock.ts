@@ -1,6 +1,6 @@
 export default {
   title: 'Quer morar aqui?',
-  listLinks: [
+  teste: [
     {
       label: 'Produza seu podcast com a nossa ajuda',
       url: '/contato#produza',
