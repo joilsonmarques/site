@@ -23,9 +23,6 @@ export async function getStaticProps() {
     fetchPolicy: 'no-cache'
   })
 
-  console.log(data.siteInfroFragment?.Section)
-  console.log('2: ', data?.extraHighLightFragment?.Section)
-
   return {
     props: {
       revalidate: 60,

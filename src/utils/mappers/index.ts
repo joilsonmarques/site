@@ -99,7 +99,7 @@ export const extraHighLightMapper = (
           }
         })
         ?.map((extra) => ({
-          cover: extra?.cover,
+          cover: `${getPublicUrl(extra?.cover?.url)}`,
           title: extra?.title,
           subtitle: extra?.subtitle,
           primaryInfo: extra?.primaryInfo,
