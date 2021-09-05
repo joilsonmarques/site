@@ -1,5 +1,6 @@
 import {
   QueryHome_callToAction_Section,
+  QueryHome_extraHighLightFragment_Section,
   QueryHome_featuredPodcasts_Section,
   QueryHome_selectedPodcastsFragment_Section,
   QueryHome_siteInfroFragment_Section
@@ -84,11 +85,35 @@ export const siteIntroMapper = (
     : {}
 }
 
+export const extraHighLightMapper = (
+  extraHighlight:
+    | (QueryHome_extraHighLightFragment_Section | null)[]
+    | undefined
+) => {
+  const regex = /(?<=src=").*?(?=[\\*"])/
+  return extraHighlight
+    ? extraHighlight
+        .filter((obj) => {
+          if (obj?.__typename === 'ComponentSectionExtra') {
+            return obj
+          }
+        })
+        ?.map((extra) => ({
+          cover: extra?.cover,
+          title: extra?.title,
+          subtitle: extra?.subtitle,
+          primaryInfo: extra?.primaryInfo,
+          secondaryInfo: extra?.secondaryInfo,
+          embedUrl: regex.exec(extra?.embed || ''),
+          link: extra?.link
+        }))[0]
+    : {}
+}
+
 export const callToActionMapper = (
   callToAction: (QueryHome_callToAction_Section | null)[] | undefined
 ) => {
-  //const regex = /(?<=src=").*?(?=[\\*"])/
-  callToAction
+  return callToAction
     ? callToAction
         .filter((obj) => {
           if (obj?.__typename === 'ComponentSectionCallToAction') {
@@ -98,6 +123,6 @@ export const callToActionMapper = (
         .map((call) => ({
           title: call?.title,
           listLinks: call?.listLinks
-        }))
+        }))[0]
     : {}
 }

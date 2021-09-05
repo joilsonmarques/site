@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client'
 import { CallToActionFragment } from 'graphql/fragments/callToAction'
+import { ExtraHighLightFragment } from 'graphql/fragments/extraHighLight'
 import { FeaturedPodcastsFragment } from 'graphql/fragments/featuredPodcasts'
 import { SelectedPodcastsFragment } from 'graphql/fragments/selectedPodcasts'
 import { SiteIntroFragment } from 'graphql/fragments/siteIntro'
@@ -15,6 +16,9 @@ export const QUERY_HOME = gql`
     selectedPodcastsFragment: home {
       ...SelectedPodcastsFragment
     }
+    extraHighLightFragment: home {
+      ...ExtraHighLightFragment
+    }
     callToAction: home {
       ...CallToActionFragment
     }
@@ -22,5 +26,6 @@ export const QUERY_HOME = gql`
   ${SiteIntroFragment}
   ${FeaturedPodcastsFragment}
   ${SelectedPodcastsFragment}
+  ${ExtraHighLightFragment}
   ${CallToActionFragment}
 `

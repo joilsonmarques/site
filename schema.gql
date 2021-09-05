@@ -77,8 +77,6 @@ type Author {
   name: String!
   bio: String
   slug: String!
-  color: String
-  bool: String
   published_at: DateTime
   episodes(sort: String, limit: Int, start: Int, where: JSON): [Episode!]!
   posts(sort: String, limit: Int, start: Int, where: JSON): [Posts!]!
@@ -103,8 +101,6 @@ type AuthorGroupBy {
   name: [AuthorConnectionName]
   bio: [AuthorConnectionBio]
   slug: [AuthorConnectionSlug]
-  color: [AuthorConnectionColor]
-  bool: [AuthorConnectionBool]
   published_at: [AuthorConnectionPublished_at]
 }
 
@@ -138,16 +134,6 @@ type AuthorConnectionSlug {
   connection: AuthorConnection
 }
 
-type AuthorConnectionColor {
-  key: String
-  connection: AuthorConnection
-}
-
-type AuthorConnectionBool {
-  key: String
-  connection: AuthorConnection
-}
-
 type AuthorConnectionPublished_at {
   key: DateTime
   connection: AuthorConnection
@@ -160,8 +146,6 @@ input AuthorInput {
   episodes: [ID]
   posts: [ID]
   avatar: [ID]
-  color: String
-  bool: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -174,8 +158,6 @@ input editAuthorInput {
   episodes: [ID]
   posts: [ID]
   avatar: [ID]
-  color: String
-  bool: String
   published_at: DateTime
   created_by: ID
   updated_by: ID
@@ -1860,8 +1842,8 @@ type ComponentSectionExtra {
   primaryInfo: String
   secondaryInfo: String
   embed: String!
-  hyperlink: ComponentFragmentHyperlink
-  image(sort: String, limit: Int, start: Int, where: JSON): [UploadFile!]!
+  cover: UploadFile
+  link: ComponentFragmentHyperlink
 }
 
 input ComponentSectionExtraInput {
@@ -1870,8 +1852,8 @@ input ComponentSectionExtraInput {
   primaryInfo: String
   secondaryInfo: String
   embed: String!
-  image: [ID]
-  hyperlink: ComponentFragmentHyperlinkInput!
+  cover: ID
+  link: ComponentFragmentHyperlinkInput!
 }
 
 input editComponentSectionExtraInput {
@@ -1881,8 +1863,8 @@ input editComponentSectionExtraInput {
   primaryInfo: String
   secondaryInfo: String
   embed: String
-  image: [ID]
-  hyperlink: editComponentFragmentHyperlinkInput
+  cover: ID
+  link: editComponentFragmentHyperlinkInput
 }
 
 type ComponentSectionFeaturedPodcast {
@@ -1991,7 +1973,7 @@ input editComponentSiteIntroInput {
   embed: String
 }
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Author | AuthorConnection | AuthorAggregator | AuthorGroupBy | AuthorConnectionId | AuthorConnectionCreated_at | AuthorConnectionUpdated_at | AuthorConnectionName | AuthorConnectionBio | AuthorConnectionSlug | AuthorConnectionColor | AuthorConnectionBool | AuthorConnectionPublished_at | createAuthorPayload | updateAuthorPayload | deleteAuthorPayload | BarraLateral | updateBarraLateralPayload | deleteBarraLateralPayload | Category | CategoryConnection | CategoryAggregator | CategoryGroupBy | CategoryConnectionId | CategoryConnectionCreated_at | CategoryConnectionUpdated_at | CategoryConnectionName | CategoryConnectionSlug | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | Episode | EpisodeConnection | EpisodeAggregator | EpisodeAggregatorSum | EpisodeAggregatorAvg | EpisodeAggregatorMin | EpisodeAggregatorMax | EpisodeGroupBy | EpisodeConnectionId | EpisodeConnectionCreated_at | EpisodeConnectionUpdated_at | EpisodeConnectionTitle | EpisodeConnectionSlug | EpisodeConnectionSubTitle | EpisodeConnectionReleaseDate | EpisodeConnectionExtraContent | EpisodeConnectionCover | EpisodeConnectionPodcast | EpisodeConnectionEmbed | EpisodeConnectionEpisodeNumber | EpisodeConnectionSeason | EpisodeConnectionPublished_at | createEpisodePayload | updateEpisodePayload | deleteEpisodePayload | Home | updateHomePayload | deleteHomePayload | PaginasInternas | PaginasInternasConnection | PaginasInternasAggregator | PaginasInternasGroupBy | PaginasInternasConnectionId | PaginasInternasConnectionCreated_at | PaginasInternasConnectionUpdated_at | PaginasInternasConnectionTitle | PaginasInternasConnectionDescription | PaginasInternasConnectionSlug | PaginasInternasConnectionPublished_at | createPaginasInternaPayload | updatePaginasInternaPayload | deletePaginasInternaPayload | Podcasts | PodcastsConnection | PodcastsAggregator | PodcastsGroupBy | PodcastsConnectionId | PodcastsConnectionCreated_at | PodcastsConnectionUpdated_at | PodcastsConnectionTitle | PodcastsConnectionSlug | PodcastsConnectionCover | PodcastsConnectionDescription | PodcastsConnectionSubtitle | PodcastsConnectionProducer | PodcastsConnectionPublished_at | createPodcastPayload | updatePodcastPayload | deletePodcastPayload | Posts | PostsConnection | PostsAggregator | PostsGroupBy | PostsConnectionId | PostsConnectionCreated_at | PostsConnectionUpdated_at | PostsConnectionCover | PostsConnectionTitle | PostsConnectionSlug | PostsConnectionSummary | PostsConnectionContent | PostsConnectionAuthor | PostsConnectionPublished_at | createPostPayload | updatePostPayload | deletePostPayload | Rodape | updateRodapePayload | deleteRodapePayload | Tags | TagsConnection | TagsAggregator | TagsGroupBy | TagsConnectionId | TagsConnectionCreated_at | TagsConnectionUpdated_at | TagsConnectionNome | TagsConnectionSlug | TagsConnectionPublished_at | createTagPayload | updateTagPayload | deleteTagPayload | Test | TestConnection | TestAggregator | TestGroupBy | TestConnectionId | TestConnectionCreated_at | TestConnectionUpdated_at | TestConnectionTitle | TestConnectionSlug | TestConnectionEmail | TestConnectionPublished_at | createTestPayload | updateTestPayload | deleteTestPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentFragmentEmbed | ComponentFragmentHyperlink | ComponentFragmentIntegrante | ComponentFragmentLinks | ComponentFragmentListaDeLinks | ComponentFragmentSectionDivider | ComponentFragmentTags | ComponentSectionCallToAction | ComponentSectionExtra | ComponentSectionFeaturedPodcast | ComponentSectionSelectedEpisodes | ComponentSiteBarraLateral | ComponentSiteContato | ComponentSiteIntro
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | UsersPermissionsLoginPayload | UserPermissionsPasswordPayload | Author | AuthorConnection | AuthorAggregator | AuthorGroupBy | AuthorConnectionId | AuthorConnectionCreated_at | AuthorConnectionUpdated_at | AuthorConnectionName | AuthorConnectionBio | AuthorConnectionSlug | AuthorConnectionPublished_at | createAuthorPayload | updateAuthorPayload | deleteAuthorPayload | BarraLateral | updateBarraLateralPayload | deleteBarraLateralPayload | Category | CategoryConnection | CategoryAggregator | CategoryGroupBy | CategoryConnectionId | CategoryConnectionCreated_at | CategoryConnectionUpdated_at | CategoryConnectionName | CategoryConnectionSlug | createCategoryPayload | updateCategoryPayload | deleteCategoryPayload | Episode | EpisodeConnection | EpisodeAggregator | EpisodeAggregatorSum | EpisodeAggregatorAvg | EpisodeAggregatorMin | EpisodeAggregatorMax | EpisodeGroupBy | EpisodeConnectionId | EpisodeConnectionCreated_at | EpisodeConnectionUpdated_at | EpisodeConnectionTitle | EpisodeConnectionSlug | EpisodeConnectionSubTitle | EpisodeConnectionReleaseDate | EpisodeConnectionExtraContent | EpisodeConnectionCover | EpisodeConnectionPodcast | EpisodeConnectionEmbed | EpisodeConnectionEpisodeNumber | EpisodeConnectionSeason | EpisodeConnectionPublished_at | createEpisodePayload | updateEpisodePayload | deleteEpisodePayload | Home | updateHomePayload | deleteHomePayload | PaginasInternas | PaginasInternasConnection | PaginasInternasAggregator | PaginasInternasGroupBy | PaginasInternasConnectionId | PaginasInternasConnectionCreated_at | PaginasInternasConnectionUpdated_at | PaginasInternasConnectionTitle | PaginasInternasConnectionDescription | PaginasInternasConnectionSlug | PaginasInternasConnectionPublished_at | createPaginasInternaPayload | updatePaginasInternaPayload | deletePaginasInternaPayload | Podcasts | PodcastsConnection | PodcastsAggregator | PodcastsGroupBy | PodcastsConnectionId | PodcastsConnectionCreated_at | PodcastsConnectionUpdated_at | PodcastsConnectionTitle | PodcastsConnectionSlug | PodcastsConnectionCover | PodcastsConnectionDescription | PodcastsConnectionSubtitle | PodcastsConnectionProducer | PodcastsConnectionPublished_at | createPodcastPayload | updatePodcastPayload | deletePodcastPayload | Posts | PostsConnection | PostsAggregator | PostsGroupBy | PostsConnectionId | PostsConnectionCreated_at | PostsConnectionUpdated_at | PostsConnectionCover | PostsConnectionTitle | PostsConnectionSlug | PostsConnectionSummary | PostsConnectionContent | PostsConnectionAuthor | PostsConnectionPublished_at | createPostPayload | updatePostPayload | deletePostPayload | Rodape | updateRodapePayload | deleteRodapePayload | Tags | TagsConnection | TagsAggregator | TagsGroupBy | TagsConnectionId | TagsConnectionCreated_at | TagsConnectionUpdated_at | TagsConnectionNome | TagsConnectionSlug | TagsConnectionPublished_at | createTagPayload | updateTagPayload | deleteTagPayload | Test | TestConnection | TestAggregator | TestGroupBy | TestConnectionId | TestConnectionCreated_at | TestConnectionUpdated_at | TestConnectionTitle | TestConnectionSlug | TestConnectionEmail | TestConnectionPublished_at | createTestPayload | updateTestPayload | deleteTestPayload | I18NLocale | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileAggregatorSum | UploadFileAggregatorAvg | UploadFileAggregatorMin | UploadFileAggregatorMax | UploadFileGroupBy | UploadFileConnectionId | UploadFileConnectionCreated_at | UploadFileConnectionUpdated_at | UploadFileConnectionName | UploadFileConnectionAlternativeText | UploadFileConnectionCaption | UploadFileConnectionWidth | UploadFileConnectionHeight | UploadFileConnectionFormats | UploadFileConnectionHash | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionPreviewUrl | UploadFileConnectionProvider | UploadFileConnectionProvider_metadata | deleteFilePayload | UsersPermissionsPermission | UsersPermissionsRole | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnectionId | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsUser | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnectionId | UsersPermissionsUserConnectionCreated_at | UsersPermissionsUserConnectionUpdated_at | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole | createUserPayload | updateUserPayload | deleteUserPayload | ComponentFragmentEmbed | ComponentFragmentHyperlink | ComponentFragmentIntegrante | ComponentFragmentLinks | ComponentFragmentListaDeLinks | ComponentFragmentSectionDivider | ComponentFragmentTags | ComponentSectionCallToAction | ComponentSectionExtra | ComponentSectionFeaturedPodcast | ComponentSectionSelectedEpisodes | ComponentSiteBarraLateral | ComponentSiteContato | ComponentSiteIntro
 
 input InputID {
   id: ID!

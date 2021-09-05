@@ -115,6 +115,39 @@ export interface QueryHome_selectedPodcastsFragment {
   Section: (QueryHome_selectedPodcastsFragment_Section | null)[];
 }
 
+export interface QueryHome_extraHighLightFragment_Section_ComponentSiteIntro {
+  __typename: "ComponentSiteIntro" | "ComponentSectionFeaturedPodcast" | "ComponentSectionSelectedEpisodes" | "ComponentSectionCallToAction";
+}
+
+export interface QueryHome_extraHighLightFragment_Section_ComponentSectionExtra_cover {
+  __typename: "UploadFile";
+  url: string;
+}
+
+export interface QueryHome_extraHighLightFragment_Section_ComponentSectionExtra_link {
+  __typename: "ComponentFragmentHyperlink";
+  url: string;
+  isExternal: boolean;
+}
+
+export interface QueryHome_extraHighLightFragment_Section_ComponentSectionExtra {
+  __typename: "ComponentSectionExtra";
+  cover: QueryHome_extraHighLightFragment_Section_ComponentSectionExtra_cover | null;
+  title: string;
+  subtitle: string | null;
+  primaryInfo: string | null;
+  secondaryInfo: string | null;
+  embed: string;
+  link: QueryHome_extraHighLightFragment_Section_ComponentSectionExtra_link | null;
+}
+
+export type QueryHome_extraHighLightFragment_Section = QueryHome_extraHighLightFragment_Section_ComponentSectionExtra;
+
+export interface QueryHome_extraHighLightFragment {
+  __typename: "Home";
+  Section: (QueryHome_extraHighLightFragment_Section | null)[];
+}
+
 export interface QueryHome_callToAction_Section_ComponentSiteIntro {
   __typename: "ComponentSiteIntro" | "ComponentSectionFeaturedPodcast" | "ComponentSectionSelectedEpisodes" | "ComponentSectionExtra";
 }
@@ -143,5 +176,6 @@ export interface QueryHome {
   siteInfroFragment: QueryHome_siteInfroFragment | null;
   featuredPodcasts: QueryHome_featuredPodcasts | null;
   selectedPodcastsFragment: QueryHome_selectedPodcastsFragment | null;
+  extraHighLightFragment: QueryHome_extraHighLightFragment | null;
   callToAction: QueryHome_callToAction | null;
 }

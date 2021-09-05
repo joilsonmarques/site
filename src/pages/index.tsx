@@ -3,6 +3,7 @@ import { initializeApollo } from 'utils/apollo'
 import { QUERY_HOME } from 'graphql/queries/home'
 import { QueryHome } from 'graphql/generated/QueryHome'
 import {
+  extraHighLightMapper,
   featuredPodcastMapper,
   selectedPodcastMapper,
   siteIntroMapper
@@ -23,6 +24,7 @@ export async function getStaticProps() {
   })
 
   console.log(data.siteInfroFragment?.Section)
+  console.log('2: ', data?.extraHighLightFragment?.Section)
 
   return {
     props: {
@@ -32,6 +34,8 @@ export async function getStaticProps() {
         featuredPodcastMapper(data.featuredPodcasts?.Section) || null,
       selectedEpisodes:
         selectedPodcastMapper(data.selectedPodcastsFragment?.Section) || null,
+      extraHighlight:
+        extraHighLightMapper(data.extraHighLightFragment?.Section) || null,
       callToAction: data.callToAction?.Section,
       outerBarsColor,
       innerBarsColor
