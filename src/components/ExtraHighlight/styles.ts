@@ -74,6 +74,12 @@ export const Content = styled.div`
   ${({ theme }) => css`
     max-width: 580px;
     position: relative;
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+      text-decoration: none;
+    }
     p {
       font-size: ${theme.font.sizes.medium};
       line-height: ${theme.font.sizes.medium};
