@@ -29,6 +29,7 @@ export interface SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisod
   cover: SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_cover | null;
   subTitle: string | null;
   podcast: SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_podcast | null;
+  releaseDate: any;
 }
 
 export interface SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes {

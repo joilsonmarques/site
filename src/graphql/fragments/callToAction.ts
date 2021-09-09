@@ -8,7 +8,7 @@ export const CallToActionFragment = gql`
         listLinks {
           label
           url
-          isExternal
+          type
         }
       }
     }

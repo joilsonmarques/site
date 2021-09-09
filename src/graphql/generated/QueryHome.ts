@@ -3,6 +3,8 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
+import { ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE } from "./globalTypes";
+
 // ====================================================
 // GraphQL query operation: QueryHome
 // ====================================================
@@ -100,7 +102,7 @@ export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSele
   cover: QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_cover | null;
   subTitle: string | null;
   podcast: QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_podcast | null;
-  releaseDate: string;
+  releaseDate: any;
 }
 
 export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes {
@@ -156,8 +158,8 @@ export interface QueryHome_callToAction_Section_ComponentSiteIntro {
 export interface QueryHome_callToAction_Section_ComponentSectionCallToAction_listLinks {
   __typename: "ComponentFragmentListaDeLinks";
   label: string;
-  url: string;
-  isExternal: boolean;
+  url: string | null;
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE | null;
 }
 
 export interface QueryHome_callToAction_Section_ComponentSectionCallToAction {
@@ -173,10 +175,36 @@ export interface QueryHome_callToAction {
   Section: (QueryHome_callToAction_Section | null)[];
 }
 
+export interface QueryHome_rodape_links {
+  __typename: "ComponentFragmentListaDeLinks";
+  label: string;
+  url: string | null;
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE | null;
+}
+
+export interface QueryHome_rodape {
+  __typename: "Rodape";
+  links: (QueryHome_rodape_links | null)[] | null;
+}
+
+export interface QueryHome_barraLateral_menu {
+  __typename: "ComponentFragmentListaDeLinks";
+  label: string;
+  url: string | null;
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE | null;
+}
+
+export interface QueryHome_barraLateral {
+  __typename: "BarraLateral";
+  menu: (QueryHome_barraLateral_menu | null)[] | null;
+}
+
 export interface QueryHome {
   siteInfroFragment: QueryHome_siteInfroFragment | null;
   featuredPodcasts: QueryHome_featuredPodcasts | null;
   selectedPodcastsFragment: QueryHome_selectedPodcastsFragment | null;
   extraHighLightFragment: QueryHome_extraHighLightFragment | null;
   callToAction: QueryHome_callToAction | null;
+  rodape: QueryHome_rodape | null;
+  barraLateral: QueryHome_barraLateral | null;
 }

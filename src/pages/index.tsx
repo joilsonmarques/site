@@ -24,8 +24,6 @@ export async function getStaticProps() {
     fetchPolicy: 'no-cache'
   })
 
-  console.log(data.callToAction?.Section)
-
   return {
     props: {
       revalidate: 60,
@@ -37,6 +35,8 @@ export async function getStaticProps() {
       extraHighlight:
         extraHighLightMapper(data.extraHighLightFragment?.Section) || null,
       callToAction: callToActionMapper(data.callToAction?.Section),
+      menuListLinks: data.barraLateral?.menu,
+      footerListLinks: data.rodape?.links,
       outerBarsColor,
       innerBarsColor
     }

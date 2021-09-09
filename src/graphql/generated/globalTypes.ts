@@ -7,6 +7,12 @@
 // START Enums and Input Objects
 //==============================================================
 
+export enum ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE {
+  externo = "externo",
+  generico = "generico",
+  interno = "interno",
+}
+
 //==============================================================
 // END Enums and Input Objects
 //==============================================================

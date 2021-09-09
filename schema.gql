@@ -964,13 +964,11 @@ type Rodape {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
-  logo: UploadFile
   contacts: ComponentSiteContato
   links: [ComponentFragmentListaDeLinks]
 }
 
 input RodapeInput {
-  logo: ID
   contacts: ComponentSiteContatoInput
   links: [ComponentFragmentListaDeLinkInput]
   created_by: ID
@@ -978,7 +976,6 @@ input RodapeInput {
 }
 
 input editRodapeInput {
-  logo: ID
   contacts: editComponentSiteContatoInput
   links: [editComponentFragmentListaDeLinkInput]
   created_by: ID
@@ -1764,24 +1761,36 @@ input editComponentFragmentLinkInput {
   url: String
 }
 
+enum ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE {
+  externo
+  interno
+  generico
+}
+
 type ComponentFragmentListaDeLinks {
   id: ID!
   label: String!
-  url: String!
-  isExternal: Boolean!
+  url: String
+  paginas_interna: PaginasInternas
+  pagina_generica: Posts
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE
 }
 
 input ComponentFragmentListaDeLinkInput {
   label: String!
-  url: String!
-  isExternal: Boolean
+  url: String
+  paginas_interna: ID
+  pagina_generica: ID
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE
 }
 
 input editComponentFragmentListaDeLinkInput {
   id: ID
   label: String
   url: String
-  isExternal: Boolean
+  paginas_interna: ID
+  pagina_generica: ID
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE
 }
 
 type ComponentFragmentSectionDivider {

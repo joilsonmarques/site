@@ -22,6 +22,20 @@ export const QUERY_HOME = gql`
     callToAction: home {
       ...CallToActionFragment
     }
+    rodape {
+      links {
+        label
+        url
+        type
+      }
+    }
+    barraLateral {
+      menu {
+        label
+        url
+        type
+      }
+    }
   }
   ${SiteIntroFragment}
   ${FeaturedPodcastsFragment}

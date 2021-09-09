@@ -3,6 +3,8 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
+import { ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE } from "./globalTypes";
+
 // ====================================================
 // GraphQL fragment: CallToActionFragment
 // ====================================================
@@ -14,8 +16,8 @@ export interface CallToActionFragment_Section_ComponentSiteIntro {
 export interface CallToActionFragment_Section_ComponentSectionCallToAction_listLinks {
   __typename: "ComponentFragmentListaDeLinks";
   label: string;
-  url: string;
-  isExternal: boolean;
+  url: string | null;
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE | null;
 }
 
 export interface CallToActionFragment_Section_ComponentSectionCallToAction {
