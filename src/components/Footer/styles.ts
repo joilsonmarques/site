@@ -45,7 +45,6 @@ export const Wrapper = styled.footer<FooterProps>`
 
     ${media.greaterThan('medium')`
       margin-top: 12rem;
-      padding: ${theme.spacings.large};
       &::before {
       top: -12rem;
       height: 12rem;
@@ -60,14 +59,16 @@ export const Wrapper = styled.footer<FooterProps>`
 export const Content = styled.div`
   ${({ theme }) => css`
     max-width: 99rem;
+    padding: ${theme.spacings.large} 0 ${theme.spacings.medium}
+      ${theme.grid.collumn};
     margin: 0 auto;
+    border: 1px solid red;
     ${media.greaterThan('medium')`
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: ${theme.grid.gutter};
       margin-top: ${theme.spacings.medium};
     `}
-    padding: ${theme.spacings.medium} 0;
   `}
 `
 
