@@ -17,7 +17,7 @@ export interface CallToActionFragment_Section_ComponentSectionCallToAction_listL
   __typename: "ComponentFragmentListaDeLinks";
   label: string;
   url: string | null;
-  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE | null;
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
 }
 
 export interface CallToActionFragment_Section_ComponentSectionCallToAction {

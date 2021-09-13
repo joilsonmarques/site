@@ -159,7 +159,7 @@ export interface QueryHome_callToAction_Section_ComponentSectionCallToAction_lis
   __typename: "ComponentFragmentListaDeLinks";
   label: string;
   url: string | null;
-  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE | null;
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
 }
 
 export interface QueryHome_callToAction_Section_ComponentSectionCallToAction {
@@ -179,7 +179,7 @@ export interface QueryHome_rodape_links {
   __typename: "ComponentFragmentListaDeLinks";
   label: string;
   url: string | null;
-  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE | null;
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
 }
 
 export interface QueryHome_rodape {
@@ -191,7 +191,7 @@ export interface QueryHome_barraLateral_menu {
   __typename: "ComponentFragmentListaDeLinks";
   label: string;
   url: string | null;
-  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE | null;
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
 }
 
 export interface QueryHome_barraLateral {

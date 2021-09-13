@@ -5,6 +5,7 @@ import {
   QueryHome_selectedPodcastsFragment_Section,
   QueryHome_siteInfroFragment_Section
 } from 'graphql/generated/QueryHome'
+import { QueryPostBySlug_posts } from 'graphql/generated/QueryPostBySlug'
 import { getPublicUrl, exibirNovoEpisodio } from 'utils/getPublicUrl'
 
 export const featuredPodcastMapper = (
@@ -122,5 +123,22 @@ export const callToActionMapper = (
           title: call?.title,
           listLinks: call?.listLinks
         }))[0]
+    : null
+}
+
+export const headerMapper = (
+  header: (QueryPostBySlug_posts | null)[] | undefined
+) => {
+  return header
+    ? header.map((post) => ({
+        releaseDate: new Intl.DateTimeFormat('pt-BR', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric'
+        }).format(new Date(post?.published_at)),
+        title: post?.title,
+        from: post?.author?.name,
+        categories: post?.categorias
+      }))[0]
     : null
 }
