@@ -9,7 +9,7 @@ import {
 } from 'graphql/generated/QueryPostBySlug'
 import { QUERY_POSTS, QUERY_POST_BY_SLUG } from 'graphql/queries/post'
 import { QueryPosts, QueryPostsVariables } from 'graphql/generated/QueryPosts'
-import { headerMapper } from 'utils/mappers'
+import { headerMapper, linksFooterMapper, linksMenuMapper } from 'utils/mappers'
 import { GetStaticProps } from 'next'
 
 const apolloClient = initializeApollo()
@@ -55,7 +55,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return {
     revalidate: 60,
     props: {
-      headerInfo: headerMapper(data.posts)
+      headerInfo: headerMapper(data.posts),
+      menuListLinks: linksMenuMapper(data.barraLateral?.menu) || null,
+      footerListLinks: linksFooterMapper(data.rodape?.links) || null
     }
   }
 }

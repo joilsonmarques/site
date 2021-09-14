@@ -31,5 +31,31 @@ export const QUERY_POST_BY_SLUG = gql`
         name
       }
     }
+    rodape {
+      links {
+        label
+        url
+        type
+        paginas_interna {
+          Slug
+        }
+        pagina_generica {
+          slug
+        }
+      }
+    }
+    barraLateral {
+      menu {
+        label
+        url
+        type
+        paginas_interna {
+          Slug
+        }
+        pagina_generica {
+          slug
+        }
+      }
+    }
   }
 `

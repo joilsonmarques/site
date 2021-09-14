@@ -126,7 +126,7 @@ export const callToActionMapper = (
           title: call?.title,
           listLinks: call?.listLinks?.map((link) => ({
             label: link?.label,
-            url: `${adicionarPrefixoUrlByType(link?.type, link)}`,
+            url: `${getUrlWithPrefixByType(link?.type, link)}`,
             type: link?.type
           }))
         }))[0]
@@ -139,7 +139,7 @@ export const linksMenuMapper = (
   return linksMenu
     ? linksMenu?.map((link) => ({
         label: link?.label,
-        url: `${adicionarPrefixoUrlByType(link?.type, link)}`,
+        url: `${getUrlWithPrefixByType(link?.type, link)}`,
         type: link?.type
       }))
     : null
@@ -151,24 +151,24 @@ export const linksFooterMapper = (
   return linksFooter
     ? linksFooter?.map((link) => ({
         label: link?.label,
-        url: `${adicionarPrefixoUrlByType(link?.type, link)}`,
+        url: `${getUrlWithPrefixByType(link?.type, link)}`,
         type: link?.type
       }))
     : null
 }
 
-function adicionarPrefixoUrlByType(
+function getUrlWithPrefixByType(
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE | undefined,
   link: QueryHome_rodape_links | null
 ) {
   let url = ''
   switch (type) {
     case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.generico:
-      url = `post/${link?.pagina_generica?.slug}`
+      url = `/post/${link?.pagina_generica?.slug}`
       break
 
     case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.interno:
-      url = `page/${link?.paginas_interna?.Slug}`
+      url = `/page/${link?.paginas_interna?.Slug}`
       break
 
     case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.externo:

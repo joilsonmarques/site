@@ -6,18 +6,24 @@ import PageHeader, {PageHeaderProps} from 'components/PageHeader'
 import header from 'components/PageHeader/mock'
 
 import * as S from './styles'
+import { MenuLinksProps } from 'components/Menu'
+import { FooterLinksProps } from 'components/Footer'
 
 export type GenericPageTemplateProps = {
   header: PageHeaderProps
+  menuListLinks: MenuLinksProps[]
+  footerListLinks: FooterLinksProps[]
 }
 
 const GenericPage = ({
   headerInfo = header,
   outerBarsColor = '29292B',
-  innerBarsColor = 'BFCAD4'
+  innerBarsColor = 'BFCAD4',
+  menuListLinks,
+  footerListLinks,
 }: GenericPageTemplateProps) => (
 
-  <Base outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor}>
+  <Base outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor} menuListLinks={menuListLinks} footerListLinks={footerListLinks}>
     <Container>
       <S.Section>
         <PageHeader {...headerInfo}/>
