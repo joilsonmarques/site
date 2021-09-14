@@ -6,6 +6,8 @@ import {
   callToActionMapper,
   extraHighLightMapper,
   featuredPodcastMapper,
+  linksFooterMapper,
+  linksMenuMapper,
   selectedPodcastMapper,
   siteIntroMapper
 } from 'utils/mappers'
@@ -35,8 +37,8 @@ export async function getStaticProps() {
       extraHighlight:
         extraHighLightMapper(data.extraHighLightFragment?.Section) || null,
       callToAction: callToActionMapper(data.callToAction?.Section),
-      menuListLinks: data.barraLateral?.menu,
-      footerListLinks: data.rodape?.links,
+      menuListLinks: linksMenuMapper(data.barraLateral?.menu) || null,
+      footerListLinks: linksFooterMapper(data.rodape?.links) || null,
       outerBarsColor,
       innerBarsColor
     }

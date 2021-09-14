@@ -155,11 +155,23 @@ export interface QueryHome_callToAction_Section_ComponentSiteIntro {
   __typename: "ComponentSiteIntro" | "ComponentSectionFeaturedPodcast" | "ComponentSectionSelectedEpisodes" | "ComponentSectionExtra";
 }
 
+export interface QueryHome_callToAction_Section_ComponentSectionCallToAction_listLinks_paginas_interna {
+  __typename: "Pages";
+  Slug: string;
+}
+
+export interface QueryHome_callToAction_Section_ComponentSectionCallToAction_listLinks_pagina_generica {
+  __typename: "Posts";
+  slug: string;
+}
+
 export interface QueryHome_callToAction_Section_ComponentSectionCallToAction_listLinks {
   __typename: "ComponentFragmentListaDeLinks";
   label: string;
   url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
+  paginas_interna: QueryHome_callToAction_Section_ComponentSectionCallToAction_listLinks_paginas_interna | null;
+  pagina_generica: QueryHome_callToAction_Section_ComponentSectionCallToAction_listLinks_pagina_generica | null;
 }
 
 export interface QueryHome_callToAction_Section_ComponentSectionCallToAction {
@@ -175,11 +187,23 @@ export interface QueryHome_callToAction {
   Section: (QueryHome_callToAction_Section | null)[];
 }
 
+export interface QueryHome_rodape_links_paginas_interna {
+  __typename: "Pages";
+  Slug: string;
+}
+
+export interface QueryHome_rodape_links_pagina_generica {
+  __typename: "Posts";
+  slug: string;
+}
+
 export interface QueryHome_rodape_links {
   __typename: "ComponentFragmentListaDeLinks";
   label: string;
   url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
+  paginas_interna: QueryHome_rodape_links_paginas_interna | null;
+  pagina_generica: QueryHome_rodape_links_pagina_generica | null;
 }
 
 export interface QueryHome_rodape {
@@ -187,11 +211,23 @@ export interface QueryHome_rodape {
   links: (QueryHome_rodape_links | null)[] | null;
 }
 
+export interface QueryHome_barraLateral_menu_paginas_interna {
+  __typename: "Pages";
+  Slug: string;
+}
+
+export interface QueryHome_barraLateral_menu_pagina_generica {
+  __typename: "Posts";
+  slug: string;
+}
+
 export interface QueryHome_barraLateral_menu {
   __typename: "ComponentFragmentListaDeLinks";
   label: string;
   url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
+  paginas_interna: QueryHome_barraLateral_menu_paginas_interna | null;
+  pagina_generica: QueryHome_barraLateral_menu_pagina_generica | null;
 }
 
 export interface QueryHome_barraLateral {

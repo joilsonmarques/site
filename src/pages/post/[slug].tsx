@@ -10,6 +10,7 @@ import {
 import { QUERY_POSTS, QUERY_POST_BY_SLUG } from 'graphql/queries/post'
 import { QueryPosts, QueryPostsVariables } from 'graphql/generated/QueryPosts'
 import { headerMapper } from 'utils/mappers'
+import { GetStaticProps } from 'next'
 
 const apolloClient = initializeApollo()
 
@@ -27,7 +28,7 @@ export default function Index(props: GenericPageTemplateProps) {
 export async function getStaticPaths() {
   const { data } = await apolloClient.query<QueryPosts, QueryPostsVariables>({
     query: QUERY_POSTS,
-    variables: { limit: 9 }
+    variables: { limit: 7 }
   })
 
   const paths = data.posts.map(({ slug }) => ({
@@ -37,13 +38,13 @@ export async function getStaticPaths() {
   return { paths, fallback: true }
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { data } = await apolloClient.query<
     QueryPostBySlug,
     QueryPostBySlugVariables
   >({
     query: QUERY_POST_BY_SLUG,
-    variables: { slug: `teste-de-post` },
+    variables: { slug: `${params?.slug}` },
     fetchPolicy: 'no-cache'
   })
 

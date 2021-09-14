@@ -9,6 +9,12 @@ export const CallToActionFragment = gql`
           label
           url
           type
+          paginas_interna {
+            Slug
+          }
+          pagina_generica {
+            slug
+          }
         }
       }
     }

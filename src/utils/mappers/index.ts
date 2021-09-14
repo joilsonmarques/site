@@ -1,9 +1,12 @@
+import { ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE } from 'graphql/generated/globalTypes'
 import {
   QueryHome_callToAction_Section,
   QueryHome_extraHighLightFragment_Section,
   QueryHome_featuredPodcasts_Section,
   QueryHome_selectedPodcastsFragment_Section,
-  QueryHome_siteInfroFragment_Section
+  QueryHome_siteInfroFragment_Section,
+  QueryHome_rodape_links,
+  QueryHome_barraLateral_menu
 } from 'graphql/generated/QueryHome'
 import { QueryPostBySlug_posts } from 'graphql/generated/QueryPostBySlug'
 import { getPublicUrl, exibirNovoEpisodio } from 'utils/getPublicUrl'
@@ -121,9 +124,61 @@ export const callToActionMapper = (
         })
         ?.map((call) => ({
           title: call?.title,
-          listLinks: call?.listLinks
+          listLinks: call?.listLinks?.map((link) => ({
+            label: link?.label,
+            url: `${adicionarPrefixoUrlByType(link?.type, link)}`,
+            type: link?.type
+          }))
         }))[0]
     : null
+}
+
+export const linksMenuMapper = (
+  linksMenu: (QueryHome_barraLateral_menu | null)[] | null | undefined
+) => {
+  return linksMenu
+    ? linksMenu?.map((link) => ({
+        label: link?.label,
+        url: `${adicionarPrefixoUrlByType(link?.type, link)}`,
+        type: link?.type
+      }))
+    : null
+}
+
+export const linksFooterMapper = (
+  linksFooter: (QueryHome_rodape_links | null)[] | null | undefined
+) => {
+  return linksFooter
+    ? linksFooter?.map((link) => ({
+        label: link?.label,
+        url: `${adicionarPrefixoUrlByType(link?.type, link)}`,
+        type: link?.type
+      }))
+    : null
+}
+
+function adicionarPrefixoUrlByType(
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE | undefined,
+  link: QueryHome_rodape_links | null
+) {
+  let url = ''
+  switch (type) {
+    case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.generico:
+      url = `post/${link?.pagina_generica?.slug}`
+      break
+
+    case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.interno:
+      url = `page/${link?.paginas_interna?.Slug}`
+      break
+
+    case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.externo:
+      url = `${link?.url}`
+      break
+    default:
+      break
+  }
+
+  return url
 }
 
 export const headerMapper = (
