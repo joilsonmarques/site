@@ -17,9 +17,13 @@ export const QUERY_POST_BY_SLUG = gql`
   query QueryPostBySlug($slug: String!) {
     posts(where: { slug: $slug }) {
       id
-      slug
-      published_at
+      cover {
+        url
+      }
       title
+      summary
+      content
+      published_at
       author {
         name
       }

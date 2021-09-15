@@ -181,17 +181,20 @@ function getUrlWithPrefixByType(
   return url
 }
 
-export const headerMapper = (
+export const headerPostMapper = (
   header: (QueryPostBySlug_posts | null)[] | undefined
 ) => {
   return header
     ? header.map((post) => ({
+        cover: `${getPublicUrl(post?.cover?.url)}`,
+        title: post?.title,
+        summary: post?.summary,
+        content: post?.content,
         releaseDate: new Intl.DateTimeFormat('pt-BR', {
           day: 'numeric',
           month: 'short',
           year: 'numeric'
         }).format(new Date(post?.published_at)),
-        title: post?.title,
         from: post?.author?.name,
         categories: post?.categorias
       }))[0]

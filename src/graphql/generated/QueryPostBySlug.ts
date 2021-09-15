@@ -9,6 +9,11 @@ import { ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE } from "./globalTypes";
 // GraphQL query operation: QueryPostBySlug
 // ====================================================
 
+export interface QueryPostBySlug_posts_cover {
+  __typename: "UploadFile";
+  url: string;
+}
+
 export interface QueryPostBySlug_posts_author {
   __typename: "Author";
   name: string;
@@ -28,9 +33,11 @@ export interface QueryPostBySlug_posts_tags {
 export interface QueryPostBySlug_posts {
   __typename: "Posts";
   id: string;
-  slug: string;
-  published_at: any | null;
+  cover: QueryPostBySlug_posts_cover | null;
   title: string;
+  summary: string;
+  content: string | null;
+  published_at: any | null;
   author: QueryPostBySlug_posts_author | null;
   categorias: QueryPostBySlug_posts_categorias[];
   tags: (QueryPostBySlug_posts_tags | null)[] | null;
