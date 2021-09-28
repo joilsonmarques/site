@@ -6,6 +6,7 @@ import { Youtube as YoutubeIcon } from '@styled-icons/boxicons-logos/Youtube'
 import { Twitter as TwitterIcon } from '@styled-icons/boxicons-logos/Twitter'
 
 import * as S from './styles'
+import Subscribe from 'components/Subscrible'
 
 export type FooterLinksProps = {
   label: string
@@ -80,6 +81,8 @@ const Footer = ({
           <span>contato@anossacasadepodcasts.bsb.br</span>
         </a>
       </S.Column>
+
+      <Subscribe></Subscribe>
     </S.Content>
   </S.Wrapper>
 )
