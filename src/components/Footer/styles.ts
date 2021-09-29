@@ -62,7 +62,6 @@ export const Content = styled.div`
     padding: ${theme.spacings.large} 0 ${theme.spacings.medium}
       ${theme.grid.collumn};
     margin: 0 auto;
-    border: 1px solid red;
     ${media.greaterThan('medium')`
       display: grid;
       grid-template-columns: repeat(3, 1fr);
