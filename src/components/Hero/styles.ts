@@ -77,7 +77,23 @@ export const Wrapper = styled.div`
       z-index: ${theme.layers.base};
     }
 
-    .test-1{
+    .detail{
+      ${media.between('medium', 'large')`
+        ${HeadingStyles.Wrapper} {
+          font-weight: ${theme.font.normal};
+          font-size: ${theme.font.sizes.medium};
+          line-height: ${theme.spacings.medium};
+        }
+      `}
+
+      ${media.greaterThan('medium')`
+        ${HeadingStyles.Wrapper} {
+          font-weight: ${theme.font.normal};
+          font-size: ${theme.font.sizes.medium};
+          line-height: ${theme.spacings.medium};
+        }
+      `}
+
       ${media.lessThan('medium')`
         ${HeadingStyles.Wrapper} {
           font-weight: ${theme.font.normal};
@@ -112,6 +128,7 @@ export const AnimatedBg = styled.div`
       `}
       ${media.greaterThan('medium')`
         width: 25%;
+        margin: 0 5px;
         display: block;
       `}
     }

@@ -48,7 +48,7 @@ const Home = ({
 }: HomeTemplateProps) => (
 
   <Base outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor} menuListLinks={menuListLinks} footerListLinks={footerListLinks}>
-    <Container>      
+    <Container>
       <S.Section>
         <Hero {...siteIntro}/>
       </S.Section>

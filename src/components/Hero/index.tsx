@@ -250,7 +250,7 @@ const Hero = ({ call, hasDetail, description, embedUrl }: HeroProps) => {
           <path className="path line_51" d="M10 380H0V400H10V380Z" />
         </svg>
       </S.AnimatedBg>
-      <FullSection className="test" color="darkGray">
+      <FullSection className="main" color="darkGray">
         <Heading>{call}</Heading>
         {hasDetail && (
           <ExpandMoreIcon aria-label="ver podcast" onClick={handleClick} />
@@ -258,7 +258,7 @@ const Hero = ({ call, hasDetail, description, embedUrl }: HeroProps) => {
       </FullSection>
       {hasDetail && (
         <div ref={titleRef}>
-          <FullSection className="test-1" color="darkGray">
+          <FullSection className="detail" color="darkGray">
             <Heading>{description}</Heading>
             <Embed embedUrl={embedUrl} />
           </FullSection>
