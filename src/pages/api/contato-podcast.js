@@ -14,7 +14,7 @@ export default async (req, res) => {
 
   try {
     await mailchimp.lists.addListMember(
-      process.env.MAILCHIMP_AUDIENCE_SUBSCRIBE_ID,
+      process.env.MAILCHIMP_AUDIENCE_PODCAST_ID,
       {
         email_address: email,
         status: 'subscribed'
@@ -23,8 +23,6 @@ export default async (req, res) => {
 
     return res.status(201).json({ error: '' })
   } catch (error) {
-    return res
-      .status(error.status)
-      .json({ error: error.response?.body?.title || error.toString() })
+    return res.status(500).json({ error: error.message || error.toString() })
   }
 }

@@ -16,5 +16,5 @@
     "jsx": "preserve"
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Subscrible/index.js"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Subscrible/index.tsx", "src/pages/api/subscribe.js"]
 }
