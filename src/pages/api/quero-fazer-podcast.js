@@ -6,11 +6,18 @@ mailchimp.setConfig({
 })
 
 export default async (req, res) => {
-  const { email } = req.body
-  const { ideia } = req.body
+  const { nome, email, telefone, cidade, uf, assunto, ideia } = req.body
+
+  if (!nome) {
+    return res.status(400).json({ error: 'Nome é obrigatório' })
+  }
 
   if (!email) {
     return res.status(400).json({ error: 'Email é obrigatório' })
+  }
+
+  if (!assunto) {
+    return res.status(400).json({ error: 'Assunto é obrigatório' })
   }
 
   if (!ideia) {
@@ -24,9 +31,14 @@ export default async (req, res) => {
         email_address: email,
         status: 'subscribed',
         merge_fields: {
-          FNAME: 'Mikael Medeiros',
+          FNAME: nome,
+          PHONE: telefone,
+          CIDADE: cidade,
+          UF: uf,
+          ASSUNTO: assunto,
           IDEIA: ideia
-        }
+        },
+        tags: ['Quero fazer podcast']
       }
     )
 

@@ -1,5 +1,5 @@
-import ContatoIdeia from 'components/ContatoIdeia'
+import QueroFazerPodcast from 'components/QueroFazerPodcast'
 
 export default function Index() {
-  return <ContatoIdeia />
+  return <QueroFazerPodcast />
 }
