@@ -1,0 +1,45 @@
+import EpisodeCard from 'components/EpisodeCard'
+import Link from 'next/link'
+
+import * as S from './styles'
+
+export type EpisodeProps = {
+  id: string
+  slug: string
+  img: string
+  title: string
+  number: string
+  podcast: string
+  releaseDate: string
+  description: string
+}
+
+export type EpisodeListProps = {
+  items: EpisodeProps[]
+}
+
+const EpisodeList = ({ items }: EpisodeListProps) =>
+  items ? (
+    <S.Wrapper>
+      {items.map((item, index) => (
+        <S.List key={index}>
+          <div>
+            <EpisodeCard {...item} />
+          </div>
+          <div>
+            <span>{item.releaseDate}</span>
+            <h3>
+              <Link href={`/episode/${item.slug}`}>
+                <a>
+                  {item.podcast} #{item.number} {item.title}
+                </a>
+              </Link>
+            </h3>
+            <p>{item.description}</p>
+          </div>
+        </S.List>
+      ))}
+    </S.Wrapper>
+  ) : null
+
+export default EpisodeList

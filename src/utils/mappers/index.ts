@@ -82,7 +82,7 @@ export const siteIntroMapper = (
           call: intro?.call,
           description: intro?.description,
           hasDetail: intro?.hasDetail,
-          embed: regex.exec(intro?.embed || '')
+          embedUrl: regex.exec(intro?.embed || '')
         }))[0]
     : {}
 }
