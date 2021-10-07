@@ -2,8 +2,10 @@
 import Base from 'components/templates/Base'
 import { Container } from 'components/atoms/Container'
 import PageHeader from 'components/PageHeader'
+import EpisodeList from 'components/EpisodeList'
 
 import header from 'components/PageHeader/mock'
+import episodes from 'components/EpisodeList/mock'
 
 import * as S from './styles'
 import { MenuLinksProps } from 'components/Menu'
@@ -30,7 +32,7 @@ const PodcastPage = ({
       </S.Section>
       <S.Section>
         <S.Content>
-
+          <EpisodeList items={episodes} {...episodes} />
         </S.Content>
       </S.Section>
     </Container>

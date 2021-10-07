@@ -9,19 +9,19 @@ import * as S from './styles'
 import { MenuLinksProps } from 'components/Menu'
 import { FooterLinksProps } from 'components/Footer'
 
-export type PodcastPageTemplateProps = {
+export type InternalPageTemplateProps = {
   outerBarsColor: string
   innerBarsColor: string
   menuListLinks: MenuLinksProps[]
   footerListLinks: FooterLinksProps[]
 }
 
-const PodcastPage = ({
+const InternalPage = ({
   outerBarsColor = '29292B',
   innerBarsColor = 'BFCAD4',
   menuListLinks,
-  footerListLinks,
-}: PodcastPageTemplateProps) => (
+  footerListLinks
+}: InternalPageTemplateProps) => (
 
   <Base outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor} menuListLinks={menuListLinks} footerListLinks={footerListLinks}>
     <Container>
@@ -37,4 +37,4 @@ const PodcastPage = ({
   </Base>
 )
 
-export default PodcastPage
+export default InternalPage
