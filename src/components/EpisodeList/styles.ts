@@ -13,7 +13,7 @@ export const List = styled.div`
     display: flex;
     justify-content: center;
     align-content: space-around;
-    padding: ${theme.spacings.medium};
+    padding: ${theme.spacings.medium} 0;
     border-top: 1px solid ${theme.colors.black};
     article {
       width: 215px;

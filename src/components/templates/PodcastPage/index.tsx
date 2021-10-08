@@ -1,10 +1,10 @@
 /* eslint-disable prettier/prettier */
 import Base from 'components/templates/Base'
 import { Container } from 'components/atoms/Container'
-import PageHeader from 'components/PageHeader'
+import PodcastHeader from 'components/PodcastHeader'
 import EpisodeList from 'components/EpisodeList'
 
-import header from 'components/PageHeader/mock'
+import header from 'components/PodcastHeader/mock'
 import episodes from 'components/EpisodeList/mock'
 
 import * as S from './styles'
@@ -28,7 +28,7 @@ const PodcastPage = ({
   <Base outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor} menuListLinks={menuListLinks} footerListLinks={footerListLinks}>
     <Container>
       <S.Section>
-        <PageHeader {...header}/>
+        <PodcastHeader {...header}/>
       </S.Section>
       <S.Section>
         <S.Content>

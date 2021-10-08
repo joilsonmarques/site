@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import Base from 'components/templates/Base'
 
-import { Container } from 'components/atoms/Container'
+import { FullContainer } from 'components/atoms/Container'
 import Hero, { HeroProps } from 'components/Hero'
 import FeaturedPodcast, { FeaturedPodcastProps } from 'components/FeaturedPodcast'
 import { EpisodeCardProps } from 'components/EpisodeCard'
@@ -48,7 +48,7 @@ const Home = ({
 }: HomeTemplateProps) => (
 
   <Base outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor} menuListLinks={menuListLinks} footerListLinks={footerListLinks}>
-    <Container>
+    <FullContainer>
       <S.Section>
         <Hero {...siteIntro}/>
       </S.Section>
@@ -64,7 +64,7 @@ const Home = ({
       <S.Section>
         <CallToAction {...callToAction} />
       </S.Section>
-    </Container>
+    </FullContainer>
   </Base>
 )
 

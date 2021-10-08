@@ -16,5 +16,6 @@ export const Content = styled.div`
   ${({ theme }) => css`
     flex: 1 0 auto;
     background: ${theme.colors.gray};
+    padding-bottom: ${theme.spacings.xlarge};
   `}
 `

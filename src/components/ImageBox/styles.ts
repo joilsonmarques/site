@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   display: block;
-  min-height: 360px;
-  min-width: 360px;
+  min-height: 160px;
+  min-width: 160px;
   position: relative;
   display: flex;
   flex-direction: column;

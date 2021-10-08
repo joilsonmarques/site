@@ -1,8 +1,14 @@
+import Image from 'next/image'
 import * as S from './styles'
 
-const ImageBox = () => (
+export type ImageBoxProps = {
+  title: string
+  img: string
+}
+
+const ImageBox = ({ title, img }: ImageBoxProps) => (
   <S.Wrapper>
-    <h1>ImageBox</h1>
+    <Image src={img} alt={title} layout="fill" objectFit="cover" />
   </S.Wrapper>
 )
 
