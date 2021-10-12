@@ -15,9 +15,6 @@ export const Wrapper = styled(WrapperBase)`
   ${({ theme }) => css`
     ${getCSSVars}
     height: auto;
-    display: flex;
-    flex-wrap: wrap;
-    flex: 1 1 auto;
     background: ${theme.colors.gray};
     padding: ${theme.spacings.large} 0;
     &::before {
@@ -31,27 +28,34 @@ export const Wrapper = styled(WrapperBase)`
       left: 0;
       z-index: ${theme.layers.zero};
     }
+
+    > div:first-child {
+      display: flex;
+      flex-wrap: no-wrap;
+    }
   `}
 `
 export const Cover = styled.div`
   width: 28.8rem;
+  min-width: 28.8rem;
   height: 28.8rem;
-  flex-grow: 0;
+  margin-right: 12rem;
 `
 export const Content = styled.div`
   ${({ theme }) => css`
     margin: 0;
-    margin-left: 10rem;
-    flex-grow: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     align-content: flex-start;
     align-content: space-between;
     z-index: ${theme.layers.base};
+  `}
+`
 
+export const ContentText = styled.div`
+  ${({ theme }) => css`
     span {
-      display: block;
       font-size: ${theme.font.sizes.xxsmall};
       font-weight: ${theme.font.bold};
       margin-bottom: ${theme.spacings.xsmall};
@@ -61,9 +65,10 @@ export const Content = styled.div`
       line-height: ${theme.font.sizes.large};
     }
     h4 {
-      font-size: ${theme.font.sizes.medium};
-      line-height: ${theme.font.sizes.large};
+      font-size: calc(${theme.font.sizes.medium} - 0.2rem);
+      line-height: calc(${theme.font.sizes.medium} + 20%);
       font-weight: ${theme.font.normal};
+      margin: 1rem 0;
     }
     p {
       font-style: italic;
@@ -77,9 +82,10 @@ export const Categories = styled.div`
     margin: ${theme.spacings.small} 0;
     ul {
       display: flex;
+      flex-wrap: wrap;
       list-style: none;
       li {
-        margin-right: 1rem;
+        margin: 0 1rem 1rem 0;
         a {
           font-size: ${theme.font.sizes.xxsmall};
           color: ${theme.colors.black};

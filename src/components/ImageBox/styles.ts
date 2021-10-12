@@ -2,7 +2,9 @@ import styled from 'styled-components'
 
 export const Wrapper = styled.div`
   display: block;
+  height: 100%;
   min-height: 160px;
+  width: 100%;
   min-width: 160px;
   position: relative;
   display: flex;
