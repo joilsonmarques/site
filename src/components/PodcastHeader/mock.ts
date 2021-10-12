@@ -1,6 +1,6 @@
 export default {
   title: 'Sem papas',
-  subtitle: 'Literatura para novos tempos Literatura para novos tempos ',
+  subtitle: 'Literatura para novos tempos.',
   from: 'Pauliny Tort',
   img: 'https://source.unsplash.com/user/willianjusten/280x280',
   description:

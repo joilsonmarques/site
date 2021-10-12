@@ -38,29 +38,31 @@ const PodcastHeader = ({
 
   return (
     <S.Wrapper outerHeight={`${height}px`}>
-      <S.Cover>
-        <ImageBox title={title} img={img} />
-      </S.Cover>
-      <S.Content>
-        <div ref={ref}>
-          <span>Podcast</span>
-          <h2>{title}</h2>
-          <h4>{subtitle}</h4>
-          <p>por {from}</p>
-        </div>
+      <div>
+        <S.Cover>
+          <ImageBox title={title} img={img} />
+        </S.Cover>
+        <S.Content>
+          <S.ContentText ref={ref}>
+            <span>Podcast</span>
+            <h2>{title}</h2>
+            <h4>{subtitle}</h4>
+            <p>por {from}</p>
+          </S.ContentText>
 
-        <S.Categories>
-          <ul aria-labelledby="Lista de Categorias">
-            {categories?.map((category, index) => (
-              <li key={index}>
-                <Link href={category.slug} passHref>
-                  <a target="_self">{category.name}</a>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </S.Categories>
-      </S.Content>
+          <S.Categories>
+            <ul aria-labelledby="Lista de Categorias">
+              {categories?.map((category, index) => (
+                <li key={index}>
+                  <Link href={category.slug} passHref>
+                    <a target="_self">{category.name}</a>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </S.Categories>
+        </S.Content>
+      </div>
       <S.Description>{ReactHtmlParser(description)}</S.Description>
     </S.Wrapper>
   )

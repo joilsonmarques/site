@@ -63,8 +63,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     return { notFound: true }
   }
 
-  console.log('resultado', data.podcasts[0].cover?.url)
-
   return {
     revalidate: 60,
     props: {
