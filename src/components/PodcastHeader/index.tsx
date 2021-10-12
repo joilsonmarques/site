@@ -51,7 +51,7 @@ const PodcastHeader = ({
 
         <S.Categories>
           <ul aria-labelledby="Lista de Categorias">
-            {categories.map((category, index) => (
+            {categories?.map((category, index) => (
               <li key={index}>
                 <Link href={category.slug} passHref>
                   <a target="_self">{category.name}</a>
