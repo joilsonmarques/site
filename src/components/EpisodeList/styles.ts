@@ -43,8 +43,7 @@ export const List = styled.div`
     ${media.lessThan('medium')`
       flex-flow: column;
       article {
-        width: 100%;
-        height: auto;
+        display: none;
       }
     `}
   `}

@@ -15,6 +15,9 @@ export const Wrapper = styled.footer<FooterProps>`
     background: ${theme.colors.darkGray};
     margin-top: 6rem;
     padding: 6rem calc(${theme.grid.collumn}*2);
+    ${media.lessThan('medium')`
+      padding: 0 ${theme.grid.gutter};
+    `}
 
     &::before {
       content: '';

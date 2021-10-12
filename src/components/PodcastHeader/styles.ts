@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 const getCSSVars = (props) =>
   Object.entries(props)
@@ -17,6 +18,9 @@ export const Wrapper = styled(WrapperBase)`
     height: auto;
     background: ${theme.colors.gray};
     padding: ${theme.spacings.large} 0;
+    ${media.lessThan('medium')`
+      padding-top: ${theme.spacings.small};
+    `}
     &::before {
       content: '';
       display: block;
@@ -32,6 +36,9 @@ export const Wrapper = styled(WrapperBase)`
     > div:first-child {
       display: flex;
       flex-wrap: no-wrap;
+      ${media.lessThan('medium')`
+        flex-wrap: wrap;
+      `}
     }
   `}
 `
@@ -40,6 +47,11 @@ export const Cover = styled.div`
   min-width: 28.8rem;
   height: 28.8rem;
   margin-right: 12rem;
+  ${media.lessThan('medium')`
+    margin: 0;
+    width: 100%;
+    height: auto;
+  `}
 `
 export const Content = styled.div`
   ${({ theme }) => css`
@@ -109,8 +121,11 @@ export const Categories = styled.div`
 export const Description = styled.div`
   ${({ theme }) => css`
     width: 100%;
-    margin-top: calc(${theme.spacings.medium} + 1rem);
     font-size: ${theme.font.sizes.small};
+    margin-top: calc(${theme.spacings.medium} + 1rem);
+    ${media.lessThan('medium')`
+    margin-top: 0;
+    `}
     p {
       margin: ${theme.spacings.xsmall} 0;
       line-height: ${theme.font.sizes.medium};

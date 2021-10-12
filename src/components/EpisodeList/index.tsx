@@ -21,6 +21,7 @@ export type EpisodeListProps = {
 const EpisodeList = ({ items }: EpisodeListProps) =>
   items ? (
     <S.Wrapper>
+      <h3>Episódios</h3>
       {items.map((item, index) => (
         <S.List key={index}>
           <div>
