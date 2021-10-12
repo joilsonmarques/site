@@ -17,7 +17,7 @@ export const Wrapper = styled(WrapperBase)`
     ${getCSSVars}
     height: auto;
     background: ${theme.colors.gray};
-    padding: ${theme.spacings.large} 0;
+    padding: ${theme.spacings.large} 0 ${theme.spacings.medium};
     ${media.lessThan('medium')`
       padding-top: ${theme.spacings.small};
     `}
