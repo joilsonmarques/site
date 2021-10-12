@@ -6,10 +6,11 @@ export type ImageBoxProps = {
   img: string
 }
 
-const ImageBox = ({ title, img }: ImageBoxProps) => (
-  <S.Wrapper>
-    <Image src={img} alt={title} layout="fill" objectFit="cover" />
-  </S.Wrapper>
-)
+const ImageBox = ({ title, img }: ImageBoxProps) =>
+  img !== 'http://localhost:1337undefined' ? (
+    <S.Wrapper>
+      <Image src={img} alt={title} layout="fill" objectFit="cover" />
+    </S.Wrapper>
+  ) : null
 
 export default ImageBox

@@ -8,6 +8,10 @@ import {
   QueryHome_rodape_links,
   QueryHome_barraLateral_menu
 } from 'graphql/generated/QueryHome'
+import {
+  QueryPodCastBySlug_podcasts,
+  QueryPodCastBySlug_podcasts_episodes
+} from 'graphql/generated/QueryPodCastBySlug'
 import { QueryPostBySlug_posts } from 'graphql/generated/QueryPostBySlug'
 import { getPublicUrl, exibirNovoEpisodio } from 'utils/getPublicUrl'
 
@@ -141,6 +145,40 @@ export const linksMenuMapper = (
         label: link?.label,
         url: `${getUrlWithPrefixByType(link?.type, link)}`,
         type: link?.type
+      }))
+    : null
+}
+
+export const headerPodcastMapper = (
+  header: (QueryPodCastBySlug_podcasts | null)[] | null | undefined
+) => {
+  return header
+    ? header.map((podcast) => ({
+        img: `${getPublicUrl(podcast?.cover?.url)}`,
+        cover: `${getPublicUrl(podcast?.cover?.url)}`,
+        title: podcast?.title,
+        subtitle: podcast?.subtitle,
+        description: podcast?.description,
+        releaseDate: podcast?.published_at,
+        from: podcast?.producer,
+        categories: podcast?.categories
+      }))[0]
+    : null
+}
+
+export const podcastEpisodesMapper = (
+  episodes: (QueryPodCastBySlug_podcasts_episodes | null)[] | null | undefined
+) => {
+  return episodes
+    ? episodes.map((episodio) => ({
+        id: episodio?.id,
+        slug: episodio?.slug,
+        img: `${getPublicUrl(episodio?.cover?.url)}`,
+        title: episodio?.title,
+        number: episodio?.episodeNumber,
+        podcast: episodio?.podcast?.title,
+        releaseDate: episodio?.releaseDate,
+        description: episodio?.extraContent
       }))
     : null
 }

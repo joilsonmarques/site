@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ImageBox from 'components/ImageBox'
 import Link from 'next/link'
 
 import Ribbon from 'components/atoms/Ribbon'
@@ -27,9 +27,7 @@ const EpisodeCard = ({
         {ribbon}
       </Ribbon>
     )}
-    <S.ImageBox>
-      <Image src={img} alt={title} layout="fill" objectFit="cover" />
-    </S.ImageBox>
+    <ImageBox title={title} img={img} />
     <S.Content>
       <Link href={`/episode/${slug}`} passHref>
         <S.Info>

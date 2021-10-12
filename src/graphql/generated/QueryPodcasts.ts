@@ -4,27 +4,22 @@
 // This file was automatically generated and should not be edited.
 
 // ====================================================
-// GraphQL query operation: QueryPosts
+// GraphQL query operation: QueryPodcasts
 // ====================================================
 
-export interface QueryPosts_posts_author {
-  __typename: "Author";
-  name: string;
-}
-
-export interface QueryPosts_posts {
-  __typename: "Posts";
+export interface QueryPodcasts_podcasts {
+  __typename: "Podcasts";
   slug: string;
   published_at: any | null;
   title: string;
-  author: QueryPosts_posts_author | null;
+  producer: string;
 }
 
-export interface QueryPosts {
-  posts: QueryPosts_posts[];
+export interface QueryPodcasts {
+  podcasts: QueryPodcasts_podcasts[];
 }
 
-export interface QueryPostsVariables {
+export interface QueryPodcastsVariables {
   limit?: number | null;
   start?: number | null;
   where?: any | null;

@@ -32,7 +32,6 @@ export interface QueryPostBySlug_posts_tags {
 
 export interface QueryPostBySlug_posts {
   __typename: "Posts";
-  id: string;
   cover: QueryPostBySlug_posts_cover | null;
   title: string;
   summary: string;
