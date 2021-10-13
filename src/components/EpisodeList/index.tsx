@@ -1,5 +1,6 @@
 import EpisodeCard from 'components/EpisodeCard'
 import Link from 'next/link'
+import ReactHtmlParser from 'react-html-parser'
 
 import * as S from './styles'
 
@@ -36,7 +37,7 @@ const EpisodeList = ({ items }: EpisodeListProps) =>
                 </a>
               </Link>
             </h3>
-            <p>{item.description}</p>
+            <div>{ReactHtmlParser(item.description)}</div>
           </div>
         </S.List>
       ))}

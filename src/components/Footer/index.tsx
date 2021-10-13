@@ -80,9 +80,8 @@ const Footer = ({
         <a href="mailto:contato@anossacasadepodcasts.bsb.br">
           <span>contato@anossacasadepodcasts.bsb.br</span>
         </a>
+        <Subscribe></Subscribe>
       </S.Column>
-
-      <Subscribe></Subscribe>
     </S.Content>
   </S.Wrapper>
 )
