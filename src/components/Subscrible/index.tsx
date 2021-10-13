@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react'
+import * as S from './styles'
 
 function Subscribe() {
   // 1. Create a reference to the input so we can fetch/clear it's value.
   const inputEl = useRef<HTMLInputElement>(null)
   // 2. Hold a message in state to handle the response from our API.
   const [message, setMessage] = useState('')
+  const [status, setStatus] = useState('none')
 
   const subscribe = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -30,6 +32,8 @@ function Subscribe() {
         setMessage(error)
       }
 
+      setStatus('error')
+
       return
     }
 
@@ -37,24 +41,30 @@ function Subscribe() {
     if (inputEl.current) {
       inputEl.current.value = ''
     }
-
     setMessage('Parabéns! 🎉 Você está inscrito na nossa newsletter.')
+    setStatus('ok')
   }
 
   return (
-    <form onSubmit={subscribe}>
-      <label htmlFor="email-input">{'Endereço de email'}</label>
-      <input
-        id="email-input"
-        name="email"
-        placeholder="voce@maravilhoso.com"
-        ref={inputEl}
-        required
-        type="email"
-      />
-      <div>{message ? message : `Prometemos que não enviaremos spam.`}</div>
-      <button type="submit">{'✨ Inscreva-se 💌'}</button>
-    </form>
+    <S.Wrapper>
+      <form onSubmit={subscribe}>
+        <label htmlFor="email-input">
+          {'Receba nossas novidades por email'}
+        </label>
+        <input
+          id="email-input"
+          name="email"
+          placeholder="nome@email.com"
+          ref={inputEl}
+          required
+          type="email"
+        />
+        <button type="submit">{'OK'}</button>
+        <span className={status ? status : `none`}>
+          {message ? message : `Prometemos que não enviaremos spam.`}
+        </span>
+      </form>
+    </S.Wrapper>
   )
 }
 

@@ -35,9 +35,12 @@ export const List = styled.div`
         color: ${theme.colors.black};
       }
     }
-    p {
+    div {
       font-size: ${theme.font.sizes.small};
       font-weight: ${theme.font.normal};
+      p {
+        margin: ${theme.spacings.small} 0;
+      }
     }
 
     ${media.lessThan('medium')`
