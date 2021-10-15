@@ -1,4 +1,5 @@
 import mailchimp from '@mailchimp/mailchimp_marketing'
+import nodemailer from 'nodemailer'
 
 mailchimp.setConfig({
   apiKey: process.env.MAILCHIMP_API_KEY,
@@ -24,25 +25,37 @@ export default async (req, res) => {
     return res.status(400).json({ error: 'Ideia é obrigatória' })
   }
 
-  try {
-    await mailchimp.lists.addListMember(
-      process.env.MAILCHIMP_AUDIENCE_IDEIA_ID,
-      {
-        email_address: email,
-        status: 'subscribed',
-        merge_fields: {
-          FNAME: nome,
-          PHONE: telefone,
-          CIDADE: cidade,
-          UF: uf,
-          ASSUNTO: assunto,
-          IDEIA: ideia
-        },
-        tags: ['Quero fazer podcast']
-      }
-    )
+  const transporter = nodemailer.createTransport({
+    host: 'smtp-relay.sendinblue.com',
+    port: 587,
+    auth: {
+      user: 'anossacasadepodcasts@gmail.com',
+      pass: process.env.SENDBLUE_SMTP_SECRET
+    },
+    secure: false,
+    tls: {
+      ciphers: 'SSLv3'
+    }
+  })
 
-    return res.status(201).json({ error: '' })
+  const mailData = {
+    from: email,
+    to: process.env.CAIXA_EMAIL,
+    subject: `${assunto}`,
+    text: `${ideia}; Contato: ${nome}-${telefone}`,
+    html: `<div>${ideia}</div><br/><br/>
+          <div>Telefone: ${telefone}</div><br/>
+          <div>${cidade}-${uf}</div></br>
+          <div>Att. ${nome}</div></br>`
+  }
+
+  try {
+    transporter.sendMail(mailData, function (err, info) {
+      if (err) console.log(err)
+      else console.log(info)
+    })
+
+    return res.status(200).json({ error: '' })
   } catch (error) {
     return res.status(500).json({ error: error.message || error.toString() })
   }
