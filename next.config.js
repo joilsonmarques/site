@@ -10,7 +10,7 @@ module.exports = withPWA({
   images: {
     domains: ['localhost', 'res.cloudinary.com', 'source.unsplash.com']
   },
-  webpack5: false,
+  webpack5: true,
   webpack: function (config, options) {
     config.experiments = {};
     return config;
