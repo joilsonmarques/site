@@ -1,6 +1,6 @@
 import EpisodeCard from 'components/EpisodeCard'
 import Link from 'next/link'
-import ReactHtmlParser from 'react-html-parser'
+import ReactHtmlParser from 'htmlparser2'
 
 import * as S from './styles'
 
