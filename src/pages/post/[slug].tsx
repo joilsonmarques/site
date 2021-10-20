@@ -57,11 +57,11 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   return {
-    revalidate: 60,
     props: {
       headerInfo: headerPostMapper(data.posts),
       menuListLinks: linksMenuMapper(data.barraLateral?.menu) || null,
       footerListLinks: linksFooterMapper(data.rodape?.links) || null
-    }
+    },
+    revalidate: 60
   }
 }
