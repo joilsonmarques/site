@@ -9,15 +9,15 @@ import * as S from './styles'
 import Subscribe from 'components/Subscrible'
 
 export type FooterLinksProps = {
-  label: string
-  url: string
-  type: string
+  label?: string
+  url?: string
+  type?: string
 }
 
 export type FooterProps = {
   outerBarsColor?: '29292B' | string
   innerBarsColor?: 'ffffff' | string
-  listLinks: FooterLinksProps[]
+  listLinks?: FooterLinksProps[]
 }
 
 const Footer = ({
