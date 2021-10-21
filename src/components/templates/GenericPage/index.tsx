@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import Base from 'components/templates/Base'
 import { Container } from 'components/atoms/Container'
-import PageHeader from 'components/PageHeader'
+import PageHeader, { PageHeaderProps } from 'components/PageHeader'
 
 import header from 'components/PageHeader/mock'
 
@@ -9,24 +9,26 @@ import * as S from './styles'
 import { MenuLinksProps } from 'components/Menu'
 import { FooterLinksProps } from 'components/Footer'
 
-export type PodcastPageTemplateProps = {
+export type GenericPageTemplateProps = {
   outerBarsColor: string
   innerBarsColor: string
+  headerInfo: PageHeaderProps
   menuListLinks: MenuLinksProps[]
   footerListLinks: FooterLinksProps[]
 }
 
-const PodcastPage = ({
+const GenericPage = ({
   outerBarsColor = '29292B',
   innerBarsColor = 'BFCAD4',
+  headerInfo = header,
   menuListLinks,
   footerListLinks,
-}: PodcastPageTemplateProps) => (
+}: GenericPageTemplateProps) => (
 
   <Base outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor} menuListLinks={menuListLinks} footerListLinks={footerListLinks}>
     <Container>
       <S.Section>
-        <PageHeader {...header}/>
+        <PageHeader {...headerInfo}/>
       </S.Section>
       <S.Section>
         <S.Content>
@@ -37,4 +39,4 @@ const PodcastPage = ({
   </Base>
 )
 
-export default PodcastPage
+export default GenericPage
