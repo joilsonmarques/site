@@ -28,7 +28,6 @@ export async function getStaticProps() {
 
   return {
     props: {
-      revalidate: 60,
       siteIntro: siteIntroMapper(data.siteInfroFragment?.Section),
       featuredPodcast:
         featuredPodcastMapper(data.featuredPodcasts?.Section) || null,
@@ -41,6 +40,7 @@ export async function getStaticProps() {
       footerListLinks: linksFooterMapper(data.rodape?.links) || null,
       outerBarsColor,
       innerBarsColor
-    }
+    },
+    revalidate: 60
   }
 }
