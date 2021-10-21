@@ -19,7 +19,7 @@ export default function Index(props: HomeTemplateProps) {
 export async function getStaticProps() {
   const apolloClient = initializeApollo()
   const outerBarsColor = '29292B'
-  const innerBarsColor = 'aab1bd'
+  const innerBarsColor = 'F95E3C'
 
   const { data } = await apolloClient.query<QueryHome>({
     query: QUERY_HOME,
