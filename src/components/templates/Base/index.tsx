@@ -17,8 +17,8 @@ export type BaseTemplateProps = {
 
 const Base = ({
   children,
-  outerBarsColor = '29292B',
   innerBarsColor = 'F95E3C',
+  outerBarsColor = '29292B',
   menuListLinks = menuLinks.listLinks,
   footerListLinks = footerLinks.listLinks
 }: BaseTemplateProps) => {
