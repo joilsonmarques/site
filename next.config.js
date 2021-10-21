@@ -17,7 +17,10 @@ module.exports = withPWA({
   },
   webpack5: false,
   webpack: function (config, options) {
-    config.experiments = {};
+    config.experiments = {}
     return config
+  },
+  typescript: {
+    ignoreBuildErrors: true
   }
 })
