@@ -8,11 +8,16 @@ module.exports = withPWA({
     disable: !isProd
   },
   images: {
-    domains: ['localhost', 'res.cloudinary.com', 'source.unsplash.com']
+    domains: [
+      'localhost',
+      'res.cloudinary.com',
+      'source.unsplash.com',
+      'ancp-r3q36.ondigitalocean.app'
+    ]
   },
   webpack5: false,
   webpack: function (config, options) {
     config.experiments = {};
-    return config;
-  },
+    return config
+  }
 })
