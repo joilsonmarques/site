@@ -11,8 +11,10 @@ module.exports = withPWA({
     domains: [
       'localhost',
       'res.cloudinary.com',
+      'cloudinary.com',
       'source.unsplash.com',
-      'ancp-r3q36.ondigitalocean.app'
+      'ancp-r3q36.ondigitalocean.app',
+      'ondigitalocean.app'
     ]
   },
   webpack5: true,
