@@ -17,7 +17,7 @@ module.exports = withPWA({
       'ondigitalocean.app'
     ]
   },
-  webpack5: false,
+  webpack5: true,
   webpack: function (config, options) {
     return config
   },
