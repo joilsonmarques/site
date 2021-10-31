@@ -1,4 +1,7 @@
+import HitList from './Hits'
 import * as S from './styles'
+
+import list from './Hits/mock'
 
 const Search = () => (
   <S.Wrapper>
@@ -9,38 +12,7 @@ const Search = () => (
         type="text"
       ></S.SearchInput>
     </S.SearchInputWrapper>
-    <S.SearchResultsWrapper>
-      <div>
-        <span>
-          <b>Radiofonias</b> Internéticas
-        </span>
-        <h3>
-          <b>Radiofonias</b> Internéticas - S1 E1
-        </h3>
-        <p>
-          Nosso primeiro episódio é conduzido pela @heloisapr que nos leva a um
-          papo com Aline Valek, escritora, contadora de histórias e podcaster do
-          Bobagens Imperdíveis. Prepara o fone, clica no link da nossa bio e se
-          jogue nessa escuta! O Radiofonias é um lugar de experimento, escuta &
-          de ideias.
-        </p>
-      </div>
-      <div>
-        <span>
-          <b>Radiofonias</b> Internéticas
-        </span>
-        <h3>
-          <b>Radiofonias</b> Internéticas - S1 E1
-        </h3>
-        <p>
-          Nosso primeiro episódio é conduzido pela @heloisapr que nos leva a um
-          papo com Aline Valek, escritora, contadora de histórias e podcaster do
-          Bobagens Imperdíveis. Prepara o fone, clica no link da nossa bio e se
-          jogue nessa escuta! O Radiofonias é um lugar de experimento, escuta &
-          de ideias.
-        </p>
-      </div>
-    </S.SearchResultsWrapper>
+    <HitList items={list} />
   </S.Wrapper>
 )
 

@@ -53,6 +53,7 @@ export default {
     red: '#C61C4A',
     purple: '#451379',
     lightPurple: '#9071AF',
+    lightGreen: '#0AF9B5',
     darkPurple: '#3A0332'
   },
   spacings: {
