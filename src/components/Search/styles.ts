@@ -22,24 +22,29 @@ export const SearchInputWrapper = styled.div`
   width: 100%;
 `
 
-export const SearchInput = styled.input`
+export const SearchInput = styled.div`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.xsmall};
-    font-weight  ${theme.font.normal};
-    font-family: ${theme.font.family};
+    position: relative;
     width: 100%;
-    background: transparent;
-    color: ${theme.colors.white};
-    border: none;
-    border-bottom: 2px solid white;
-    padding: ${theme.spacings.xxsmall};
-    padding-left: 0;
-    outline: none;
-    ${media.greaterThan('medium')`
-      height: 42px;
-      font-size: ${theme.font.sizes.large};
-      padding: ${theme.spacings.medium};
+    input {
+      font-size: ${theme.font.sizes.xsmall};
+      font-weight  ${theme.font.normal};
+      font-family: ${theme.font.family};
+      width: 100%;
+      background: transparent;
+      color: ${theme.colors.white};
+      border: none;
+      border-bottom: 2px solid white;
+      padding: ${theme.spacings.xxsmall};
       padding-left: 0;
-    `}
+      outline: none;
+      text-indent: 5rem;
+      ${media.greaterThan('medium')`
+        height: 42px;
+        font-size: ${theme.font.sizes.large};
+        padding: ${theme.spacings.medium};
+        padding-left: 0;
+      `}
+    }
   `}
 `

@@ -14,14 +14,14 @@ export type HitProps = {
 }
 
 export type HitsListProps = {
-  items: HitProps[]
+  hits: HitProps[]
 }
 
-const HitList = ({ items }: HitsListProps) =>
-  items ? (
+const HitList = ({ hits }: HitsListProps) =>
+  hits ? (
     <S.Wrapper>
       <h3>Resultados</h3>
-      {items.map((item, index) => (
+      {hits.map((item, index) => (
         <S.List key={index}>
           <div>
             <Link href={`/${item.slug}`} passHref>
