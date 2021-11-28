@@ -4,7 +4,7 @@ import EpisodeHeader, { EpisodeHeaderProps } from '.'
 import mockEpisodeHeaderProps from './mock'
 
 export default {
-  title: 'Design System/Molecules/Episode Header',
+  title: 'Design System/Molecules/Headers/Episode Header',
   component: EpisodeHeader,
   parameters: {
     layout: 'fullscreen',

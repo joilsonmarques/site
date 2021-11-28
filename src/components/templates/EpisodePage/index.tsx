@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
 import Base from 'components/templates/Base'
 import { Container } from 'components/atoms/Container'
-import EpisodeHeader, { EpisodeHeaderProps } from 'components/EpisodeHeader'
+import EpisodeHeader, { EpisodeHeaderProps } from 'components/Headers/EpisodeHeader'
 
-import header from 'components/EpisodeHeader/mock'
+import header from 'components/Headers/EpisodeHeader/mock'
 
 import * as S from './styles'
 import { MenuLinksProps } from 'components/Menu'

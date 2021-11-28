@@ -11,10 +11,14 @@ export const Section = styled.section`
 
 export const Content = styled.div`
   ${({ theme }) => css`
+    margin-top: 2rem;
     p {
       font-size: ${theme.font.sizes.small};
       line-height: calc(${theme.font.sizes.small} + 50%);
       margin-bottom: 2rem;
+      ${media.lessThan('medium')`
+        font-size: ${theme.font.sizes.xsmall};
+      `}
     }
     margin-bottom: 10rem;
     ${media.greaterThan('medium')`

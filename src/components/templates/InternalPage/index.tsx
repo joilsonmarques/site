@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
 import Base from 'components/templates/Base'
 import { Container } from 'components/atoms/Container'
-import PageHeader from 'components/PageHeader'
+import PageHeader from 'components/Headers/PageHeader'
 
-import header from 'components/PageHeader/mock'
+import header from 'components/Headers/PageHeader/mock'
 
 import * as S from './styles'
 import { MenuLinksProps } from 'components/Menu'

@@ -20,6 +20,7 @@ export const Wrapper = styled(WrapperBase)`
     padding: ${theme.spacings.large} 0 ${theme.spacings.medium};
     ${media.lessThan('medium')`
       padding-top: ${theme.spacings.small};
+      padding-bottom: 0;
     `}
     &::before {
       content: '';
@@ -48,6 +49,7 @@ export const Wrapper = styled(WrapperBase)`
     }
   `}
 `
+
 export const Cover = styled.div`
   ${({ theme }) => css`
     width: 100%;
@@ -100,7 +102,7 @@ export const Categories = styled.div`
       flex-wrap: wrap;
       list-style: none;
       li {
-        margin: 0 2.1rem 1rem 0;
+        margin-right: 1rem;
         a {
           font-size: ${theme.font.sizes.xxsmall};
           color: ${theme.colors.black};
