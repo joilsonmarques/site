@@ -6,7 +6,7 @@ import list from './mock'
 export default {
   title: 'Design System/Organisms/Search/Hits',
   component: HitList,
-  args: { list },
+  args: list,
   parameters: {
     layout: 'fullscreen',
     backgrounds: {
@@ -16,5 +16,5 @@ export default {
 } as Meta
 
 export const Default: Story<HitsListProps[]> = (args) => (
-  <HitList items={list} {...args} />
+  <HitList hits={list} {...args} />
 )
