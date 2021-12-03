@@ -1,7 +1,6 @@
 import EpisodeCard from 'components/EpisodeCard'
 import Link from 'next/link'
 import ReactHtmlParser from 'react-html-parser'
-import { useRouter } from 'next/router'
 
 import * as S from './styles'
 
@@ -12,6 +11,7 @@ export type EpisodeProps = {
   title: string
   number: string
   podcast: string
+  slugPodcast: string
   releaseDate: string
   description: string
 }
@@ -21,8 +21,6 @@ export type EpisodeListProps = {
 }
 
 const EpisodeList = ({ items }: EpisodeListProps) => {
-  const router = useRouter()
-  const { asPath } = router
   return items ? (
     <S.Wrapper>
       <h3>Episódios </h3>
@@ -34,7 +32,7 @@ const EpisodeList = ({ items }: EpisodeListProps) => {
           <div>
             <span>{item.releaseDate}</span>
             <h3>
-              <Link href={`${asPath}/${item.slug}`}>
+              <Link href={`../podcast/${item.slugPodcast}/${item.slug}`}>
                 <a>
                   {item.podcast} #{item.number} {item.title}
                 </a>

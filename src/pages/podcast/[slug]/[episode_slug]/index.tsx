@@ -49,7 +49,6 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log(params)
   const { data } = await apolloClient.query<
     QueryEpisodeBySlug,
     QueryEpisodeBySlugVariables

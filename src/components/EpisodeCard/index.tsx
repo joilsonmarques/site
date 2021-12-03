@@ -5,13 +5,12 @@ import Ribbon from 'components/atoms/Ribbon'
 
 import * as S from './styles'
 
-import { useRouter } from 'next/router'
-
 export type EpisodeCardProps = {
   id: string
   slug: string
   title: string
   podcast: string
+  slugPodcast: string
   img: string
   ribbon?: React.ReactNode
 }
@@ -19,12 +18,11 @@ export type EpisodeCardProps = {
 const EpisodeCard = ({
   slug,
   title,
+  slugPodcast,
   podcast,
   img,
   ribbon
 }: EpisodeCardProps) => {
-  const router = useRouter()
-  const { asPath } = router
   return (
     <S.Wrapper data-cy="episode-card">
       {!!ribbon && (
@@ -34,7 +32,7 @@ const EpisodeCard = ({
       )}
       <ImageBox title={title} img={img} />
       <S.Content>
-        <Link href={`${asPath}/${slug}`} passHref>
+        <Link href={`../podcast/${slugPodcast}/${slug}`} passHref>
           <S.Info>
             <S.Podcast>{podcast}</S.Podcast>
             <S.Title>{title}</S.Title>

@@ -67,6 +67,7 @@ export const selectedPodcastMapper = (
           title: podSelect?.title,
           img: `${getPublicUrl(podSelect?.cover?.url)}`,
           podcast: podSelect?.podcast?.title,
+          slugPodcast: podSelect.podcast?.slug,
           ribbon: `${exibirNovoEpisodio(podSelect?.releaseDate)}`
         }))
     : {}
@@ -178,6 +179,7 @@ export const podcastEpisodesMapper = (
         title: episodio?.title,
         number: episodio?.episodeNumber,
         podcast: episodio?.podcast?.title,
+        slugPodcast: episodio?.podcast?.slug,
         releaseDate: episodio?.releaseDate,
         description: episodio?.extraContent
       }))

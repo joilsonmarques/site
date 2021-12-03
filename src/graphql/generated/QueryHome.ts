@@ -92,6 +92,7 @@ export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSele
 export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_podcast {
   __typename: "Podcasts";
   title: string;
+  slug: string;
 }
 
 export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes {

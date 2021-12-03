@@ -8,7 +8,8 @@ export default [
     description:
       '“Como despertar o gênio da criação literária”, este foi o tema do meu papo com a escritora Sheyla Smanioto, que deu dicas preciosas para quem deseja encontrar voz na Literatura. Sheyla nasceu em Diadema em 1990....',
     img: 'https://source.unsplash.com/user/willianjusten/280x281',
-    podcast: 'Sem Papas'
+    podcast: 'Sem Papas',
+    slugPodcast: 'sem-papas'
   },
   {
     id: '3',
@@ -19,6 +20,7 @@ export default [
     description:
       '“Como despertar o gênio da criação literária”, este foi o tema do meu papo com a escritora Sheyla Smanioto, que deu dicas preciosas para quem deseja encontrar voz na Literatura. Sheyla nasceu em Diadema em 1990....',
     img: 'https://source.unsplash.com/user/willianjusten/280x280',
-    podcast: 'Sem Papas'
+    podcast: 'Sem Papas',
+    slugPodcast: 'sem-papas'
   }
 ]

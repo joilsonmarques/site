@@ -15,6 +15,7 @@ export const SelectedPodcastsFragment = gql`
           subTitle
           podcast {
             title
+            slug
           }
           releaseDate
         }
