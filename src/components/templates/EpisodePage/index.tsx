@@ -1,37 +1,38 @@
 /* eslint-disable prettier/prettier */
 import Base from 'components/templates/Base'
 import { Container } from 'components/atoms/Container'
-import PageHeader, { PageHeaderProps } from 'components/Headers/PageHeader'
+import EpisodeHeader, { EpisodeHeaderProps } from 'components/Headers/EpisodeHeader'
 
-import header from 'components/Headers/PageHeader/mock'
-import ReactHtmlParser from 'react-html-parser'
+import header from 'components/Headers/EpisodeHeader/mock'
 
 import * as S from './styles'
 import { MenuLinksProps } from 'components/Menu'
 import { FooterLinksProps } from 'components/Footer'
+import ReactHtmlParser from 'react-html-parser'
 
-export type GenericPageTemplateProps = {
+export type EpisodePageTemplateProps = {
+  headerProps: EpisodeHeaderProps
   content: string
   outerBarsColor: string
   innerBarsColor: string
-  headerInfo: PageHeaderProps
   menuListLinks: MenuLinksProps[]
   footerListLinks: FooterLinksProps[]
 }
 
-const GenericPage = ({
+const EpisodePage = ({
+  headerProps = header,
+  content = header.content,
   outerBarsColor = '29292B',
   innerBarsColor = 'BFCAD4',
-  headerInfo = header,
-  content = header.content,
   menuListLinks,
   footerListLinks,
-}: GenericPageTemplateProps) => (
+}: EpisodePageTemplateProps) =>
+(
 
   <Base outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor} menuListLinks={menuListLinks} footerListLinks={footerListLinks}>
     <Container>
       <S.Section>
-        <PageHeader {...headerInfo}/>
+        <EpisodeHeader {...headerProps}/>
       </S.Section>
       <S.Section>
         <S.Content>
@@ -42,4 +43,4 @@ const GenericPage = ({
   </Base>
 )
 
-export default GenericPage
+export default EpisodePage

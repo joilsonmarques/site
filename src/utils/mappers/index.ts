@@ -1,4 +1,5 @@
 import { ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE } from 'graphql/generated/globalTypes'
+import { QueryEpisodeBySlug_episodes } from 'graphql/generated/QueryEpisodeBySlug'
 import {
   QueryHome_callToAction_Section,
   QueryHome_extraHighLightFragment_Section,
@@ -66,6 +67,7 @@ export const selectedPodcastMapper = (
           title: podSelect?.title,
           img: `${getPublicUrl(podSelect?.cover?.url)}`,
           podcast: podSelect?.podcast?.title,
+          slugPodcast: podSelect.podcast?.slug,
           ribbon: `${exibirNovoEpisodio(podSelect?.releaseDate)}`
         }))
     : {}
@@ -177,6 +179,7 @@ export const podcastEpisodesMapper = (
         title: episodio?.title,
         number: episodio?.episodeNumber,
         podcast: episodio?.podcast?.title,
+        slugPodcast: episodio?.podcast?.slug,
         releaseDate: episodio?.releaseDate,
         description: episodio?.extraContent
       }))
@@ -235,6 +238,27 @@ export const headerPostMapper = (
         }).format(new Date(post?.published_at)),
         from: post?.author?.name,
         categories: post?.categorias
+      }))[0]
+    : null
+}
+
+export const headerEpisodeMapper = (
+  header: (QueryEpisodeBySlug_episodes | null)[] | undefined
+) => {
+  const regex = /(?<=src=").*?(?=[\\*"])/
+  return header
+    ? header.map((episode) => ({
+        title: episode?.title,
+        from: episode?.authors[0].name,
+        episodeNumber: episode?.episodeNumber,
+        embedUrl: regex.exec(episode?.embed || ''),
+        releaseDate: new Intl.DateTimeFormat('pt-BR', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric'
+        }).format(new Date(episode?.releaseDate)),
+        content: episode?.extraContent,
+        categories: episode?.categories
       }))[0]
     : null
 }

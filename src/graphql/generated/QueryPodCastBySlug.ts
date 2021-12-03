@@ -28,6 +28,7 @@ export interface QueryPodCastBySlug_podcasts_episodes_cover {
 export interface QueryPodCastBySlug_podcasts_episodes_podcast {
   __typename: "Podcasts";
   title: string;
+  slug: string;
 }
 
 export interface QueryPodCastBySlug_podcasts_episodes {

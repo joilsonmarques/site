@@ -27,6 +27,7 @@ export const Wrapper = styled.main`
     width: 100vw;
     min-height: 100vh;
     overflow: hidden;
+    padding: 0;
   `}
 `
 

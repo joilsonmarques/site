@@ -19,6 +19,7 @@ export interface SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisod
 export interface SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes_podcast {
   __typename: "Podcasts";
   title: string;
+  slug: string;
 }
 
 export interface SelectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes {

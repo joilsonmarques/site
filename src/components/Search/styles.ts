@@ -22,72 +22,29 @@ export const SearchInputWrapper = styled.div`
   width: 100%;
 `
 
-export const SearchInput = styled.input`
+export const SearchInput = styled.div`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.xsmall};
-    font-weight  ${theme.font.normal};
-    font-family: ${theme.font.family};
+    position: relative;
     width: 100%;
-    background: transparent;
-    color: ${theme.colors.white};
-    border: none;
-    border-bottom: 2px solid white;
-    padding: ${theme.spacings.xxsmall};
-    padding-left: 0;
-    outline: none;
-    ${media.greaterThan('medium')`
-      height: 42px;
-      font-size: ${theme.font.sizes.large};
-      padding: ${theme.spacings.medium};
-      padding-left: 0;
-    `}
-  `}
-`
-
-export const SearchResultsWrapper = styled.div`
-  ${({ theme }) => css`
-    font-size: ${theme.font.sizes.small};
-    color: ${theme.colors.white};
-    height: 80vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    div {
-      padding-right: ${theme.spacings.xsmall};
-      padding-bottom: ${theme.spacings.xsmall};
-      margin-bottom: ${theme.spacings.small};
-      border-bottom: 1px solid ${theme.colors.darkBlue};
-    }
-    b {
-      color: ${theme.colors.lightGreen};
-    }
-    span {
-      font-weight: ${theme.font.bold};
-      font-size: ${theme.font.sizes.xxsmall};
-    }
-    h3 {
-      font-weight: ${theme.font.bold};
+    input {
       font-size: ${theme.font.sizes.xsmall};
+      font-weight  ${theme.font.normal};
+      font-family: ${theme.font.family};
+      width: 100%;
+      background: transparent;
+      color: ${theme.colors.white};
+      border: none;
+      border-bottom: 2px solid white;
+      padding: ${theme.spacings.xxsmall};
+      padding-left: 0;
+      outline: none;
+      text-indent: 5rem;
+      ${media.greaterThan('medium')`
+        height: 42px;
+        font-size: ${theme.font.sizes.large};
+        padding: ${theme.spacings.medium};
+        padding-left: 0;
+      `}
     }
-    p {
-      font-weight: ${theme.font.normal};
-      font-size: ${theme.font.sizes.xxsmall};
-    }
-    ${media.greaterThan('medium')`
-      div{
-        padding-right: 0;
-      }
-      span {
-        font-weight: ${theme.font.bold};
-        font-size: ${theme.font.sizes.xsmall};
-      }
-      h3 {
-        font-weight: ${theme.font.bold};
-        font-size: ${theme.font.sizes.small};
-      }
-      p {
-        font-weight: ${theme.font.normal};
-        font-size: ${theme.font.sizes.small};
-      }
-    `}
   `}
 `
