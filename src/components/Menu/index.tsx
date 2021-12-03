@@ -4,7 +4,7 @@ import { Search as SearchIcon } from '@styled-icons/material-outlined/Search'
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
 
 import Logo from 'components/Logo'
-import Search from 'components/Search'
+import Search, { SearchProps } from 'components/Search'
 import * as S from './styles'
 
 export type MenuLinksProps = {
@@ -15,9 +15,10 @@ export type MenuLinksProps = {
 
 export type MenuProps = {
   listLinks: MenuLinksProps[]
+  searchConfig: SearchProps
 }
 
-const Menu = ({ listLinks }: MenuProps) => {
+const Menu = ({ listLinks, searchConfig }: MenuProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const [isRight, setIsRight] = useState(false)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
@@ -73,7 +74,7 @@ const Menu = ({ listLinks }: MenuProps) => {
             setIsRight(false)
           }}
         />
-        <Search />
+        <Search {...searchConfig} />
       </S.SearchBox>
     </S.Wrapper>
   )

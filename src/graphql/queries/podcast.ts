@@ -41,6 +41,7 @@ export const QUERY_PODCAST_BY_SLUG = gql`
         subTitle
         podcast {
           title
+          slug
         }
       }
     }

@@ -4,7 +4,7 @@ import PageHeader, { PageHeaderProps } from '.'
 import mockPageHeaderProps from './mock'
 
 export default {
-  title: 'Design System/Molecules/PageHeader',
+  title: 'Design System/Molecules/Headers/Page Generic Header',
   component: PageHeader,
   parameters: {
     layout: 'fullscreen',
