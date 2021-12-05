@@ -227,7 +227,7 @@ export const headerPostMapper = (
 ) => {
   return header
     ? header.map((post) => ({
-        cover: `${getPublicUrl(post?.cover?.url)}`,
+        img: `${getPublicUrl(post?.cover?.url)}`,
         title: post?.title,
         summary: post?.summary,
         content: post?.content,
