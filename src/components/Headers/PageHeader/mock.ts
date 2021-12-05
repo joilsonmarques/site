@@ -1,6 +1,6 @@
 export default {
-  img: '/img/generic-banner.jpeg',
-  releaseDate: '20 jun 2021',
+  img: '/img/generic-banner.png',
+  releaseDate: '20/06/2021',
   title:
     'Radiofonias Internéticas -  o novo projeto  dA nossa casa de podcasts',
   from: 'Karina Cardoso',
