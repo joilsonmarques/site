@@ -4,7 +4,7 @@ import Member, { MemberProps } from '.'
 import member from './mock'
 
 export default {
-  title: 'Member',
+  title: 'Design System/Molecules/Member',
   component: Member,
   args: member,
   parameters: {
