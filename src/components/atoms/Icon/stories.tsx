@@ -6,7 +6,7 @@ export default {
   component: Icon,
   args: {
     name: 'Instagram',
-    size: '50'
+    size: '150'
   },
   parameters: {
     layout: 'fullscreen'

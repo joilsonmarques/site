@@ -1,9 +1,9 @@
 /* eslint-disable prettier/prettier */
 import Base from 'components/templates/Base'
 import { Container } from 'components/atoms/Container'
-import PageHeader from 'components/Headers/PageHeader'
+import MemberList from 'components/MemberList'
 
-import header from 'components/Headers/PageHeader/mock'
+import members from 'components/MemberList/mock'
 
 import * as S from './styles'
 import { MenuLinksProps } from 'components/Menu'
@@ -18,7 +18,7 @@ export type InternalPageTemplateProps = {
 
 const InternalPage = ({
   outerBarsColor = '29292B',
-  innerBarsColor = 'BFCAD4',
+  innerBarsColor = '0E3C63',
   menuListLinks,
   footerListLinks
 }: InternalPageTemplateProps) => (
@@ -26,12 +26,7 @@ const InternalPage = ({
   <Base outerBarsColor={outerBarsColor} innerBarsColor={innerBarsColor} menuListLinks={menuListLinks} footerListLinks={footerListLinks}>
     <Container>
       <S.Section>
-        <PageHeader {...header}/>
-      </S.Section>
-      <S.Section>
-        <S.Content>
-
-        </S.Content>
+        <MemberList members={members}/>
       </S.Section>
     </Container>
   </Base>

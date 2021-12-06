@@ -6,25 +6,36 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: stretch;
     color: ${theme.colors.white};
-    column-gap:: ${theme.spacings.large};
+    column-gap: ${theme.spacings.large};
+    padding-bottom: ${theme.spacings.large};
     ${media.lessThan('medium')`
       flex-direction: column;
-      column-gap:0;
     `}
     ${media.between('medium', 'large')`
-      column-gap: ${theme.spacings.small}
+      column-gap: ${theme.spacings.small};
+      flex-direction: column;
+    `}
+    /* Tablet */
+    ${media.between('1111px', '1170px')`
+      flex-direction: row;
+      align-items: start;
     `}
 
     div {
-      flex-grow: 4;
       &:first-child {
         height: auto;
+        max-width: 27rem;
         ${media.lessThan('medium')`
           width: 100%;
+          max-width: 100%;
           margin-right: 0;
         `}
         ${media.between('medium', 'large')`
-          min-width: 300px;
+          min-width: 50vw;
+        `}
+        /* Tablet */
+        ${media.between('1111px', '1170px')`
+          min-width: auto;
         `}
 
         img {
@@ -41,6 +52,7 @@ export const Wrapper = styled.div`
       }
       p {
         font-size: ${theme.font.sizes.small};
+        max-width: 60rem;
         ${media.lessThan('medium')`
           font-size: ${theme.font.sizes.xsmall};
         `}
