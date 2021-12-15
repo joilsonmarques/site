@@ -38,9 +38,6 @@ export const QUERY_POST_BY_SLUG = gql`
         label
         url
         type
-        paginas_interna {
-          Slug
-        }
         pagina_generica {
           slug
         }
@@ -51,9 +48,6 @@ export const QUERY_POST_BY_SLUG = gql`
         label
         url
         type
-        paginas_interna {
-          Slug
-        }
         pagina_generica {
           slug
         }

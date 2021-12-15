@@ -50,9 +50,6 @@ export const QUERY_PODCAST_BY_SLUG = gql`
         label
         url
         type
-        paginas_interna {
-          Slug
-        }
         pagina_generica {
           slug
         }
@@ -63,9 +60,6 @@ export const QUERY_PODCAST_BY_SLUG = gql`
         label
         url
         type
-        paginas_interna {
-          Slug
-        }
         pagina_generica {
           slug
         }
