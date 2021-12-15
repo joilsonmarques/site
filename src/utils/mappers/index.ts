@@ -208,10 +208,6 @@ function getUrlWithPrefixByType(
       url = `/post/${link?.pagina_generica?.slug}`
       break
 
-    case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.interno:
-      url = `/page/${link?.paginas_interna?.Slug}`
-      break
-
     case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.externo:
       url = `${link?.url}`
       break

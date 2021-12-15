@@ -31,10 +31,6 @@ export interface QueryEpisodeBySlug_episodes {
   categories: QueryEpisodeBySlug_episodes_categories[];
 }
 
-export interface QueryEpisodeBySlug_rodape_links_paginas_interna {
-  __typename: "Pages";
-  Slug: string;
-}
 
 export interface QueryEpisodeBySlug_rodape_links_pagina_generica {
   __typename: "Posts";
@@ -46,7 +42,6 @@ export interface QueryEpisodeBySlug_rodape_links {
   label: string;
   url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  paginas_interna: QueryEpisodeBySlug_rodape_links_paginas_interna | null;
   pagina_generica: QueryEpisodeBySlug_rodape_links_pagina_generica | null;
 }
 
@@ -55,10 +50,6 @@ export interface QueryEpisodeBySlug_rodape {
   links: (QueryEpisodeBySlug_rodape_links | null)[] | null;
 }
 
-export interface QueryEpisodeBySlug_barraLateral_menu_paginas_interna {
-  __typename: "Pages";
-  Slug: string;
-}
 
 export interface QueryEpisodeBySlug_barraLateral_menu_pagina_generica {
   __typename: "Posts";
@@ -70,7 +61,6 @@ export interface QueryEpisodeBySlug_barraLateral_menu {
   label: string;
   url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  paginas_interna: QueryEpisodeBySlug_barraLateral_menu_paginas_interna | null;
   pagina_generica: QueryEpisodeBySlug_barraLateral_menu_pagina_generica | null;
 }
 

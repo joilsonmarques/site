@@ -1777,7 +1777,6 @@ type ComponentFragmentListaDeLinks {
   id: ID!
   label: String!
   url: String
-  paginas_interna: Pages
   pagina_generica: Posts
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE!
 }
@@ -1785,7 +1784,6 @@ type ComponentFragmentListaDeLinks {
 input ComponentFragmentListaDeLinkInput {
   label: String!
   url: String
-  paginas_interna: ID
   pagina_generica: ID
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE!
 }
@@ -1794,7 +1792,6 @@ input editComponentFragmentListaDeLinkInput {
   id: ID
   label: String
   url: String
-  paginas_interna: ID
   pagina_generica: ID
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE
 }

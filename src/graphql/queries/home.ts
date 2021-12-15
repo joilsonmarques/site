@@ -27,9 +27,6 @@ export const QUERY_HOME = gql`
         label
         url
         type
-        paginas_interna {
-          Slug
-        }
         pagina_generica {
           slug
         }
@@ -40,9 +37,6 @@ export const QUERY_HOME = gql`
         label
         url
         type
-        paginas_interna {
-          Slug
-        }
         pagina_generica {
           slug
         }
