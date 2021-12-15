@@ -1,6 +1,6 @@
 export default [
   {
-    id: 1,
+    id: '1',
     name: 'Heloisa Rocha',
     avatar: '/img/members/helo.png',
     bio: 'Mulher, 55 anos, branca, mãe, produtora, publicitária, comunicadora, criativa, bordadeira, curiosa, gosto de tecnologia, empreendedora, apresentadora, podcaster, gestora de projetos, estrategista, nexialista, capricorniana e em construção.',
@@ -20,7 +20,7 @@ export default [
     ]
   },
   {
-    id: 2,
+    id: '2',
     name: 'Karina Cardoso',
     avatar: '/img/members/karina.png',
     bio: 'Jornalista, radialista, apresentadora, empreendedora & podcaster. Apaixonada por comunicação, cultura, viagens e Cerrado. Especialista em Comunicação pública, curadora e profissional do rádio há 15 anos. Co-idealizadora do Deguste Cultura.',
@@ -40,7 +40,7 @@ export default [
     ]
   },
   {
-    id: 3,
+    id: '3',
     name: 'Mario Sartorelo',
     avatar: '/img/members/sarto.png',
     bio: 'Radiomaker e produtor executivo, curador musical e produtor cultural. Um paulista-baiano formado em Políticas e Gestão da Cultura e pós-graduando em Musicoterapia. No rádio faz o Memória Musical na Nacional FM Brasília e Deguste Cultura na Cultura FM.',

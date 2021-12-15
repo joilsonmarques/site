@@ -4,7 +4,7 @@ import MemberList, { MemberListProps } from '.'
 import list from './mock'
 
 export default {
-  title: 'MemberList',
+  title: 'Design System/Organism/MemberList',
   component: MemberList,
   parameters: {
     layout: 'fullscreen',
