@@ -50,7 +50,7 @@ export interface QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodc
 
 export interface QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodcast_podcast_episodes {
   __typename: "Episode";
-  embed: string;
+  embed: string | null;
 }
 
 export interface QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodcast_podcast {
@@ -156,7 +156,6 @@ export interface QueryHome_callToAction_Section_ComponentSiteIntro {
   __typename: "ComponentSiteIntro" | "ComponentSectionFeaturedPodcast" | "ComponentSectionSelectedEpisodes" | "ComponentSectionExtra";
 }
 
-
 export interface QueryHome_callToAction_Section_ComponentSectionCallToAction_listLinks_pagina_generica {
   __typename: "Posts";
   slug: string;
@@ -200,7 +199,6 @@ export interface QueryHome_rodape {
   __typename: "Rodape";
   links: (QueryHome_rodape_links | null)[] | null;
 }
-
 
 export interface QueryHome_barraLateral_menu_pagina_generica {
   __typename: "Posts";

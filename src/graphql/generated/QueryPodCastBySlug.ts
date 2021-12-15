@@ -68,13 +68,13 @@ export interface QueryPodCastBySlug_rodape_links {
   label: string;
   url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
+  pagina_generica: QueryPodCastBySlug_rodape_links_pagina_generica | null;
 }
 
 export interface QueryPodCastBySlug_rodape {
   __typename: "Rodape";
   links: (QueryPodCastBySlug_rodape_links | null)[] | null;
 }
-
 
 export interface QueryPodCastBySlug_barraLateral_menu_pagina_generica {
   __typename: "Posts";

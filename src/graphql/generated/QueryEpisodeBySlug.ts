@@ -25,12 +25,11 @@ export interface QueryEpisodeBySlug_episodes {
   title: string;
   authors: QueryEpisodeBySlug_episodes_authors[];
   episodeNumber: number;
-  embed: string;
+  embed: string | null;
   releaseDate: any;
   extraContent: string | null;
   categories: QueryEpisodeBySlug_episodes_categories[];
 }
-
 
 export interface QueryEpisodeBySlug_rodape_links_pagina_generica {
   __typename: "Posts";
@@ -49,7 +48,6 @@ export interface QueryEpisodeBySlug_rodape {
   __typename: "Rodape";
   links: (QueryEpisodeBySlug_rodape_links | null)[] | null;
 }
-
 
 export interface QueryEpisodeBySlug_barraLateral_menu_pagina_generica {
   __typename: "Posts";

@@ -13,7 +13,6 @@ export interface CallToActionFragment_Section_ComponentSiteIntro {
   __typename: "ComponentSiteIntro" | "ComponentSectionFeaturedPodcast" | "ComponentSectionSelectedEpisodes" | "ComponentSectionExtra";
 }
 
-
 export interface CallToActionFragment_Section_ComponentSectionCallToAction_listLinks_pagina_generica {
   __typename: "Posts";
   slug: string;

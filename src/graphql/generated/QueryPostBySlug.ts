@@ -42,7 +42,6 @@ export interface QueryPostBySlug_posts {
   tags: (QueryPostBySlug_posts_tags | null)[] | null;
 }
 
-
 export interface QueryPostBySlug_rodape_links_pagina_generica {
   __typename: "Posts";
   slug: string;
@@ -60,7 +59,6 @@ export interface QueryPostBySlug_rodape {
   __typename: "Rodape";
   links: (QueryPostBySlug_rodape_links | null)[] | null;
 }
-
 
 export interface QueryPostBySlug_barraLateral_menu_pagina_generica {
   __typename: "Posts";
