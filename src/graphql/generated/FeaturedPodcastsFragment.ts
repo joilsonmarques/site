@@ -29,7 +29,7 @@ export interface FeaturedPodcastsFragment_Section_ComponentSectionFeaturedPodcas
 
 export interface FeaturedPodcastsFragment_Section_ComponentSectionFeaturedPodcast_podcast_episodes {
   __typename: "Episode";
-  embed: string;
+  embed: string | null;
 }
 
 export interface FeaturedPodcastsFragment_Section_ComponentSectionFeaturedPodcast_podcast {

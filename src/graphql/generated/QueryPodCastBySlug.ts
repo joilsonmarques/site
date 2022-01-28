@@ -58,11 +58,6 @@ export interface QueryPodCastBySlug_podcasts {
   episodes: QueryPodCastBySlug_podcasts_episodes[];
 }
 
-export interface QueryPodCastBySlug_rodape_links_paginas_interna {
-  __typename: "Pages";
-  Slug: string;
-}
-
 export interface QueryPodCastBySlug_rodape_links_pagina_generica {
   __typename: "Posts";
   slug: string;
@@ -73,18 +68,12 @@ export interface QueryPodCastBySlug_rodape_links {
   label: string;
   url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  paginas_interna: QueryPodCastBySlug_rodape_links_paginas_interna | null;
   pagina_generica: QueryPodCastBySlug_rodape_links_pagina_generica | null;
 }
 
 export interface QueryPodCastBySlug_rodape {
   __typename: "Rodape";
   links: (QueryPodCastBySlug_rodape_links | null)[] | null;
-}
-
-export interface QueryPodCastBySlug_barraLateral_menu_paginas_interna {
-  __typename: "Pages";
-  Slug: string;
 }
 
 export interface QueryPodCastBySlug_barraLateral_menu_pagina_generica {
@@ -97,7 +86,6 @@ export interface QueryPodCastBySlug_barraLateral_menu {
   label: string;
   url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  paginas_interna: QueryPodCastBySlug_barraLateral_menu_paginas_interna | null;
   pagina_generica: QueryPodCastBySlug_barraLateral_menu_pagina_generica | null;
 }
 

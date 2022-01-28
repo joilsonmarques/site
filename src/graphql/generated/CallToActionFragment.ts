@@ -13,11 +13,6 @@ export interface CallToActionFragment_Section_ComponentSiteIntro {
   __typename: "ComponentSiteIntro" | "ComponentSectionFeaturedPodcast" | "ComponentSectionSelectedEpisodes" | "ComponentSectionExtra";
 }
 
-export interface CallToActionFragment_Section_ComponentSectionCallToAction_listLinks_paginas_interna {
-  __typename: "Pages";
-  Slug: string;
-}
-
 export interface CallToActionFragment_Section_ComponentSectionCallToAction_listLinks_pagina_generica {
   __typename: "Posts";
   slug: string;
@@ -28,7 +23,6 @@ export interface CallToActionFragment_Section_ComponentSectionCallToAction_listL
   label: string;
   url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  paginas_interna: CallToActionFragment_Section_ComponentSectionCallToAction_listLinks_paginas_interna | null;
   pagina_generica: CallToActionFragment_Section_ComponentSectionCallToAction_listLinks_pagina_generica | null;
 }
 
