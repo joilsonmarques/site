@@ -114,10 +114,10 @@ export const AnimatedBg = styled.div`
     width: 100%;
     height: 100vh;
     position: fixed;
+    border: 1px solid red;
     z-index: ${theme.layers.zero};
 
     svg {
-      display: none;
       fill: ${theme.colors.black};
       opacity: 0.5;
       margin: 0 10px;
@@ -133,10 +133,10 @@ export const AnimatedBg = styled.div`
       `}
     }
 
-    .path {
+    /* .path {
       animation: ${pulse} ${duration}s infinite;
     }
 
-    ${getAnimations(items, duration)}
+    ${getAnimations(items, duration)} */
   `}
 `

@@ -1,0 +1,124 @@
+{
+  "id":7,
+"title":"Conversa com Julián Fuks",
+"slug":"conversa-com-julian-fuks-1",
+"subTitle":"Autoficção: a escrita de si como registro de um tempo",
+"releaseDate":"2021-11-07",
+"extraContent":"<p>\"Autoficção: a escrita de si como registro de um tempo\", este foi o tema da minha conversa com Julián Fuks, convidado desta edição especialíssima do Sem Papas. Nascido em 1981, Julián foi eleito pela revista Granta um dos melhores jovens escritores brasileiros. Seus livros conquistaram importantes distinções, como os prêmios Jabuti e José Saramago, o que não deixa de ser também um reconhecimento à importância do testemunho na literatura. </p><p>\"A resistência\" e \"A ocupação\", romances mais recentes de Julián, confirmam seu compromisso com uma escrita que se pretende antes de tudo honesta e firmemente atenta aos desafios do presente. Ao narrar sobre si, sobre a própria vida e os próprios conflitos, Julián faz não um exercício narcísico, mas justamente o contrário, explorando aquilo que se encontra para além das nossas esferas de conforto. </p><p>Nessa papo, falamos sobre a crise da ficção, sobre W. G. Sebald (falamos realmente muito nele, pois não é possível pensar a autoficção hoje sem considerar o projeto do Sebald) e sobre os processos de escrita de \"A resistência\" e \"A ocupação\" e em que medida esses romances se aproximam e se afastam da realidade. Para quem quer conhecer melhor o gênero, considero esse episódio uma excelente reflexão. </p><p>Sem Papas na língua, deixo meu abraço de fim de ano a cada ouvinte, esperando reencontrá-las muito breve. E, caso queira falar comigo, basta me procurar nas redes sociais: <a href=\"https://www.instagram.com/paullinytort/?hl=pt-br\">@paullinytort</a>.</p><p>Um beijo muito grato, boas festas e até a próxima!</p>",
+"podcast":{
+"id":4,
+"title":"Sem Papas",
+"slug":"sem-papas",
+"description":"Sem bedéis, sem pedestais, sem muros, sem guetos, sem medo. Assim, descolonizadas e despojadas de papas na língua, falaremos sobre literatura.",
+"subtitle":"Literatura para novos tempos",
+"producer":"Paulliny Tort",
+"published_at":"2021-10-21T02:01:50.032Z",
+"created_at":"2021-10-21T02:01:43.634Z",
+"updated_at":"2021-11-09T23:47:18.103Z",
+"cover":{
+"id":6,
+"name":"sem-papas-capa.jpeg",
+"alternativeText":"",
+"caption":"",
+"width":640,
+"height":640,
+"formats":{
+"thumbnail":{
+"ext":".jpeg",
+"url":"https://res.cloudinary.com/djnkmceg8/image/upload/v1635339246/thumbnail_sem_papas_capa_b7cc77ec74.jpg",
+"hash":"thumbnail_sem_papas_capa_b7cc77ec74",
+"mime":"image/jpeg",
+"name":"thumbnail_sem-papas-capa.jpeg",
+"path":null,
+"size":4.78,
+"width":156,
+"height":156,
+"provider_metadata":{
+"public_id":"thumbnail_sem_papas_capa_b7cc77ec74",
+"resource_type":"image"
+}
+}
+},
+"hash":"sem_papas_capa_b7cc77ec74",
+"ext":".jpeg",
+"mime":"image/jpeg",
+"size":45.31,
+"url":"https://res.cloudinary.com/djnkmceg8/image/upload/v1635339246/sem_papas_capa_b7cc77ec74.jpg",
+"previewUrl":null,
+"provider":"cloudinary",
+"provider_metadata":{
+"public_id":"sem_papas_capa_b7cc77ec74",
+"resource_type":"image"
+},
+"created_at":"2021-10-21T02:00:50.634Z",
+"updated_at":"2021-10-27T12:54:07.083Z"
+}
+},
+"embed":"<iframe src=\"https://www.listennotes.com/podcasts/sem-papas/sem-papas-6-com-julián-fuks-YLB-zH4dW7q/embed/\" height=\"170px\" width=\"100%\" style=\"width: 1px; min-width: 100%;\" loading=\"lazy\" frameborder=\"0\" scrolling=\"no\"></iframe>",
+"episodeNumber":6,
+"season":"2020",
+"published_at":"2021-10-21T02:10:03.798Z",
+"created_at":"2021-10-21T02:10:00.192Z",
+"updated_at":"2021-12-03T21:31:14.950Z",
+"inputTag":null,
+"cover":{
+"id":8,
+"name":"sem-papas-6-com-julián-fuks-_eEx-95d607-YLB-zH4dW7q.1400x1400.jpg",
+"alternativeText":"",
+"caption":"",
+"width":1400,
+"height":1400,
+"formats":{
+"thumbnail":{
+"ext":".jpg",
+"url":"https://res.cloudinary.com/djnkmceg8/image/upload/v1635339223/thumbnail_sem_papas_6_com_julian_fuks_e_Ex_95d607_YLB_z_H4d_W7q_1400x1400_63c6fabf56.jpg",
+"hash":"thumbnail_sem_papas_6_com_julian_fuks_e_Ex_95d607_YLB_z_H4d_W7q_1400x1400_63c6fabf56",
+"mime":"image/jpeg",
+"name":"thumbnail_sem-papas-6-com-julián-fuks-_eEx-95d607-YLB-zH4dW7q.1400x1400.jpg",
+"path":null,
+"size":5.13,
+"width":156,
+"height":156,
+"provider_metadata":{
+"public_id":"thumbnail_sem_papas_6_com_julian_fuks_e_Ex_95d607_YLB_z_H4d_W7q_1400x1400_63c6fabf56",
+"resource_type":"image"
+}
+}
+},
+"hash":"sem_papas_6_com_julian_fuks_e_Ex_95d607_YLB_z_H4d_W7q_1400x1400_63c6fabf56",
+"ext":".jpg",
+"mime":"image/jpeg",
+"size":131.12,
+"url":"https://res.cloudinary.com/djnkmceg8/image/upload/v1635339222/sem_papas_6_com_julian_fuks_e_Ex_95d607_YLB_z_H4d_W7q_1400x1400_63c6fabf56.jpg",
+"previewUrl":null,
+"provider":"cloudinary",
+"provider_metadata":{
+"public_id":"sem_papas_6_com_julian_fuks_e_Ex_95d607_YLB_z_H4d_W7q_1400x1400_63c6fabf56",
+"resource_type":"image"
+},
+"created_at":"2021-10-21T02:09:09.371Z",
+"updated_at":"2021-10-27T12:53:43.678Z"
+},
+"categories":[
+{
+"id":3,
+"name":"arte",
+"slug":"arte",
+"created_at":"2021-10-21T01:44:03.274Z",
+"updated_at":"2021-10-21T01:44:03.291Z"
+}
+],
+"authors":[
+{
+"id":1,
+"name":"Um autor",
+"bio":"Biografia do autor qualquer",
+"slug":"um-autor",
+"published_at":"2021-10-20T15:01:53.842Z",
+"created_at":"2021-10-20T15:01:44.924Z",
+"updated_at":"2021-10-20T15:01:53.919Z",
+"avatar":[
+]
+}
+]
+}
