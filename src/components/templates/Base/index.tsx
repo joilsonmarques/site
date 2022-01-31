@@ -2,6 +2,8 @@ import { Container } from 'components/atoms/Container'
 import Footer, { FooterLinksProps } from 'components/Footer'
 import Menu, { MenuLinksProps } from 'components/Menu'
 import { SearchProps } from 'components/Search'
+import algoliasearch from 'algoliasearch/lite'
+import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom'
 
 import menuLinks from 'components/Menu/mock'
 import footerLinks from 'components/Footer/mock'
@@ -18,6 +20,11 @@ export type BaseTemplateProps = {
   searchConfig: SearchProps
 }
 
+const searchClient = algoliasearch(
+  process.env.NEXT_PUBLIC_ALGOLIA_APP_ID,
+  process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_API_KEY
+)
+
 const Base = ({
   children,
   innerBarsColor = 'F95E3C',
@@ -26,11 +33,13 @@ const Base = ({
   footerListLinks = footerLinks.listLinks,
   searchConfig = {
     inputSearch: (
-      <input
-        aria-label="search"
-        placeholder="Busque por podcast ou tema"
-        type="text"
-      ></input>
+      <InstantSearch searchClient={searchClient} indexName="gfg_dev">
+        {/* Adding Search Box */}
+        <SearchBox />
+
+        {/* Adding Data */}
+        <Hits />
+      </InstantSearch>
     ),
     hits: searchResults
   }

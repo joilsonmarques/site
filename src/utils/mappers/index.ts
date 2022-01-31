@@ -5,15 +5,16 @@ import {
   QueryHome_extraHighLightFragment_Section,
   QueryHome_featuredPodcasts_Section,
   QueryHome_selectedPodcastsFragment_Section,
-  QueryHome_siteInfroFragment_Section,
   QueryHome_rodape_links,
-  QueryHome_barraLateral_menu
+  QueryHome_barraLateral_menu,
+  QueryHome_siteInfroFragment_Section_ComponentSiteIntro
 } from 'graphql/generated/QueryHome'
 import {
   QueryPodCastBySlug_podcasts,
   QueryPodCastBySlug_podcasts_episodes
 } from 'graphql/generated/QueryPodCastBySlug'
 import { QueryPostBySlug_posts } from 'graphql/generated/QueryPostBySlug'
+import { QuerySobre_sobre } from 'graphql/generated/QuerySobre'
 import { getPublicUrl, exibirNovoEpisodio } from 'utils/getPublicUrl'
 
 export const featuredPodcastMapper = (
@@ -74,7 +75,9 @@ export const selectedPodcastMapper = (
 }
 
 export const siteIntroMapper = (
-  siteIntro: (QueryHome_siteInfroFragment_Section | null)[] | undefined
+  siteIntro:
+    | (QueryHome_siteInfroFragment_Section_ComponentSiteIntro | null)[]
+    | undefined
 ) => {
   const regex = /(?<=src=").*?(?=[\\*"])/
   return siteIntro
@@ -208,10 +211,6 @@ function getUrlWithPrefixByType(
       url = `/post/${link?.pagina_generica?.slug}`
       break
 
-    case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.interno:
-      url = `/page/${link?.paginas_interna?.Slug}`
-      break
-
     case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.externo:
       url = `${link?.url}`
       break
@@ -260,5 +259,29 @@ export const headerEpisodeMapper = (
         content: episode?.extraContent,
         categories: episode?.categories
       }))[0]
+    : null
+}
+
+export const sobreMapper = (sobre: (QuerySobre_sobre | null) | undefined) => {
+  const regex = /(?<=src=").*?(?=[\\*"])/
+  return sobre
+    ? {
+        header: {
+          img: '',
+          embedUrl: regex.exec(sobre?.Embed),
+          title: sobre?.Title,
+          summary: sobre?.Summary
+        },
+        members: sobre?.Members?.map((membro) => ({
+          id: membro?.id,
+          name: membro?.name,
+          avatar: membro?.avatar?.url,
+          bio: membro?.bio,
+          networks: membro?.links?.map((link) => ({
+            name: link?.network,
+            url: link?.url
+          }))
+        }))
+      }
     : null
 }

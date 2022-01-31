@@ -1,4 +1,5 @@
 import * as Icons from '@styled-icons/entypo-social'
+import { Globe as GlobeIcon } from '@styled-icons/boxicons-regular/Globe'
 import * as S from './styles'
 
 export type IconProps = {
@@ -12,7 +13,11 @@ const SocialIcon = ({ name, size }: IconProps) => {
 
   if (!IconComponent) {
     // Return a default one
-    return <S.Icon size={size}></S.Icon>
+    return (
+      <S.Icon size={size}>
+        <GlobeIcon />
+      </S.Icon>
+    )
   }
 
   return (
