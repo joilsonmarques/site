@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     QueryEpisodeBySlugVariables
   >({
     query: QUERY_EPISODE_BY_SLUG,
-    variables: { slug: `${params?.episode_slug}` },
+    variables: { slug: `${params?.episode_slug?.toString}` },
     fetchPolicy: 'no-cache'
   })
 
