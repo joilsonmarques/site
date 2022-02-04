@@ -114,7 +114,6 @@ export const AnimatedBg = styled.div`
     width: 100%;
     height: 100vh;
     position: fixed;
-    border: 1px solid red;
     z-index: ${theme.layers.zero};
 
     svg {
@@ -125,6 +124,7 @@ export const AnimatedBg = styled.div`
         height: auto;
         width: 100%;
         &:first-child {display: block;}
+        &.no-mobile{display:none;}
       `}
       ${media.greaterThan('medium')`
         width: 25%;
