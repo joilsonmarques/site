@@ -25,7 +25,9 @@ export const Wrapper = styled.main`
     position: relative;
     color: ${theme.colors.white};
     width: 100vw;
-    min-height: 100vh;
+    height: 100vh;
+    min-height: 690px;
+    background-color: ${theme.colors.darkPurple};
     overflow: hidden;
     padding: 0;
   `}
@@ -229,7 +231,7 @@ export const Podcast = styled.div`
       position: relative;
       /* border: 1px solid white; */
     }
-    div:last-child {
+    div.arrow-back {
       display: grid;
       justify-content: end;
     }
@@ -273,7 +275,7 @@ export const Podcast = styled.div`
         ${theme.grid.collumn} * 2.4
       );
       column-gap: calc(${theme.grid.collumn} + ${theme.grid.gutter});
-      div:last-child {
+      div.arrow-back {
         grid-column: span 2;
       }
       p {
@@ -281,7 +283,8 @@ export const Podcast = styled.div`
         line-height: 2.1rem;
       }
       iframe {
-        position: absolute;
+        position: relative;
+        width: 100%;
       }
       a {
         font-size: ${theme.font.sizes.xsmall};

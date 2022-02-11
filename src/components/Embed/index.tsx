@@ -8,9 +8,8 @@ const Embed = ({ embedUrl }: EmbedProps) => {
   return (
     <S.Wrapper>
       <S.Iframe
+        loading="lazy"
         src={embedUrl}
-        width="100%"
-        height="160"
         frameBorder="0"
         allow="encrypted-media"
         scrolling="no"

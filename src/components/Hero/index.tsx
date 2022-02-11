@@ -86,11 +86,6 @@ const Hero = ({ call, hasDetail, description, embedUrl }: HeroProps) => {
         <svg className="no-mobile" viewBox="0 0 310 530">
           <use xlinkHref="#wavegroup" />
         </svg>
-
-        <svg className="no-mobile" viewBox="0 0 310 530">
-          <use xlinkHref="#wavegroup" />
-        </svg>
-
         <svg className="no-mobile" viewBox="0 0 310 530">
           <use xlinkHref="#wavegroup" />
         </svg>
