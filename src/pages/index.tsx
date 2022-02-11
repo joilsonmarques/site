@@ -26,6 +26,11 @@ export async function getStaticProps() {
     fetchPolicy: 'no-cache'
   })
 
+  if (hasNullValue(data)) {
+    console.log('Eu estou nulo!')
+    return { props: {} }
+  }
+
   return {
     props: {
       siteIntro: siteIntroMapper(data.siteInfroFragment?.Section),
@@ -43,4 +48,10 @@ export async function getStaticProps() {
     },
     revalidate: 60
   }
+}
+
+function hasNullValue(data: QueryHome) {
+  return Object.values(data).every((propertie) => {
+    return propertie === null
+  })
 }
