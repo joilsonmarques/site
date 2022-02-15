@@ -11,6 +11,7 @@ import {
   selectedPodcastMapper,
   siteIntroMapper
 } from 'utils/mappers'
+import { hasNullValue } from 'utils/validacoes'
 
 export default function Index(props: HomeTemplateProps) {
   return <Home {...props} />
@@ -27,8 +28,7 @@ export async function getStaticProps() {
   })
 
   if (hasNullValue(data)) {
-    console.log('Eu estou nulo!')
-    return { props: {} }
+    return returnPropsDefault()
   }
 
   return {
@@ -50,8 +50,16 @@ export async function getStaticProps() {
   }
 }
 
-function hasNullValue(data: QueryHome) {
-  return Object.values(data).every((propertie) => {
-    return propertie === null
-  })
+export function returnPropsDefault() {
+  return {
+    props: {
+      siteIntro: null,
+      featuredPodcast: null,
+      selectedEpisodes: null,
+      extraHighlight: null,
+      callToAction: null,
+      menuListLinks: null,
+      footerListLinks: null
+    }
+  }
 }
