@@ -83,15 +83,10 @@ const Hero = ({ call, hasDetail, description, embedUrl }: HeroProps) => {
           </defs>
           <use xlinkHref="#wavegroup" />
         </svg>
-        <svg viewBox="0 0 310 530">
+        <svg className="no-mobile" viewBox="0 0 310 530">
           <use xlinkHref="#wavegroup" />
         </svg>
-
-        <svg viewBox="0 0 310 530">
-          <use xlinkHref="#wavegroup" />
-        </svg>
-
-        <svg viewBox="0 0 310 530">
+        <svg className="no-mobile" viewBox="0 0 310 530">
           <use xlinkHref="#wavegroup" />
         </svg>
       </S.AnimatedBg>

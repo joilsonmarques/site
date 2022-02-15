@@ -14,6 +14,9 @@ export const Wrapper = styled.div`
     background: ${theme.colors.purple};
     ${media.greaterThan('medium')`
       flex-direction: row;
+      padding: 20rem 0 20rem calc(${theme.grid.collumn});
+    `}
+    ${media.greaterThan('1900px')`
       padding: 20rem calc(${theme.grid.collumn}*2);
     `}
 
@@ -36,14 +39,20 @@ export const Wrapper = styled.div`
       height: 15rem;
       margin: 2rem auto;
       ${media.greaterThan('medium')`
-        width: 28rem;
-        height: 28rem;
+        width: 25rem;
+        height: 25rem;
         margin: 0 auto;
       `}
+      ${media.greaterThan('1900px')`
+        width: 28rem;
+        height: 28rem;
+      `}
       ${media.between('medium', '900px')`
+        border: 1px solid green;
         margin: 20rem 0 0;
       `}
       ${media.between('901px', 'large')`
+        border: 1px solid white;
         margin: 20rem 0;
       `}
     }

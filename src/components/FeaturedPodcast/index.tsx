@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Heading from 'components/Heading'
+import Embed from 'components/Embed'
 import { ArrowForward as ArrowForwardIcon } from '@styled-icons/material-outlined/ArrowForward'
 import { ArrowBack as ArrowBackIcon } from '@styled-icons/material-outlined/ArrowBack'
 
@@ -63,13 +64,7 @@ const FeaturedPodcast = ({
           <div>
             <Heading color="white">{podcast.title}</Heading>
             <p>{podcast.description}</p>
-            <iframe
-              src={podcast.lastEpisode.embedUrl}
-              width="100%"
-              height="152"
-              frameBorder="0"
-              allow="encrypted-media"
-            ></iframe>
+            <Embed embedUrl={podcast.lastEpisode.embedUrl} />
           </div>
           <div>
             <S.PodcastCover
@@ -83,7 +78,7 @@ const FeaturedPodcast = ({
               </Link>
             ))}
           </div>
-          <div>
+          <div className="arrow-back">
             <ArrowBackIcon
               aria-label="voltar para apresentação"
               onClick={() => {
