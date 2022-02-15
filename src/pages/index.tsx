@@ -29,20 +29,22 @@ export async function getStaticProps() {
 
   if (hasNullValue(data)) {
     return returnPropsDefault()
+  } else {
+    console.log('não estou nulo')
   }
 
   return {
     props: {
       siteIntro: siteIntroMapper(data.siteInfroFragment?.Section),
       featuredPodcast:
-        featuredPodcastMapper(data.featuredPodcasts?.Section) || null,
+        featuredPodcastMapper(data.featuredPodcasts?.Section) || [],
       selectedEpisodes:
-        selectedPodcastMapper(data.selectedPodcastsFragment?.Section) || null,
+        selectedPodcastMapper(data.selectedPodcastsFragment?.Section) || [],
       extraHighlight:
         extraHighLightMapper(data.extraHighLightFragment?.Section) || null,
       callToAction: callToActionMapper(data.callToAction?.Section),
-      menuListLinks: linksMenuMapper(data.barraLateral?.menu) || null,
-      footerListLinks: linksFooterMapper(data.rodape?.links) || null,
+      menuListLinks: linksMenuMapper(data.barraLateral?.menu) || [],
+      footerListLinks: linksFooterMapper(data.rodape?.links) || [],
       outerBarsColor,
       innerBarsColor
     },

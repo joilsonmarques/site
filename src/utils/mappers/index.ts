@@ -71,7 +71,7 @@ export const selectedPodcastMapper = (
           slugPodcast: podSelect.podcast?.slug,
           ribbon: `${exibirNovoEpisodio(podSelect?.releaseDate)}`
         }))
-    : {}
+    : []
 }
 
 export const siteIntroMapper = (
