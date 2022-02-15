@@ -58,8 +58,8 @@ export function returnPropsDefault() {
       selectedEpisodes: null,
       extraHighlight: null,
       callToAction: null,
-      menuListLinks: null,
-      footerListLinks: null
+      menuListLinks: [],
+      footerListLinks: []
     }
   }
 }
