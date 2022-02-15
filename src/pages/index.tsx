@@ -29,8 +29,6 @@ export async function getStaticProps() {
 
   if (hasNullValue(data)) {
     return returnPropsDefault()
-  } else {
-    console.log('não estou nulo')
   }
 
   return {
