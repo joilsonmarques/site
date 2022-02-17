@@ -1,4 +1,7 @@
-import { ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE } from 'graphql/generated/globalTypes'
+import {
+  ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA,
+  ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE
+} from 'graphql/generated/globalTypes'
 import { QueryEpisodeBySlug_episodes } from 'graphql/generated/QueryEpisodeBySlug'
 import {
   QueryHome_callToAction_Section,
@@ -195,7 +198,11 @@ export const linksFooterMapper = (
   return linksFooter
     ? linksFooter?.map((link) => ({
         label: link?.label,
-        url: `${getUrlWithPrefixByType(link?.type, link)}`,
+        url: `${getUrlWithPrefixByType(
+          link?.type,
+          link,
+          link?.pagina_interna
+        )}`,
         type: link?.type
       }))
     : null
@@ -203,7 +210,11 @@ export const linksFooterMapper = (
 
 function getUrlWithPrefixByType(
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE | undefined,
-  link: QueryHome_rodape_links | null
+  link: QueryHome_rodape_links | null,
+  pagina_interna:
+    | ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA
+    | null
+    | undefined
 ) {
   let url = ''
   switch (type) {
@@ -213,6 +224,10 @@ function getUrlWithPrefixByType(
 
     case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.externo:
       url = `${link?.url}`
+      break
+
+    case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.interno:
+      url = `/${pagina_interna}`
       break
     default:
       break
@@ -248,7 +263,6 @@ export const headerEpisodeMapper = (
   return header
     ? header.map((episode) => ({
         title: episode?.title,
-        from: episode?.authors[0].name,
         episodeNumber: episode?.episodeNumber,
         embedUrl: regex.exec(episode?.embed || ''),
         releaseDate: new Intl.DateTimeFormat('pt-BR', {

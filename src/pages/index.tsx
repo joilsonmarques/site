@@ -42,7 +42,7 @@ export async function getStaticProps() {
         extraHighLightMapper(data.extraHighLightFragment?.Section) || null,
       callToAction: callToActionMapper(data.callToAction?.Section),
       menuListLinks: linksMenuMapper(data.barraLateral?.menu) || [],
-      footerListLinks: linksFooterMapper(data.rodape?.links) || [],
+      footerListLinks: linksFooterMapper(data.rodapeFragment?.links) || [],
       outerBarsColor,
       innerBarsColor
     },

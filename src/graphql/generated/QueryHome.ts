@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE } from "./globalTypes";
+import { ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE, ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA } from "./globalTypes";
 
 // ====================================================
 // GraphQL query operation: QueryHome
@@ -21,7 +21,7 @@ export interface QueryHome_siteInfroFragment_Section_ComponentSiteIntro {
   embed: string | null;
 }
 
-export type QueryHome_siteInfroFragment_Section = QueryHome_siteInfroFragment_Section_ComponentSiteIntro;
+export type QueryHome_siteInfroFragment_Section = QueryHome_siteInfroFragment_Section_ComponentSectionFeaturedPodcast | QueryHome_siteInfroFragment_Section_ComponentSiteIntro;
 
 export interface QueryHome_siteInfroFragment {
   __typename: "Home";
@@ -73,7 +73,7 @@ export interface QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodc
   podcast: QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodcast_podcast | null;
 }
 
-export type QueryHome_featuredPodcasts_Section = QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodcast;
+export type QueryHome_featuredPodcasts_Section = QueryHome_featuredPodcasts_Section_ComponentSiteIntro | QueryHome_featuredPodcasts_Section_ComponentSectionFeaturedPodcast;
 
 export interface QueryHome_featuredPodcasts {
   __typename: "Home";
@@ -112,7 +112,7 @@ export interface QueryHome_selectedPodcastsFragment_Section_ComponentSectionSele
   episodes: QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes_episodes[];
 }
 
-export type QueryHome_selectedPodcastsFragment_Section = QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes;
+export type QueryHome_selectedPodcastsFragment_Section = QueryHome_selectedPodcastsFragment_Section_ComponentSiteIntro | QueryHome_selectedPodcastsFragment_Section_ComponentSectionSelectedEpisodes;
 
 export interface QueryHome_selectedPodcastsFragment {
   __typename: "Home";
@@ -145,7 +145,7 @@ export interface QueryHome_extraHighLightFragment_Section_ComponentSectionExtra 
   link: QueryHome_extraHighLightFragment_Section_ComponentSectionExtra_link | null;
 }
 
-export type QueryHome_extraHighLightFragment_Section = QueryHome_extraHighLightFragment_Section_ComponentSectionExtra;
+export type QueryHome_extraHighLightFragment_Section = QueryHome_extraHighLightFragment_Section_ComponentSiteIntro | QueryHome_extraHighLightFragment_Section_ComponentSectionExtra;
 
 export interface QueryHome_extraHighLightFragment {
   __typename: "Home";
@@ -175,29 +175,30 @@ export interface QueryHome_callToAction_Section_ComponentSectionCallToAction {
   listLinks: (QueryHome_callToAction_Section_ComponentSectionCallToAction_listLinks | null)[] | null;
 }
 
-export type QueryHome_callToAction_Section = QueryHome_callToAction_Section_ComponentSectionCallToAction;
+export type QueryHome_callToAction_Section = QueryHome_callToAction_Section_ComponentSiteIntro | QueryHome_callToAction_Section_ComponentSectionCallToAction;
 
 export interface QueryHome_callToAction {
   __typename: "Home";
   Section: (QueryHome_callToAction_Section | null)[];
 }
 
-export interface QueryHome_rodape_links_pagina_generica {
+export interface QueryHome_rodapeFragment_links_pagina_generica {
   __typename: "Posts";
   slug: string;
 }
 
-export interface QueryHome_rodape_links {
+export interface QueryHome_rodapeFragment_links {
   __typename: "ComponentFragmentListaDeLinks";
   label: string;
-  url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  pagina_generica: QueryHome_rodape_links_pagina_generica | null;
+  url: string | null;
+  pagina_interna: ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA | null;
+  pagina_generica: QueryHome_rodapeFragment_links_pagina_generica | null;
 }
 
-export interface QueryHome_rodape {
+export interface QueryHome_rodapeFragment {
   __typename: "Rodape";
-  links: (QueryHome_rodape_links | null)[] | null;
+  links: (QueryHome_rodapeFragment_links | null)[] | null;
 }
 
 export interface QueryHome_barraLateral_menu_pagina_generica {
@@ -224,6 +225,6 @@ export interface QueryHome {
   selectedPodcastsFragment: QueryHome_selectedPodcastsFragment | null;
   extraHighLightFragment: QueryHome_extraHighLightFragment | null;
   callToAction: QueryHome_callToAction | null;
-  rodape: QueryHome_rodape | null;
+  rodapeFragment: QueryHome_rodapeFragment | null;
   barraLateral: QueryHome_barraLateral | null;
 }

@@ -3,16 +3,11 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE } from "./globalTypes";
+import { ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE, ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA } from "./globalTypes";
 
 // ====================================================
 // GraphQL query operation: QueryEpisodeBySlug
 // ====================================================
-
-export interface QueryEpisodeBySlug_episodes_authors {
-  __typename: "Author";
-  name: string;
-}
 
 export interface QueryEpisodeBySlug_episodes_categories {
   __typename: "Category";
@@ -23,7 +18,6 @@ export interface QueryEpisodeBySlug_episodes_categories {
 export interface QueryEpisodeBySlug_episodes {
   __typename: "Episode";
   title: string;
-  authors: QueryEpisodeBySlug_episodes_authors[];
   episodeNumber: number;
   embed: string | null;
   releaseDate: any;
@@ -31,22 +25,23 @@ export interface QueryEpisodeBySlug_episodes {
   categories: QueryEpisodeBySlug_episodes_categories[];
 }
 
-export interface QueryEpisodeBySlug_rodape_links_pagina_generica {
+export interface QueryEpisodeBySlug_rodapeFragment_links_pagina_generica {
   __typename: "Posts";
   slug: string;
 }
 
-export interface QueryEpisodeBySlug_rodape_links {
+export interface QueryEpisodeBySlug_rodapeFragment_links {
   __typename: "ComponentFragmentListaDeLinks";
   label: string;
-  url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  pagina_generica: QueryEpisodeBySlug_rodape_links_pagina_generica | null;
+  url: string | null;
+  pagina_interna: ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA | null;
+  pagina_generica: QueryEpisodeBySlug_rodapeFragment_links_pagina_generica | null;
 }
 
-export interface QueryEpisodeBySlug_rodape {
+export interface QueryEpisodeBySlug_rodapeFragment {
   __typename: "Rodape";
-  links: (QueryEpisodeBySlug_rodape_links | null)[] | null;
+  links: (QueryEpisodeBySlug_rodapeFragment_links | null)[] | null;
 }
 
 export interface QueryEpisodeBySlug_barraLateral_menu_pagina_generica {
@@ -69,7 +64,7 @@ export interface QueryEpisodeBySlug_barraLateral {
 
 export interface QueryEpisodeBySlug {
   episodes: QueryEpisodeBySlug_episodes[];
-  rodape: QueryEpisodeBySlug_rodape | null;
+  rodapeFragment: QueryEpisodeBySlug_rodapeFragment | null;
   barraLateral: QueryEpisodeBySlug_barraLateral | null;
 }
 

@@ -69,8 +69,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       podcastEpisodes: podcastEpisodesMapper(
         data.podcasts.map((podcast) => podcast.episodes)[0] || null
       ),
-      menuListLinks: linksMenuMapper(data.barraLateral?.menu) || null,
-      footerListLinks: linksFooterMapper(data.rodape?.links) || null
+      menuListLinks: linksMenuMapper(data.barraLateral?.menu) || [],
+      footerListLinks: linksFooterMapper(data.rodape?.links) || []
     },
     revalidate: 60
   }
