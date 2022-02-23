@@ -166,6 +166,7 @@ export interface QueryHome_callToAction_Section_ComponentSectionCallToAction_lis
   label: string;
   url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
+  pagina_interna: ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA | null;
   pagina_generica: QueryHome_callToAction_Section_ComponentSectionCallToAction_listLinks_pagina_generica | null;
 }
 
@@ -180,6 +181,25 @@ export type QueryHome_callToAction_Section = QueryHome_callToAction_Section_Comp
 export interface QueryHome_callToAction {
   __typename: "Home";
   Section: (QueryHome_callToAction_Section | null)[];
+}
+
+export interface QueryHome_menuFragment_menu_pagina_generica {
+  __typename: "Posts";
+  slug: string;
+}
+
+export interface QueryHome_menuFragment_menu {
+  __typename: "ComponentFragmentListaDeLinks";
+  label: string;
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
+  url: string | null;
+  pagina_interna: ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA | null;
+  pagina_generica: QueryHome_menuFragment_menu_pagina_generica | null;
+}
+
+export interface QueryHome_menuFragment {
+  __typename: "BarraLateral";
+  menu: (QueryHome_menuFragment_menu | null)[] | null;
 }
 
 export interface QueryHome_rodapeFragment_links_pagina_generica {
@@ -201,30 +221,12 @@ export interface QueryHome_rodapeFragment {
   links: (QueryHome_rodapeFragment_links | null)[] | null;
 }
 
-export interface QueryHome_barraLateral_menu_pagina_generica {
-  __typename: "Posts";
-  slug: string;
-}
-
-export interface QueryHome_barraLateral_menu {
-  __typename: "ComponentFragmentListaDeLinks";
-  label: string;
-  url: string | null;
-  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  pagina_generica: QueryHome_barraLateral_menu_pagina_generica | null;
-}
-
-export interface QueryHome_barraLateral {
-  __typename: "BarraLateral";
-  menu: (QueryHome_barraLateral_menu | null)[] | null;
-}
-
 export interface QueryHome {
   siteInfroFragment: QueryHome_siteInfroFragment | null;
   featuredPodcasts: QueryHome_featuredPodcasts | null;
   selectedPodcastsFragment: QueryHome_selectedPodcastsFragment | null;
   extraHighLightFragment: QueryHome_extraHighLightFragment | null;
   callToAction: QueryHome_callToAction | null;
+  menuFragment: QueryHome_menuFragment | null;
   rodapeFragment: QueryHome_rodapeFragment | null;
-  barraLateral: QueryHome_barraLateral | null;
 }

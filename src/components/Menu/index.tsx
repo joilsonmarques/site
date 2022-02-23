@@ -60,12 +60,12 @@ const Menu = ({ listLinks, searchConfig }: MenuProps) => {
         <CloseIcon aria-label="Fechar Menu" onClick={() => setIsOpen(false)} />
         <S.MenuNav>
           {listLinks.map((link, index) => (
-            <S.MenuLink key={index} href={link.url} passHref>
-              {link.type === 'externo' ? (
-                <a target="_blank">{link.label}</a>
-              ) : (
-                <a target="_self">{link.label}</a>
-              )}
+            <S.MenuLink
+              key={index}
+              href={link.url}
+              target={link.type === 'externo' ? '_blank' : '_self'}
+            >
+              {link.label}
             </S.MenuLink>
           ))}
         </S.MenuNav>

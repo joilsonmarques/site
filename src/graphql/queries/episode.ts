@@ -1,4 +1,5 @@
 import { gql } from '@apollo/client'
+import { MenuFragment } from 'graphql/fragments/menu'
 import { RodapeFragment } from 'graphql/fragments/rodape'
 
 export const QUERY_EPISODE = gql`
@@ -25,19 +26,13 @@ export const QUERY_EPISODE_BY_SLUG = gql`
         slug
       }
     }
+    menuFragment: barraLateral {
+      ...MenuFragment
+    }
     rodapeFragment: rodape {
       ...RodapeFragment
     }
-    barraLateral {
-      menu {
-        label
-        url
-        type
-        pagina_generica {
-          slug
-        }
-      }
-    }
   }
+  ${MenuFragment}
   ${RodapeFragment}
 `

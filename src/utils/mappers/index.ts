@@ -8,8 +8,8 @@ import {
   QueryHome_extraHighLightFragment_Section,
   QueryHome_featuredPodcasts_Section,
   QueryHome_selectedPodcastsFragment_Section,
-  QueryHome_rodape_links,
-  QueryHome_barraLateral_menu,
+  QueryHome_rodapeFragment_links,
+  QueryHome_menuFragment_menu,
   QueryHome_siteInfroFragment_Section_ComponentSiteIntro
 } from 'graphql/generated/QueryHome'
 import {
@@ -138,25 +138,16 @@ export const callToActionMapper = (
           title: call?.title,
           listLinks: call?.listLinks?.map((link) => ({
             label: link?.label,
-            url: `${getUrlWithPrefixByType(link?.type, link)}`,
+            url: `${getUrlWithPrefixByType(
+              link?.type,
+              link,
+              link?.pagina_interna
+            )}`,
             type: link?.type
           }))
         }))[0]
     : null
 }
-
-export const linksMenuMapper = (
-  linksMenu: (QueryHome_barraLateral_menu | null)[] | null | undefined
-) => {
-  return linksMenu
-    ? linksMenu?.map((link) => ({
-        label: link?.label,
-        url: `${getUrlWithPrefixByType(link?.type, link)}`,
-        type: link?.type
-      }))
-    : null
-}
-
 export const headerPodcastMapper = (
   header: (QueryPodCastBySlug_podcasts | null)[] | null | undefined
 ) => {
@@ -192,8 +183,50 @@ export const podcastEpisodesMapper = (
     : null
 }
 
+export const linksMenuMapper = (
+  linksMenu: (QueryHome_menuFragment_menu | null)[] | null | undefined
+) => {
+  return linksMenu
+    ? linksMenu?.map((link) => ({
+        label: link?.label,
+        url: `${getUrlWithPrefixByTypeMenu(
+          link?.type,
+          link,
+          link?.pagina_interna
+        )}`,
+        type: link?.type
+      }))
+    : null
+}
+function getUrlWithPrefixByTypeMenu(
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE | undefined,
+  link: QueryHome_menuFragment_menu | null,
+  pagina_interna:
+    | ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA
+    | null
+    | undefined
+) {
+  let url = ''
+  switch (type) {
+    case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.generico:
+      url = `/post/${link?.pagina_generica?.slug}`
+      break
+
+    case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.externo:
+      url = `${link?.url}`
+      break
+
+    case ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE.interno:
+      url = pagina_interna == 'inicial' ? `/` : `/${pagina_interna}`
+      break
+    default:
+      break
+  }
+  return url
+}
+
 export const linksFooterMapper = (
-  linksFooter: (QueryHome_rodape_links | null)[] | null | undefined
+  linksFooter: (QueryHome_rodapeFragment_links | null)[] | null | undefined
 ) => {
   return linksFooter
     ? linksFooter?.map((link) => ({
@@ -210,7 +243,7 @@ export const linksFooterMapper = (
 
 function getUrlWithPrefixByType(
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE | undefined,
-  link: QueryHome_rodape_links | null,
+  link: QueryHome_rodapeFragment_links | null,
   pagina_interna:
     | ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA
     | null
@@ -232,7 +265,6 @@ function getUrlWithPrefixByType(
     default:
       break
   }
-
   return url
 }
 

@@ -132,11 +132,11 @@ export const AnimatedBg = styled.div`
         display: block;
       `}
     }
-    /*
+
     .path {
       animation: ${pulse} ${duration}s infinite;
     }
-
+    /*
     .line_1 {
       animation-delay: ${`${(duration / items) * 1}s`};
     }
@@ -289,6 +289,6 @@ export const AnimatedBg = styled.div`
     }
     */
 
-    /* ${getAnimations(items, duration)} */
+    ${getAnimations(items, duration)}
   `}
 `

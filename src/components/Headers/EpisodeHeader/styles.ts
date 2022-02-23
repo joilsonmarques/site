@@ -56,6 +56,9 @@ export const Cover = styled.div`
     z-index: ${theme.layers.base};
     justify-content: center;
     display: flex;
+    iframe {
+      width: 100%;
+    }
   `}
 `
 export const Content = styled.div`

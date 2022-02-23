@@ -25,6 +25,25 @@ export interface QueryEpisodeBySlug_episodes {
   categories: QueryEpisodeBySlug_episodes_categories[];
 }
 
+export interface QueryEpisodeBySlug_menuFragment_menu_pagina_generica {
+  __typename: "Posts";
+  slug: string;
+}
+
+export interface QueryEpisodeBySlug_menuFragment_menu {
+  __typename: "ComponentFragmentListaDeLinks";
+  label: string;
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
+  url: string | null;
+  pagina_interna: ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA | null;
+  pagina_generica: QueryEpisodeBySlug_menuFragment_menu_pagina_generica | null;
+}
+
+export interface QueryEpisodeBySlug_menuFragment {
+  __typename: "BarraLateral";
+  menu: (QueryEpisodeBySlug_menuFragment_menu | null)[] | null;
+}
+
 export interface QueryEpisodeBySlug_rodapeFragment_links_pagina_generica {
   __typename: "Posts";
   slug: string;
@@ -44,28 +63,10 @@ export interface QueryEpisodeBySlug_rodapeFragment {
   links: (QueryEpisodeBySlug_rodapeFragment_links | null)[] | null;
 }
 
-export interface QueryEpisodeBySlug_barraLateral_menu_pagina_generica {
-  __typename: "Posts";
-  slug: string;
-}
-
-export interface QueryEpisodeBySlug_barraLateral_menu {
-  __typename: "ComponentFragmentListaDeLinks";
-  label: string;
-  url: string | null;
-  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  pagina_generica: QueryEpisodeBySlug_barraLateral_menu_pagina_generica | null;
-}
-
-export interface QueryEpisodeBySlug_barraLateral {
-  __typename: "BarraLateral";
-  menu: (QueryEpisodeBySlug_barraLateral_menu | null)[] | null;
-}
-
 export interface QueryEpisodeBySlug {
   episodes: QueryEpisodeBySlug_episodes[];
+  menuFragment: QueryEpisodeBySlug_menuFragment | null;
   rodapeFragment: QueryEpisodeBySlug_rodapeFragment | null;
-  barraLateral: QueryEpisodeBySlug_barraLateral | null;
 }
 
 export interface QueryEpisodeBySlugVariables {

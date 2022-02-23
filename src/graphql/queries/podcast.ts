@@ -1,4 +1,6 @@
 import { gql } from '@apollo/client'
+import { MenuFragment } from 'graphql/fragments/menu'
+import { RodapeFragment } from 'graphql/fragments/rodape'
 
 export const QUERY_PODCASTS = gql`
   query QueryPodcasts($limit: Int, $start: Int, $where: JSON, $sort: String) {
@@ -45,25 +47,13 @@ export const QUERY_PODCAST_BY_SLUG = gql`
         }
       }
     }
-    rodape {
-      links {
-        label
-        url
-        type
-        pagina_generica {
-          slug
-        }
-      }
+    menuFragment: barraLateral {
+      ...MenuFragment
     }
-    barraLateral {
-      menu {
-        label
-        url
-        type
-        pagina_generica {
-          slug
-        }
-      }
+    rodapeFragment: rodape {
+      ...RodapeFragment
     }
   }
+  ${MenuFragment}
+  ${RodapeFragment}
 `

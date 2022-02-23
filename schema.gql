@@ -189,13 +189,11 @@ type BarraLateral {
   id: ID!
   created_at: DateTime!
   updated_at: DateTime!
-  logo: UploadFile
   tituloSite: String!
   menu: [ComponentFragmentListaDeLinks]
 }
 
 input BarraLateralInput {
-  logo: ID
   tituloSite: String!
   menu: [ComponentFragmentListaDeLinkInput!]
   created_by: ID
@@ -203,7 +201,6 @@ input BarraLateralInput {
 }
 
 input editBarraLateralInput {
-  logo: ID
   tituloSite: String
   menu: [editComponentFragmentListaDeLinkInput]
   created_by: ID
@@ -1525,6 +1522,7 @@ enum ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE {
 }
 
 enum ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA {
+  inicial
   sobre
   contato
 }

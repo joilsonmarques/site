@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ENUM_COMPONENTFRAGMENTLINKS_NETWORK, ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE } from "./globalTypes";
+import { ENUM_COMPONENTFRAGMENTLINKS_NETWORK, ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE, ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA } from "./globalTypes";
 
 // ====================================================
 // GraphQL query operation: QuerySobre
@@ -37,44 +37,46 @@ export interface QuerySobre_sobre {
   Members: (QuerySobre_sobre_Members | null)[] | null;
 }
 
-export interface QuerySobre_rodape_links_pagina_generica {
+export interface QuerySobre_menuFragment_menu_pagina_generica {
   __typename: "Posts";
   slug: string;
 }
 
-export interface QuerySobre_rodape_links {
+export interface QuerySobre_menuFragment_menu {
   __typename: "ComponentFragmentListaDeLinks";
   label: string;
-  url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  pagina_generica: QuerySobre_rodape_links_pagina_generica | null;
-}
-
-export interface QuerySobre_rodape {
-  __typename: "Rodape";
-  links: (QuerySobre_rodape_links | null)[] | null;
-}
-
-export interface QuerySobre_barraLateral_menu_pagina_generica {
-  __typename: "Posts";
-  slug: string;
-}
-
-export interface QuerySobre_barraLateral_menu {
-  __typename: "ComponentFragmentListaDeLinks";
-  label: string;
   url: string | null;
-  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  pagina_generica: QuerySobre_barraLateral_menu_pagina_generica | null;
+  pagina_interna: ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA | null;
+  pagina_generica: QuerySobre_menuFragment_menu_pagina_generica | null;
 }
 
-export interface QuerySobre_barraLateral {
+export interface QuerySobre_menuFragment {
   __typename: "BarraLateral";
-  menu: (QuerySobre_barraLateral_menu | null)[] | null;
+  menu: (QuerySobre_menuFragment_menu | null)[] | null;
+}
+
+export interface QuerySobre_rodapeFragment_links_pagina_generica {
+  __typename: "Posts";
+  slug: string;
+}
+
+export interface QuerySobre_rodapeFragment_links {
+  __typename: "ComponentFragmentListaDeLinks";
+  label: string;
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
+  url: string | null;
+  pagina_interna: ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA | null;
+  pagina_generica: QuerySobre_rodapeFragment_links_pagina_generica | null;
+}
+
+export interface QuerySobre_rodapeFragment {
+  __typename: "Rodape";
+  links: (QuerySobre_rodapeFragment_links | null)[] | null;
 }
 
 export interface QuerySobre {
   sobre: QuerySobre_sobre | null;
-  rodape: QuerySobre_rodape | null;
-  barraLateral: QuerySobre_barraLateral | null;
+  menuFragment: QuerySobre_menuFragment | null;
+  rodapeFragment: QuerySobre_rodapeFragment | null;
 }

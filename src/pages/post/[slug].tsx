@@ -60,7 +60,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       headerInfo: headerPostMapper(data.posts),
       content: data.posts[0].content,
-      menuListLinks: linksMenuMapper(data.barraLateral?.menu) || [],
+      menuListLinks: linksMenuMapper(data.menuFragment?.menu) || [],
       footerListLinks: linksFooterMapper(data.rodapeFragment?.links) || []
     },
     revalidate: 60

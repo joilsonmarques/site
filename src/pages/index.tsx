@@ -41,7 +41,7 @@ export async function getStaticProps() {
       extraHighlight:
         extraHighLightMapper(data.extraHighLightFragment?.Section) || null,
       callToAction: callToActionMapper(data.callToAction?.Section),
-      menuListLinks: linksMenuMapper(data.barraLateral?.menu) || [],
+      menuListLinks: linksMenuMapper(data.menuFragment?.menu) || [],
       footerListLinks: linksFooterMapper(data.rodapeFragment?.links) || [],
       outerBarsColor,
       innerBarsColor

@@ -23,6 +23,7 @@ export enum ENUM_COMPONENTFRAGMENTLINKS_NETWORK {
 
 export enum ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA {
   contato = "contato",
+  inicial = "inicial",
   sobre = "sobre",
 }
 
