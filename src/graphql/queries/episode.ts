@@ -1,4 +1,6 @@
 import { gql } from '@apollo/client'
+import { MenuFragment } from 'graphql/fragments/menu'
+import { RodapeFragment } from 'graphql/fragments/rodape'
 
 export const QUERY_EPISODE = gql`
   query QueryEpisode($limit: Int, $start: Int, $where: JSON, $sort: String) {
@@ -15,9 +17,6 @@ export const QUERY_EPISODE_BY_SLUG = gql`
   query QueryEpisodeBySlug($slug: String!) {
     episodes(where: { slug: $slug }) {
       title
-      authors {
-        name
-      }
       episodeNumber
       embed
       releaseDate
@@ -27,25 +26,13 @@ export const QUERY_EPISODE_BY_SLUG = gql`
         slug
       }
     }
-    rodape {
-      links {
-        label
-        url
-        type
-        pagina_generica {
-          slug
-        }
-      }
+    menuFragment: barraLateral {
+      ...MenuFragment
     }
-    barraLateral {
-      menu {
-        label
-        url
-        type
-        pagina_generica {
-          slug
-        }
-      }
+    rodapeFragment: rodape {
+      ...RodapeFragment
     }
   }
+  ${MenuFragment}
+  ${RodapeFragment}
 `

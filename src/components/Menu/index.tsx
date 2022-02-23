@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Link from 'next/link'
 import { Menu as MenuIcon } from '@styled-icons/material-outlined/Menu'
 import { Search as SearchIcon } from '@styled-icons/material-outlined/Search'
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
@@ -26,7 +27,11 @@ const Menu = ({ listLinks, searchConfig }: MenuProps) => {
   return (
     <S.Wrapper isRight={isRight}>
       <S.LogoWrapper>
-        <Logo color="white" horizontalOnMobile />
+        <Link href="/">
+          <a>
+            <Logo color="white" horizontalOnMobile />
+          </a>
+        </Link>
       </S.LogoWrapper>
 
       <S.MenuGroup>
@@ -55,12 +60,12 @@ const Menu = ({ listLinks, searchConfig }: MenuProps) => {
         <CloseIcon aria-label="Fechar Menu" onClick={() => setIsOpen(false)} />
         <S.MenuNav>
           {listLinks.map((link, index) => (
-            <S.MenuLink key={index} href={link.url} passHref>
-              {link.type === 'externo' ? (
-                <a target="_blank">{link.label}</a>
-              ) : (
-                <a target="_self">{link.label}</a>
-              )}
+            <S.MenuLink
+              key={index}
+              href={link.url}
+              target={link.type === 'externo' ? '_blank' : '_self'}
+            >
+              {link.label}
             </S.MenuLink>
           ))}
         </S.MenuNav>

@@ -54,7 +54,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     QueryEpisodeBySlugVariables
   >({
     query: QUERY_EPISODE_BY_SLUG,
-    variables: { slug: `${params?.episode_slug?.toString}` },
+    variables: { slug: `${params?.episode_slug}` },
     fetchPolicy: 'no-cache'
   })
 
@@ -68,8 +68,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       headerProps: episodeHeader,
       content: episodeHeader?.content,
-      menuListLinks: linksMenuMapper(data.barraLateral?.menu) || null,
-      footerListLinks: linksFooterMapper(data.rodape?.links) || null
+      menuListLinks: linksMenuMapper(data.barraLateral?.menu) || [],
+      footerListLinks: linksFooterMapper(data.rodapeFragment?.links) || []
     },
     revalidate: 60
   }

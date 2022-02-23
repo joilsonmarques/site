@@ -21,6 +21,12 @@ export enum ENUM_COMPONENTFRAGMENTLINKS_NETWORK {
   YouTube = "YouTube",
 }
 
+export enum ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA {
+  contato = "contato",
+  inicial = "inicial",
+  sobre = "sobre",
+}
+
 export enum ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE {
   externo = "externo",
   generico = "generico",

@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE } from "./globalTypes";
+import { ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE, ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA } from "./globalTypes";
 
 // ====================================================
 // GraphQL query operation: QueryPostBySlug
@@ -42,46 +42,48 @@ export interface QueryPostBySlug_posts {
   tags: (QueryPostBySlug_posts_tags | null)[] | null;
 }
 
-export interface QueryPostBySlug_rodape_links_pagina_generica {
+export interface QueryPostBySlug_menuFragment_menu_pagina_generica {
   __typename: "Posts";
   slug: string;
 }
 
-export interface QueryPostBySlug_rodape_links {
+export interface QueryPostBySlug_menuFragment_menu {
   __typename: "ComponentFragmentListaDeLinks";
   label: string;
-  url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  pagina_generica: QueryPostBySlug_rodape_links_pagina_generica | null;
-}
-
-export interface QueryPostBySlug_rodape {
-  __typename: "Rodape";
-  links: (QueryPostBySlug_rodape_links | null)[] | null;
-}
-
-export interface QueryPostBySlug_barraLateral_menu_pagina_generica {
-  __typename: "Posts";
-  slug: string;
-}
-
-export interface QueryPostBySlug_barraLateral_menu {
-  __typename: "ComponentFragmentListaDeLinks";
-  label: string;
   url: string | null;
-  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  pagina_generica: QueryPostBySlug_barraLateral_menu_pagina_generica | null;
+  pagina_interna: ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA | null;
+  pagina_generica: QueryPostBySlug_menuFragment_menu_pagina_generica | null;
 }
 
-export interface QueryPostBySlug_barraLateral {
+export interface QueryPostBySlug_menuFragment {
   __typename: "BarraLateral";
-  menu: (QueryPostBySlug_barraLateral_menu | null)[] | null;
+  menu: (QueryPostBySlug_menuFragment_menu | null)[] | null;
+}
+
+export interface QueryPostBySlug_rodapeFragment_links_pagina_generica {
+  __typename: "Posts";
+  slug: string;
+}
+
+export interface QueryPostBySlug_rodapeFragment_links {
+  __typename: "ComponentFragmentListaDeLinks";
+  label: string;
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
+  url: string | null;
+  pagina_interna: ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA | null;
+  pagina_generica: QueryPostBySlug_rodapeFragment_links_pagina_generica | null;
+}
+
+export interface QueryPostBySlug_rodapeFragment {
+  __typename: "Rodape";
+  links: (QueryPostBySlug_rodapeFragment_links | null)[] | null;
 }
 
 export interface QueryPostBySlug {
   posts: QueryPostBySlug_posts[];
-  rodape: QueryPostBySlug_rodape | null;
-  barraLateral: QueryPostBySlug_barraLateral | null;
+  menuFragment: QueryPostBySlug_menuFragment | null;
+  rodapeFragment: QueryPostBySlug_rodapeFragment | null;
 }
 
 export interface QueryPostBySlugVariables {

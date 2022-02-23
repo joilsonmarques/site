@@ -36,12 +36,13 @@ const Footer = ({
         <Heading size="small">Links</Heading>
         <nav aria-labelledby="Lista de links">
           {listLinks.map((link, index) => (
-            <Link key={index} href={link.url} passHref>
-              {link.type === 'externo' ? (
-                <a target="_blank">{link.label}</a>
-              ) : (
-                <a target="_self">{link.label}</a>
-              )}
+            <Link
+              key={index}
+              href={link.url}
+              passHref
+              target={link.type === 'externo' ? '_blank' : '_self'}
+            >
+              {link.label}
             </Link>
           ))}
         </nav>

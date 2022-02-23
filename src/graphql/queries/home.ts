@@ -2,6 +2,8 @@ import { gql } from '@apollo/client'
 import { CallToActionFragment } from 'graphql/fragments/callToAction'
 import { ExtraHighLightFragment } from 'graphql/fragments/extraHighLight'
 import { FeaturedPodcastsFragment } from 'graphql/fragments/featuredPodcasts'
+import { MenuFragment } from 'graphql/fragments/menu'
+import { RodapeFragment } from 'graphql/fragments/rodape'
 import { SelectedPodcastsFragment } from 'graphql/fragments/selectedPodcasts'
 import { SiteIntroFragment } from 'graphql/fragments/siteIntro'
 
@@ -22,25 +24,11 @@ export const QUERY_HOME = gql`
     callToAction: home {
       ...CallToActionFragment
     }
-    rodape {
-      links {
-        label
-        url
-        type
-        pagina_generica {
-          slug
-        }
-      }
+    menuFragment: barraLateral {
+      ...MenuFragment
     }
-    barraLateral {
-      menu {
-        label
-        url
-        type
-        pagina_generica {
-          slug
-        }
-      }
+    rodapeFragment: rodape {
+      ...RodapeFragment
     }
   }
   ${SiteIntroFragment}
@@ -48,4 +36,6 @@ export const QUERY_HOME = gql`
   ${SelectedPodcastsFragment}
   ${ExtraHighLightFragment}
   ${CallToActionFragment}
+  ${MenuFragment}
+  ${RodapeFragment}
 `

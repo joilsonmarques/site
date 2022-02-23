@@ -28,8 +28,8 @@ export async function getStaticProps() {
     props: {
       members: dataSobre?.members,
       header: dataSobre?.header,
-      menuListLinks: linksMenuMapper(data.barraLateral?.menu) || null,
-      footerListLinks: linksFooterMapper(data.rodape?.links) || null
+      menuListLinks: linksMenuMapper(data.menuFragment?.menu) || null,
+      footerListLinks: linksFooterMapper(data.rodapeFragment?.links) || null
     }
   }
 }

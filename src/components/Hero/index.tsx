@@ -18,7 +18,7 @@ const Hero = ({ call, hasDetail, description, embedUrl }: HeroProps) => {
   function handleClick() {
     titleRef.current.scrollIntoView({ behavior: 'smooth' })
   }
-  return call ? (
+  return (
     <S.Wrapper>
       <S.AnimatedBg>
         <svg
@@ -86,11 +86,6 @@ const Hero = ({ call, hasDetail, description, embedUrl }: HeroProps) => {
         <svg className="no-mobile" viewBox="0 0 310 530">
           <use xlinkHref="#wavegroup" />
         </svg>
-
-        <svg className="no-mobile" viewBox="0 0 310 530">
-          <use xlinkHref="#wavegroup" />
-        </svg>
-
         <svg className="no-mobile" viewBox="0 0 310 530">
           <use xlinkHref="#wavegroup" />
         </svg>
@@ -110,8 +105,6 @@ const Hero = ({ call, hasDetail, description, embedUrl }: HeroProps) => {
         </div>
       )}
     </S.Wrapper>
-  ) : (
-    <S.Wrapper>teste</S.Wrapper>
   )
 }
 export default Hero

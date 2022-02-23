@@ -20,8 +20,8 @@ const CallToAction = ({ title, listLinks }: CallToActionProps) =>
       <Heading>{title}</Heading>
       <nav aria-labelledby="Lista de links">
         {listLinks.map((link, index) => (
-          <Link key={index} href={link.url} passHref>
-            {link.type === 'external' ? (
+          <Link key={index} href={link.url}>
+            {link.type === 'externo' ? (
               <a target="_blank">
                 {link.label} <ExternalLinkIcon aria-label="abrir link" />
               </a>

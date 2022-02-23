@@ -9,6 +9,7 @@ export const Wrapper = styled.footer<FooterProps>`
   ${({ theme, outerBarsColor, innerBarsColor }) => css`
     ${HeadingStyles.Wrapper} {
       height: 0px;
+      overflow: hidden;
       opacity: 0;
     }
     position: relative;
@@ -100,6 +101,7 @@ export const Column = styled.div`
       `}
     }
     a {
+      white-space: nowrap;
       word-wrap: break-word;
       overflow-wrap: break-word;
     }

@@ -3,7 +3,7 @@
 // @generated
 // This file was automatically generated and should not be edited.
 
-import { ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE } from "./globalTypes";
+import { ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE, ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA } from "./globalTypes";
 
 // ====================================================
 // GraphQL query operation: QueryPodCastBySlug
@@ -58,46 +58,48 @@ export interface QueryPodCastBySlug_podcasts {
   episodes: QueryPodCastBySlug_podcasts_episodes[];
 }
 
-export interface QueryPodCastBySlug_rodape_links_pagina_generica {
+export interface QueryPodCastBySlug_menuFragment_menu_pagina_generica {
   __typename: "Posts";
   slug: string;
 }
 
-export interface QueryPodCastBySlug_rodape_links {
+export interface QueryPodCastBySlug_menuFragment_menu {
   __typename: "ComponentFragmentListaDeLinks";
   label: string;
-  url: string | null;
   type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  pagina_generica: QueryPodCastBySlug_rodape_links_pagina_generica | null;
-}
-
-export interface QueryPodCastBySlug_rodape {
-  __typename: "Rodape";
-  links: (QueryPodCastBySlug_rodape_links | null)[] | null;
-}
-
-export interface QueryPodCastBySlug_barraLateral_menu_pagina_generica {
-  __typename: "Posts";
-  slug: string;
-}
-
-export interface QueryPodCastBySlug_barraLateral_menu {
-  __typename: "ComponentFragmentListaDeLinks";
-  label: string;
   url: string | null;
-  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
-  pagina_generica: QueryPodCastBySlug_barraLateral_menu_pagina_generica | null;
+  pagina_interna: ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA | null;
+  pagina_generica: QueryPodCastBySlug_menuFragment_menu_pagina_generica | null;
 }
 
-export interface QueryPodCastBySlug_barraLateral {
+export interface QueryPodCastBySlug_menuFragment {
   __typename: "BarraLateral";
-  menu: (QueryPodCastBySlug_barraLateral_menu | null)[] | null;
+  menu: (QueryPodCastBySlug_menuFragment_menu | null)[] | null;
+}
+
+export interface QueryPodCastBySlug_rodapeFragment_links_pagina_generica {
+  __typename: "Posts";
+  slug: string;
+}
+
+export interface QueryPodCastBySlug_rodapeFragment_links {
+  __typename: "ComponentFragmentListaDeLinks";
+  label: string;
+  type: ENUM_COMPONENTFRAGMENTLISTADELINKS_TYPE;
+  url: string | null;
+  pagina_interna: ENUM_COMPONENTFRAGMENTLISTADELINKS_PAGINA_INTERNA | null;
+  pagina_generica: QueryPodCastBySlug_rodapeFragment_links_pagina_generica | null;
+}
+
+export interface QueryPodCastBySlug_rodapeFragment {
+  __typename: "Rodape";
+  links: (QueryPodCastBySlug_rodapeFragment_links | null)[] | null;
 }
 
 export interface QueryPodCastBySlug {
   podcasts: QueryPodCastBySlug_podcasts[];
-  rodape: QueryPodCastBySlug_rodape | null;
-  barraLateral: QueryPodCastBySlug_barraLateral | null;
+  menuFragment: QueryPodCastBySlug_menuFragment | null;
+  rodapeFragment: QueryPodCastBySlug_rodapeFragment | null;
 }
 
 export interface QueryPodCastBySlugVariables {
