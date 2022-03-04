@@ -22,8 +22,8 @@ const Hero = ({ call, hasDetail, description, embedUrl }: HeroProps) => {
     <S.Wrapper>
       <div className="video-header">
         <video playsinline autoPlay muted loop id="bgvid">
-          <source src="video/soundwave.webm" type="video/webm" />
-          <source src="video/soundwave.mp4" type="video/mp4" />
+          <source src="video/comp.webm" type="video/webm" />
+          <source src="video/comp.mp4" type="video/mp4" />
         </video>
       </div>
       <FullSection className="main" color="darkGray">

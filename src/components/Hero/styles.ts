@@ -39,16 +39,17 @@ function getAnimations(items: number, duration: number) {
 }
 
 export const Wrapper = styled.div`
-  video {
-    object-fit: cover;
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
   ${({ theme }) => css`
+    video {
+      object-fit: cover;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
     ${FullSectionStyles.Wrapper} {
+
       svg {
         width: ${theme.font.sizes.xxlarge};
         z-index: ${theme.layers.base};
@@ -61,7 +62,6 @@ export const Wrapper = styled.div`
         width: 100%;
         display: flex;
         justify-content: center;
-
         iframe {
           width: calc(${theme.grid.collumn}*4);
           height: 100px;
